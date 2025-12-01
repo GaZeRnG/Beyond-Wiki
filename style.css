@@ -1,0 +1,142 @@
+:root {
+    --clr-bg: rgb(48, 48, 48);
+    --clr-text: rgb(240, 255, 255);
+    --clr-dark: rgb(33, 33, 33);
+    --clr-mid: rgb(95, 92, 92);
+    --clr-red: rgb(255, 18, 18);
+    --transition: 0.8s;
+}
+
+::-webkit-scrollbar {
+    width: 13px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(75, 75, 75, 0.1);
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgb(25, 25, 25);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(27, 27, 27);
+}
+
+::-webkit-scrollbar-button:decrement {
+    cursor: pointer;
+    background-size: 20px;
+    height: 15px;
+    border: none;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-up-icon lucide-chevron-up"><path d="m18 15-6-6-6 6"/></svg>') no-repeat center;
+}
+
+::-webkit-scrollbar-button:increment {
+    cursor: pointer;
+    background-size: 20px;
+    height: 15px;
+    border: none;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>') no-repeat center;
+}
+
+.carousel {
+    width: 100%;
+    padding-top: 80px;
+    perspective: 1000px;
+    overflow: hidden;
+}
+
+.carousel-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+}
+
+.mod {
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    transform-origin: center center;
+    z-index: 0;
+    opacity: 0; 
+}
+
+.mod img {
+    height: 300px;
+    transition: transform 0.6s ease;
+    margin-top: 20px;
+}
+
+.bo { transform: translateX(-350px) translateZ(-350px) scale(0.7); opacity: 0.4; z-index: 0; }
+
+.bo img {height: 50px;}
+
+.ba { transform: translateX(-200px) translateZ(-200px) scale(0.85); opacity: 0.7; z-index: 1; }
+
+.ba img {height: 100px;}
+
+.bd { transform: translateX(0px) translateZ(0px) scale(1); opacity: 1; z-index: 2; }
+
+.bd img {height: 150px;}
+
+.bc { transform: translateX(200px) translateZ(-200px) scale(0.85); opacity: 0.7; z-index: 1; }
+
+.bc img {height: 100px;}
+
+.bz { transform: translateX(350px) translateZ(-350px) scale(0.7); opacity: 0.4; z-index: 0; }
+
+.bz img {height: 50px;}
+
+.bn { transform: translateX(0px) translateZ(-300px) scale(0.5); opacity: 0; z-index: 0; }
+
+.bn img {height: 50px;}
+
+a {
+    color: var(--clr-text);
+    text-decoration: none;
+}
+
+.modpacks_title h1 {
+    margin: 0;
+    font-size: 18px;
+}
+
+/* responsive */
+@media screen and (max-width: 600px) {
+    .warning {
+        font-size: 15px;
+    }
+    .logo img {
+        height: 100px;
+    }
+    .content_description {
+        font-size: 15px;
+    }
+    .bo { transform: translateX(-230px) translateZ(-350px) scale(0.7); opacity: 0.4; z-index: 0; }
+
+    .bo img {height: 50px;}
+
+    .ba { transform: translateX(-130px) translateZ(-200px) scale(0.85); opacity: 0.7; z-index: 1; }
+
+    .ba img {height: 80px;}
+
+    .bd { transform: translateX(0px) translateZ(0px) scale(1); opacity: 1; z-index: 2; }
+
+    .bd img {height: 100px;}
+
+    .bc { transform: translateX(130px) translateZ(-200px) scale(0.85); opacity: 0.7; z-index: 1; }
+
+    .bc img {height: 80px;}
+
+    .bz { transform: translateX(230px) translateZ(-350px) scale(0.7); opacity: 0.4; z-index: 0; }
+
+    .bz img {height: 50px;}
+
+    .bn { transform: translateX(0px) translateZ(-300px) scale(0.5); opacity: 0; z-index: 0; }
+
+    .bn img {height: 50px;}
+}

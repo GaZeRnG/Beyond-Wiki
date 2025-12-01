@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
+    --breakpoint-2xl: 1536px;
+}
+
+@layer base {
+    body {  
+        @apply font-sans text-white m-0 bg-repeat bg-zinc-700 bg-blend-multiply bg-[url('https://drive.google.com/thumbnail?id=1tft95UuONX8TXdMK8Z05kqbEzUXhkcm6')] bg-size-[50px];
+    }
+}
+
+@layer components {
+    .nav {
+        @apply fixed top-0 left-0 w-full h-[50px] p-2.5 z-50 flex justify-start items-center bg-neutral-800;
+    }
+    .nav a{
+        @apply mr-5
+    }
+    .nav a img {
+        @apply h-[70px] transition-transform duration-300 hover:scale-110 active:scale-110;
+    }
+    .warning {
+        @apply text-[20px] font-bold bg-red-600 text-center mb-5;
+    }
+    .logo {
+        @apply flex justify-center items-center w-full mt-5;
+    }
+    .logo img {
+        @apply block mx-auto h-[150px];
+    }
+    .main {
+        @apply bg-[rgb(95,92,92)] shadow-[0_0_20px_rgba(163,163,163,0.5)] rounded-[10px] mx-auto mt-[30px] mb-[30px] max-w-[95%] pt-2.5 text-center;
+    }
+    .content_description {
+        @apply text-[15px] w-[85%] mx-auto;
+    }
+    .link {
+        @apply flex mt-5 flex-row place-content-around;
+    }
+    .link img {
+        @apply transition-transform duration-300 hover:scale-120 active:scale-120;
+    }
+    .join {
+        @apply lg:flex gap-[200px] xl:gap-[300px];
+    }
+    .join img {
+        @apply h-[25px];
+    }
+    .join a {
+        @apply flex justify-around;
+    }
+    .official {
+        @apply flex justify-center items-center gap-0.5;
+    }
+    .cflink {
+        @apply flex flex-row items-center gap-2.5;
+    }
+    .cflink img {
+        @apply h-[30px];
+    }
+    .carousel-buttons {
+        @apply flex justify-center gap-6 z-5 mt-[130px] pb-5;
+    }
+    .carousel-buttons button{
+        @apply flex justify-center gap-6 px-4 py-2 rounded-xl transition bg-[rgb(74,71,71)] hover:bg-[rgb(63,60,60)] active:bg-[rgb(63,60,60)];
+    }
+}
