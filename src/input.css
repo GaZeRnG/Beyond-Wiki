@@ -15,26 +15,45 @@
 }
 
 @layer components {
+    /* Navbar CSS */
     .nav {
         @apply fixed top-0 left-0 w-full h-[50px] p-2.5 z-50 flex justify-start items-center bg-neutral-800;
     }
     .nav a{
-        @apply mr-5
+        @apply mr-auto ml-5;
     }
     .nav a img {
-        @apply h-[70px] transition-transform duration-300 hover:scale-110 active:scale-110;
+        @apply h-[30px] transition-transform duration-300 hover:scale-110 active:scale-110;
     }
+    .nav .icons {
+        @apply ml-auto mr-5 flex gap-5 align-middle;
+    }
+    .nav .icons .user {
+        @apply flex flex-col items-center text-white text-[10px] cursor-pointer transition-transform duration-300 hover:scale-120 active:scale-120;
+    }
+    .nav .icons .dropdown {
+        @apply hidden absolute top-[50px] bg-neutral-700 shadow-[0_0_8px_rgba(163,163,163,0.5)] rounded-md p-2.5 w-[100px] end-5 whitespace-normal;
+    }
+    .nav .icons .dropdown a {
+        @apply m-0 text-white text-[12px] no-underline;
+    }
+
+    /* Warning CSS */
     .warning {
         @apply text-[20px] font-bold bg-red-600 text-center mb-5;
     }
+
+    /* Logo CSS */
     .logo {
         @apply flex justify-center items-center w-full mt-5;
     }
     .logo img {
         @apply block mx-auto h-[150px];
     }
+
+    /* Main CSS */
     .main {
-        @apply bg-[rgb(95,92,92)] shadow-[0_0_20px_rgba(163,163,163,0.5)] rounded-[10px] mx-auto mt-[30px] max-w-[95%] pt-2.5 text-center;
+        @apply bg-[rgb(95,92,92)] shadow-[0_0_20px_rgba(163,163,163,0.5)] rounded-[10px] mx-auto mt-[30px] mb-[30px] max-w-[95%] pt-2.5 text-center;
     }
     .content_description {
         @apply text-[15px] w-[85%] mx-auto;

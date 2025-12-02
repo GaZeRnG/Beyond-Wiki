@@ -108,14 +108,24 @@ a {
 /* responsive */
 @media screen and (max-width: 600px) {
     .warning {
-        font-size: 15px;
+        font-size: 13px;
     }
+
+    .nav a img {
+        height: 25px;
+    }
+
     .logo img {
         height: 100px;
     }
     .content_description {
         font-size: 15px;
     }
+
+    .main {
+        max-width: 90%;
+    }
+
     .bo { transform: translateX(-230px) translateZ(-350px) scale(0.7); opacity: 0.4; z-index: 0; }
 
     .bo img {height: 50px;}
