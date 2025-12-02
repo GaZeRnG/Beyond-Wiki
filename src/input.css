@@ -10,7 +10,7 @@
 
 @layer base {
     body {  
-        @apply font-sans text-white m-0 bg-repeat bg-zinc-700 bg-blend-multiply bg-[url('https://drive.google.com/thumbnail?id=1tft95UuONX8TXdMK8Z05kqbEzUXhkcm6')] bg-size-[50px];
+        @apply font-sans text-white m-0 bg-repeat bg-zinc-700 bg-blend-multiply bg-[url('/Images/background.png')] bg-size-[50px];
     }
 }
 
@@ -34,7 +34,7 @@
         @apply block mx-auto h-[150px];
     }
     .main {
-        @apply bg-[rgb(95,92,92)] shadow-[0_0_20px_rgba(163,163,163,0.5)] rounded-[10px] mx-auto mt-[30px] mb-[30px] max-w-[95%] pt-2.5 text-center;
+        @apply bg-[rgb(95,92,92)] shadow-[0_0_20px_rgba(163,163,163,0.5)] rounded-[10px] mx-auto mt-[30px] max-w-[95%] pt-2.5 text-center;
     }
     .content_description {
         @apply text-[15px] w-[85%] mx-auto;

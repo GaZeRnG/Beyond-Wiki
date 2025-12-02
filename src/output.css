@@ -204,10 +204,6 @@
   .w-\[90\%\] {
     width: 90%;
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
-  }
   .text-lg {
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
@@ -221,7 +217,7 @@
   body {
     margin: calc(var(--spacing) * 0);
     background-color: var(--color-zinc-700);
-    background-image: url('https://drive.google.com/thumbnail?id=1tft95UuONX8TXdMK8Z05kqbEzUXhkcm6');
+    background-image: url('/Images/background.png');
     background-size: 50px;
     background-repeat: repeat;
     font-family: var(--font-sans);
@@ -291,7 +287,6 @@
   .main {
     margin-inline: auto;
     margin-top: 30px;
-    margin-bottom: 30px;
     max-width: 95%;
     border-radius: 10px;
     background-color: rgb(95,92,92);
@@ -392,11 +387,6 @@
     }
   }
 }
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
@@ -488,7 +478,6 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-duration: initial;
       --tw-scale-x: 1;
