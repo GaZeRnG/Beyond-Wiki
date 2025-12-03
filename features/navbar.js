@@ -1,4 +1,4 @@
-const user = document.getElementById('icon');
+const user = document.getElementById('user');
 const dropdown = document.getElementById('dropdown');
 
 user.addEventListener('click', () => {

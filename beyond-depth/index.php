@@ -1,6 +1,6 @@
 <html>
     <head>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="/beyond-depth/style.css">
 
         <link rel="icon" type="image" href="https://drive.google.com/thumbnail?id=1OQlYuWBYktXTOZe47gpjdoLBPEAAstWR">
         <meta charset="UTF-8">

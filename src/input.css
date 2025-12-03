@@ -28,14 +28,18 @@
     .nav .icons {
         @apply ml-auto mr-5 flex gap-5 align-middle;
     }
+    /* User */
     .nav .icons .user {
-        @apply flex flex-col items-center text-white text-[10px] cursor-pointer transition-transform duration-300 hover:scale-120 active:scale-120;
+        @apply flex items-center text-white text-[10px] cursor-pointer transition-transform duration-300 hover:scale-120 active:scale-120;
+    }
+    .nav .icons .user p {
+        @apply mr-1;
     }
     .nav .icons .dropdown {
         @apply hidden absolute top-[50px] bg-neutral-700 shadow-[0_0_8px_rgba(163,163,163,0.5)] rounded-md p-2.5 w-[100px] end-5 whitespace-normal;
     }
     .nav .icons .dropdown a {
-        @apply m-0 text-white text-[12px] no-underline;
+        @apply m-0 text-white text-[12px] no-underline flex justify-center;
     }
 
     /* Warning CSS */
