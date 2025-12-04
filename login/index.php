@@ -1,6 +1,17 @@
 <?php 
     session_start();
     include '../features/db.php';
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $username = $_POST['user_name'];
+        $email = $_POST['user_email'];
+        $password = $_POST['user_password'];
+
+        $profile_picture = null;
+        if (isset($_FILES['profile_picture']) && $_FILES['profile_picture']['error'] == 0) {
+            $filename = time() . "_" . $_FILES ["profile pciture"]["name"];
+        }
+    }
 ?>
 
 <html>

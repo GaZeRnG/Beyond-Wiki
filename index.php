@@ -1,5 +1,5 @@
 <?php 
-    include "/features/db.php";
+    include __DIR__ ."/features/db.php";
 ?>
 
 <html>
@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale= 1.0">
     </head>
 
-    <body>
+    <body class="hub-page">
         <!-- Navbar -->
         <?php include_once __DIR__ . '/features/navbar.php'; ?>
 

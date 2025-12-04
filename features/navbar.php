@@ -1,5 +1,5 @@
 <?php 
-    include "/features/db.php";
+    include "db.php";
 ?>
 
 <nav class="nav">

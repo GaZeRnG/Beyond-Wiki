@@ -222,11 +222,13 @@
   body {
     margin: calc(var(--spacing) * 0);
     background-color: var(--color-zinc-700);
+    font-family: var(--font-sans);
+    color: var(--color-white);
+  }
+  .hub-page {
     background-image: url('/Images/background.png');
     background-size: 50px;
     background-repeat: repeat;
-    font-family: var(--font-sans);
-    color: var(--color-white);
     background-blend-mode: multiply;
   }
 }

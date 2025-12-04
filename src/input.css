@@ -10,7 +10,10 @@
 
 @layer base {
     body {  
-        @apply font-sans text-white m-0 bg-repeat bg-zinc-700 bg-blend-multiply bg-[url('/Images/background.png')] bg-size-[50px];
+        @apply font-sans text-white m-0 bg-zinc-700 ;
+    }
+    .hub-page {
+        @apply bg-repeat bg-blend-multiply bg-[url('/Images/background.png')] bg-size-[50px];
     }
 }
 
