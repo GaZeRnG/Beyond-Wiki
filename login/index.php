@@ -22,7 +22,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale= 1.0">
     </head>
-    <body>
+    <body class="login-page">
         <h2>Login</h2>
 
         <form action="" method="POST" enctype="multipart/form-data">
@@ -42,6 +42,7 @@
         </form>
 
         <h3>Login with:</h3>
+        <!-- Google -->
         <?php
             $googleClientId = "YOUR_GOOGLE_CLIENT_ID";
             $googleRedirect = "http://localhost/google-callback.php";
@@ -51,6 +52,7 @@
                 . '&scope=email%20profile">Login with Google</a><br><br>';
         ?>
 
+        <!-- Discord -->
         <?php
             $discordClientId = "YOUR_DISCORD_CLIENT_ID";
             $discordRedirect = "http://localhost/discord-callback.php";

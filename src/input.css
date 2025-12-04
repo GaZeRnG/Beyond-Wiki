@@ -17,19 +17,16 @@
     }
 }
 
+/* Navbar */
 @layer components {
-    /* Navbar CSS */
     .nav {
-        @apply fixed top-0 left-0 w-full h-[50px] p-2.5 z-50 flex justify-start items-center bg-neutral-800;
+        @apply fixed top-0 left-0 w-full h-[50px] p-5 z-50 flex justify-start items-center bg-neutral-800 select-none;
     }
-    .nav a{
-        @apply mr-auto ml-5;
-    }
-    .nav a img {
-        @apply h-[30px] transition-transform duration-300 hover:scale-110 active:scale-110;
+    .nav img {
+        @apply h-[30px];
     }
     .nav .icons {
-        @apply ml-auto mr-5 flex gap-5 align-middle;
+        @apply ml-auto flex gap-5 align-middle;
     }
     /* User */
     .nav .icons .user {
@@ -39,12 +36,15 @@
         @apply mr-1;
     }
     .nav .icons .dropdown {
-        @apply hidden absolute top-[50px] bg-neutral-700 shadow-[0_0_8px_rgba(163,163,163,0.5)] rounded-md p-2.5 w-[100px] end-5 whitespace-normal;
+        @apply hidden absolute top-[50px] bg-neutral-700 shadow-[0_0_8px_rgba(163,163,163,0.5)] rounded-md p-1 w-[100px] end-5 whitespace-normal;
     }
     .nav .icons .dropdown a {
-        @apply m-0 text-white text-[12px] no-underline flex justify-center;
+        @apply m-0 text-white text-[12px] no-underline flex justify-center hover:bg-neutral-600 rounded-md;
     }
+}
 
+/* Hub Page */
+@layer components {
     /* Warning CSS */
     .warning {
         @apply text-[20px] font-bold bg-red-600 text-center mb-5;
@@ -95,4 +95,9 @@
     .carousel-buttons button{
         @apply flex justify-center gap-6 px-4 py-2 rounded-xl transition bg-[rgb(74,71,71)] hover:bg-[rgb(63,60,60)] active:bg-[rgb(63,60,60)];
     }
+}
+
+/* Login Page */
+@layer components {
+
 }

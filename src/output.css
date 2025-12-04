@@ -9,6 +9,7 @@
       "Courier New", monospace;
     --color-red-600: oklch(57.7% 0.245 27.325);
     --color-zinc-700: oklch(37% 0.013 285.805);
+    --color-neutral-600: oklch(43.9% 0 0);
     --color-neutral-700: oklch(37.1% 0 0);
     --color-neutral-800: oklch(26.9% 0 0);
     --color-white: #fff;
@@ -244,36 +245,14 @@
     align-items: center;
     justify-content: flex-start;
     background-color: var(--color-neutral-800);
-    padding: calc(var(--spacing) * 2.5);
+    padding: calc(var(--spacing) * 5);
+    -webkit-user-select: none;
+    user-select: none;
   }
-  .nav a {
-    margin-right: auto;
-    margin-left: calc(var(--spacing) * 5);
-  }
-  .nav a img {
+  .nav img {
     height: 30px;
-    transition-property: transform, translate, scale, rotate;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-    --tw-duration: 300ms;
-    transition-duration: 300ms;
-    &:hover {
-      @media (hover: hover) {
-        --tw-scale-x: 110%;
-        --tw-scale-y: 110%;
-        --tw-scale-z: 110%;
-        scale: var(--tw-scale-x) var(--tw-scale-y);
-      }
-    }
-    &:active {
-      --tw-scale-x: 110%;
-      --tw-scale-y: 110%;
-      --tw-scale-z: 110%;
-      scale: var(--tw-scale-x) var(--tw-scale-y);
-    }
   }
   .nav .icons {
-    margin-right: calc(var(--spacing) * 5);
     margin-left: auto;
     display: flex;
     gap: calc(var(--spacing) * 5);
@@ -316,7 +295,7 @@
     width: 100px;
     border-radius: var(--radius-md);
     background-color: var(--color-neutral-700);
-    padding: calc(var(--spacing) * 2.5);
+    padding: calc(var(--spacing) * 1);
     white-space: normal;
     --tw-shadow: 0 0 8px var(--tw-shadow-color, rgba(163,163,163,0.5));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -325,10 +304,18 @@
     margin: calc(var(--spacing) * 0);
     display: flex;
     justify-content: center;
+    border-radius: var(--radius-md);
     font-size: 12px;
     color: var(--color-white);
     text-decoration-line: none;
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-neutral-600);
+      }
+    }
   }
+}
+@layer components {
   .warning {
     margin-bottom: calc(var(--spacing) * 5);
     background-color: var(--color-red-600);
@@ -453,6 +440,7 @@
     }
   }
 }
+@layer components;
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;

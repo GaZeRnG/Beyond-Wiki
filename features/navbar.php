@@ -3,7 +3,7 @@
 ?>
 
 <nav class="nav">
-    <a href="/"><img src="/Images/Logo/Beyond_Wiki_logo_crop.png" alt="Beyond Wiki Logo"></a>
+    <img src="/Images/Logo/Beyond_Wiki_logo_crop.png" alt="Beyond Wiki Logo">
 
     <section class="icons">
         <div class="user" id="user">
