@@ -13,14 +13,14 @@
         @apply font-sans text-white m-0 bg-zinc-700 ;
     }
     .hub-page {
-        @apply bg-repeat bg-blend-multiply bg-[url('/Images/background.png')] bg-size-[50px];
+        @apply bg-repeat bg-blend-multiply bg-[url('/Images/background.png')] bg-size-[50px] select-none;
     }
 }
 
 /* Navbar */
 @layer components {
     .nav {
-        @apply fixed top-0 left-0 w-full h-[50px] p-5 z-50 flex justify-start items-center bg-neutral-800 select-none;
+        @apply fixed top-0 left-0 w-full h-[50px] p-5 z-50 flex justify-start items-center bg-neutral-800;
     }
     .nav img {
         @apply h-[30px];
@@ -35,11 +35,12 @@
     .nav .icons .user p {
         @apply mr-1;
     }
+    /* User Dropdown */
     .nav .icons .dropdown {
-        @apply hidden absolute top-[50px] bg-neutral-700 shadow-[0_0_8px_rgba(163,163,163,0.5)] rounded-md p-1 w-[100px] end-5 whitespace-normal;
+        @apply hidden absolute top-[50px] bg-neutral-700 shadow-[0_0_8px_rgba(163,163,163,0.5)] rounded-md p-1 w-[200px] end-5 whitespace-normal;
     }
     .nav .icons .dropdown a {
-        @apply m-0 text-white text-[12px] no-underline flex justify-center hover:bg-neutral-600 rounded-md;
+        @apply m-0 text-white text-[15px] no-underline flex justify-center hover:bg-neutral-600 rounded-md;
     }
 }
 

@@ -38,28 +38,20 @@
             <label>Profile Picture:</label><br>
             <input type="file" name="profile_picture" accept="image/*"><br><br>
 
-            <button type="submit">Register / Login</button>
+            <button type="submit">Login</button>
         </form>
 
         <h3>Login with:</h3>
-        <!-- Google -->
-        <?php
-            $googleClientId = "YOUR_GOOGLE_CLIENT_ID";
-            $googleRedirect = "http://localhost/google-callback.php";
-            echo '<a href="https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=' 
-                . $googleClientId 
-                . '&redirect_uri=' . urlencode($googleRedirect) 
-                . '&scope=email%20profile">Login with Google</a><br><br>';
-        ?>
-
         <!-- Discord -->
         <?php
-            $discordClientId = "YOUR_DISCORD_CLIENT_ID";
-            $discordRedirect = "http://localhost/discord-callback.php";
-            echo '<a href="https://discord.com/api/oauth2/authorize?client_id=' 
-                . $discordClientId 
-                . '&redirect_uri=' . urlencode($discordRedirect) 
-                . '&response_type=code&scope=identify%20email">Login with Discord</a>';
-        ?>
+            $client_id = "1446515794442715217";
+            $redirect_url = "http://192.168.1.4:3000/discord-callback.php";
+
+            $scope = "identify email";
+
+            $url = "https://discord.com/api/oauth2/authorize?client_id=$client_id&redirect_uri=" . urlencode($redirect_url) . "&response_type=code&scope=" . urlencode($scope);
+            ?>
+
+            <a href="<?= $url ?>">Login with Discord</a>
     </body>
 </html>
