@@ -1,5 +1,8 @@
 <?php 
     include __DIR__ ."/features/db.php";
+
+    // For navbar wiki logo
+    $page = 'hub';
 ?>
 
 <html>

@@ -15,12 +15,15 @@
     .hub-page {
         @apply bg-repeat bg-blend-multiply bg-[url('/Images/background.png')] bg-size-[50px] select-none;
     }
+    .bd-page {
+        @apply bg-fixed bg-[url('/Images/Beyond_Depth_Background.png')] bg-cover;
+    }
 }
 
 /* Navbar */
 @layer components {
     .nav {
-        @apply fixed top-0 left-0 w-full h-[50px] p-5 z-50 flex justify-start items-center bg-neutral-800;
+        @apply fixed top-0 left-0 w-full h-[50px] p-5 z-50 flex justify-start items-center bg-neutral-800 select-none;
     }
     .nav img {
         @apply h-[30px];
@@ -98,7 +101,17 @@
     }
 }
 
-/* Login Page */
-@layer components {
+/* BD Page */
+@layer components{
+
+    /* Warning CSS*/
+    .bd-page .warning {
+        @apply text-[20px] font-bold bg-red-600 text-center mb-5;
+    }
+    /* Extra CSS*/
+    .bd-page .join {
+        @apply gap-0;
+    }
+
 
 }

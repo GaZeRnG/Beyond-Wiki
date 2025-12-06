@@ -3,7 +3,13 @@
 ?>
 
 <nav class="nav">
-    <img src="/Images/Logo/Beyond_Wiki_logo_crop.png" alt="Beyond Wiki Logo">
+    <?php if (isset($page) && $page !== 'hub'): ?>
+        <a href="/">
+            <img src="/Images/Logo/Beyond_Wiki_logo_crop.png" alt="Beyond Wiki Logo">
+        </a>
+    <?php else: ?>
+        <img src="/Images/Logo/Beyond_Wiki_logo_crop.png" alt="Beyond Wiki Logo">
+    <?php endif; ?>
 
     <section class="icons">
         <div class="user" id="user">
@@ -13,7 +19,7 @@
             </div>
         </div>
         <div class="dropdown" id="dropdown">
-            <a href="/login/">Login</a>
+            <a>Upcoming Feature</a>
         </div>
     </section>
 </nav>

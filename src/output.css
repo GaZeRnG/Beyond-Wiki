@@ -234,6 +234,11 @@
     -webkit-user-select: none;
     user-select: none;
   }
+  .bd-page {
+    background-image: url('/Images/Beyond_Depth_Background.png');
+    background-size: cover;
+    background-attachment: fixed;
+  }
 }
 @layer components {
   .nav {
@@ -248,6 +253,8 @@
     justify-content: flex-start;
     background-color: var(--color-neutral-800);
     padding: calc(var(--spacing) * 5);
+    -webkit-user-select: none;
+    user-select: none;
   }
   .nav img {
     height: 30px;
@@ -440,7 +447,19 @@
     }
   }
 }
-@layer components;
+@layer components {
+  .bd-page .warning {
+    margin-bottom: calc(var(--spacing) * 5);
+    background-color: var(--color-red-600);
+    text-align: center;
+    font-size: 20px;
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .bd-page .join {
+    gap: calc(var(--spacing) * 0);
+  }
+}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;

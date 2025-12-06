@@ -1,33 +1,34 @@
+<?php 
+    include __DIR__ ."/../features/db.php";
+
+    // For navbar wiki logo
+    $page = 'bd';
+?>
+
 <html>
     <head>
+        <link rel="stylesheet" href="/src/output.css">
         <link rel="stylesheet" href="/beyond-depth/style.css">
-
-        <link rel="icon" type="image" href="https://drive.google.com/thumbnail?id=1OQlYuWBYktXTOZe47gpjdoLBPEAAstWR">
+        <link rel="icon" type="image" href="/Images/Logo/Beyond_Wiki_logo.png">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale= 1.0">
         <title>Beyond Wiki</title>
     </head>
-    <script src="script.js"></script>
-    <body>
-        <div class="topnav" id="topnav">
-            <div class="topnav_logo">
-                <a href="../"><img src="https://drive.google.com/thumbnail?id=1OQlYuWBYktXTOZe47gpjdoLBPEAAstWR&sz=s4000"></a>
-            </div>
-            <div class="search">
-                <input type="text" placeholder="Search" id="searchInput">
-                <button id="searchButton" class="button"><img src="https://drive.google.com/thumbnail?id=14FhaqwMgCFqcfxZAcrCnDyC5zRpxbVYt&sz=s4000"></button>
-            </div>
-            <div class="topnav_logo2">
-                <a href="../beyond-depth"><img src="https://drive.google.com/thumbnail?id=1WKzVUzgRO1n7ev2_RVV40dA7WYtJH91y&sz=s4000"></a>
-            </div>
-        </div>
-        <div class="body">
-        <div class="warning">
+
+    <body class="bd-page">
+        <!-- Navbar -->
+        <?php include_once __DIR__ . '/../features/navbar.php'; ?>
+
+        <div class="h-20"></div>
+        
+        <!-- Warning -->
+        <section class="warning">
             <h2>This wiki is currently under development and will have NO INFO.</h2>
-        </div>
-        <div class="title_logo">
+        </section>
+
+        <section class="title_logo">
             <img src="https://drive.google.com/thumbnail?id=1iBvkS4pMGpLls4fi8UBcyggPtDFPLwRQ&sz=s4000">
-        </div>
+        </section>
         <!--Content-->
         <div class="content">
             <div class="what">
@@ -152,34 +153,38 @@
                 </div>
             </div>
         </div>
+
         <!--Bottom-->
         <div class="edit">
             <div class="others">
                 <h3>Other Modpacks</h3>
                 <div class="pack">
                     <a>
-                        <img src="https://drive.google.com/thumbnail?id=1OnpeLyigLlEj6Cbu3u31iwwgPYa3l3aE&sz=s4000">
+                        <img src="/Images/Logo/Beyond_Ascension_logo_crop.png">
                     </a>
                     <a>
-                        <img src="https://drive.google.com/thumbnail?id=19Z6LNg_Sbq1bP4O1oCYs2DsqxnEyMsnE&sz=s4000">
+                        <img src="/Images/Logo/Beyond_Cosmo_logo_crop.png">
                     </a>
                     <a>
-                        <img src="https://drive.google.com/thumbnail?id=10qpD3Zd73NzIRf6VKnAUTXsVoaYQUHxf&sz=s4000">
+                        <img src="/Images/Logo/Beyond_Ocean_logo_crop.png">
                     </a>
                     <a>
-                        <img src="https://drive.google.com/thumbnail?id=10oV4GaALWo6gUXFP03QCeKIHlO-Ov4iK&sz=s4000">
+                        <img src="/Images/Logo/Beyond_Zombie_logo_crop.png">
                     </a>
                     <a>
-                        <img src="https://drive.google.com/thumbnail?id=1po_8J81Jhj36pwswK4e_U_hQoWylUqfo&sz=s4000">
+                        <img src="/Images/Logo/Beyond_Nightfall_logo_crop.png">
                     </a>
                 </div>
             </div>
             <div class="more">
                 <h3>Want to contribute in this wiki?</h3>
-                <p>You can add info by <a href="https://discord.gg/VqrxmqZP" target="_blank">Joining our Discord</a> and we will review your suggested info.</p><br>
+                <p>You can currently add info freely with no restrictions for now. </p><br>
                 <p class="join">Support the packs creator: <a href="https://ko-fi.com/blueversal" target="_blank"><img src="https://drive.google.com/thumbnail?id=1WaU22e-BXhwRxwx2Zm4LsShYnPFtIPig&sz=4000"></a></p>
+                <p class="join">Also join our Discord: <a href="https://discord.gg/VqrxmqZP" target="_blank"><img src="/Images/Logo/discord.png"></a></p>
             </div>
         </div>
         </div>
+
+        <script src="/beyond-depth/script.js"></script>
     </body>
 </html>
