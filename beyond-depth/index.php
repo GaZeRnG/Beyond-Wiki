@@ -150,7 +150,7 @@
                 </div>
 
                 <div class="mechanics">
-                    <h3>What to put?</h3>
+                    <h3>Tips and Tricks</h3>
                     <ul>
                         <li><span>???</span></li>
                         <li><span>???</span></li>
