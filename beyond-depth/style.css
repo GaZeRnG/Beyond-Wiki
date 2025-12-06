@@ -34,73 +34,8 @@
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>') no-repeat center;
 }
 
-.title_logo {
-    display: flex;
-    justify-content: center;
-}
-
-.title_logo img{
-    width: auto;
-    height: 155px;
-}
-
-.search {
-    display: flex;
-}
-
-.search input {
-    background-color: rgb(100, 100, 100);
-    border: none;
-    width: 500px;
-    height: 30px;
-    border-radius: 50px;
-    padding-left: 20px;
-    color: white;
-}
-
-.search input::placeholder {
-    color: white;
-}
-
-.search button {
-    background: none;
-    cursor: pointer;
-    border: none;
-}
-
-.search .button img {
-    width: auto;
-    height: 20px;
-    transition: 0.5s;
-}
-
-.search .button img:hover {
-    transform: scale(1.2);
-}
-
 /*Content*/
-.content {
-    background-color: rgb(95 92 92);
-    box-shadow: 0 0 20px rgba(163 163 163 0.5);
-    border-radius: 10px;
-    margin: 31px auto 0 auto;
-    padding: 15px;
-    width: 97%;
-    box-sizing: border-box;
-    color: rgb(240 255 255);
-}
-.content .what {
-    margin-bottom: 30px;
-}
-
-.content .what h3 {
-    margin: 0 0 15px -15px;
-    padding: 5px 0 5px 15px;
-    width: calc(100% + 15px);
-    background-color: rgb(51 51 51);
-}
-
-.content .categories {
+.main .categories {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
@@ -108,7 +43,7 @@
     box-sizing: border-box;
 }
 
-.content .items, .content .dimensions, .content .bosses, .content .mechanics {
+.main .items, .main .dimensions, .main .bosses, .main .mechanics {
     background-color: rgb(95 92 92);
     border: 1px solid rgb(133 133 133);
     border-radius: 10px;
@@ -117,13 +52,13 @@
     box-sizing: border-box;
 }
 
-.content .items h3, .content .dimensions h3, .content .bosses h3, .content .mechanics h3 {
+.main .items h3, .main .dimensions h3, .main .bosses h3, .main .mechanics h3 {
     margin: 0 0 0 -15px;
     padding: 5px 0 5px 15px;
     background-color: rgb(51 51 51);
 }
 
-.content .items ul, .content .dimensions ul, .content .bosses ul, .content .mechanics ul {
+.main .items ul, .main .dimensions ul, .main .bosses ul, .main .mechanics ul {
     display: grid;
     grid-template-columns: repeat(5, auto);
     list-style-type: none;
@@ -133,11 +68,11 @@
     font-size: 15px;
 }
 
-.content .bosses ul {
+.main .bosses ul {
     grid-template-columns: repeat(4, auto);
 }
 
-.content .dimensions ul {
+.main .dimensions ul {
     grid-template-columns: repeat(2, auto);
 }
 

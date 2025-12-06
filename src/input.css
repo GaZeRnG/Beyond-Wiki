@@ -28,6 +28,9 @@
     .nav img {
         @apply h-[30px];
     }
+    .nav .logo_click {
+        @apply transition-transform duration-300 hover:scale-120 active:scale-120;
+    }
     .nav .icons {
         @apply ml-auto flex gap-5 align-middle;
     }
@@ -64,7 +67,7 @@
 
     /* Main CSS */
     .main {
-        @apply bg-[rgb(95,92,92)] shadow-[0_0_20px_rgba(163,163,163,0.5)] rounded-[10px] mx-auto mt-[30px] mb-[30px] max-w-[95%] pt-2.5 text-center;
+        @apply bg-[rgba(117,117,117,0.5)] shadow-[0_0_20px_rgb(163,163,163)] rounded-[10px] mx-auto mt-[30px] mb-[30px] max-w-[95%] pt-2.5 text-center;
     }
     .content_description {
         @apply text-[15px] w-[85%] mx-auto;
@@ -97,7 +100,7 @@
         @apply flex justify-center gap-6 z-5 mt-[130px] pb-5;
     }
     .carousel-buttons button{
-        @apply flex justify-center gap-6 px-4 py-2 rounded-xl transition bg-[rgb(74,71,71)] hover:bg-[rgb(63,60,60)] active:bg-[rgb(63,60,60)];
+        @apply flex justify-center gap-6 px-4 py-2 rounded-xl transition bg-[rgb(60,60,60)] hover:bg-[rgb(39,39,39)] active:bg-[rgb(39,39,39)];
     }
 }
 
@@ -108,10 +111,22 @@
     .bd-page .warning {
         @apply text-[20px] font-bold bg-red-600 text-center mb-5;
     }
-    /* Extra CSS*/
+
+    /* Main CSS */
+    .bd-page .main {
+        @apply bg-[rgba(117,117,117,0.5)] shadow-[0_0_20px_rgb(163,163,163)] rounded-[10px] mx-auto mt-[30px] mb-0 p-[15px] max-w-[95%] box-border;
+    }
+    /* What is Beyond Depth */
+    .bd-page .main .what {
+        @apply mb-[30px];
+    }
+    .bd-page .main .what .sector-title {
+        @apply bg-[rgb(51,51,51)] w-full p-[5px_0_5px_15px];
+    }
+
+    /* Bottom CSS*/
+
     .bd-page .join {
         @apply gap-0;
     }
-
-
 }

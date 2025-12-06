@@ -4,7 +4,7 @@
 
 <nav class="nav">
     <?php if (isset($page) && $page !== 'hub'): ?>
-        <a href="/">
+        <a href="/" class="logo_click">
             <img src="/Images/Logo/Beyond_Wiki_logo_crop.png" alt="Beyond Wiki Logo">
         </a>
     <?php else: ?>

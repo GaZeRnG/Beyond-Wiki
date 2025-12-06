@@ -12,7 +12,7 @@
         <link rel="icon" type="image" href="/Images/Logo/Beyond_Wiki_logo.png">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale= 1.0">
-        <title>Beyond Wiki</title>
+        <title>Beyond Wiki - Depth</title>
     </head>
 
     <body class="bd-page">
@@ -23,18 +23,21 @@
         
         <!-- Warning -->
         <section class="warning">
-            <h2>This wiki is currently under development and will have NO INFO.</h2>
+            <h2>This wiki is currently under development and will have LIMITED, INACCURATE or NO INFO at all.</h2>
         </section>
 
-        <section class="title_logo">
-            <img src="https://drive.google.com/thumbnail?id=1iBvkS4pMGpLls4fi8UBcyggPtDFPLwRQ&sz=s4000">
+        <!-- Logo -->
+        <section class="logo">
+            <img src="/../Images/Logo/Beyond_Depth_logo_crop.png">
         </section>
+
         <!--Content-->
-        <div class="content">
-            <div class="what">
-                <h3>What is Beyond Depth?</h3>
+        <div class="main">
+            <section class="what">
+                <p class="sector-title"><b>What is Beyond Depth?</b></p>
                 Beyond Depth is an adventure and exploration modpack fully optimized with 400+ mods designed for players seeking new challenges. It features unique progression, expanded biomes, tougher bosses, and new mechanics, focusing on survival and discovery. Without relying too much on quests. With unique structures, enhanced combat, pet systems, and Building contraptions, the pack caters to various playstyles.
-            </div>
+            </section>
+
             <div class="categories">
                 <div class="items">
                     <h3>Items</h3>
@@ -52,6 +55,7 @@
                         <li><span>Crafting Stations</span></li>
                     </ul>
                 </div>
+
                 <div class="dimensions">
                     <h3>Dimensions</h3>
                     <ul>
@@ -62,6 +66,7 @@
                         <li><span>Voidscape</span></li>
                     </ul>
                 </div>
+
                 <div class="bosses">
                     <h3>Bosses</h3>
                     <div class="mini">
@@ -81,6 +86,7 @@
                             <li><span>Corpse Warlock</span></li>
                         </ul>
                     </div>
+
                     <div class="tier">
                         <div class="early">
                             <button onclick="dropfunction()" class="drop"><b>Early-Game</b></button>
@@ -92,6 +98,7 @@
                                 <li><span>Sunbird</span></li>
                             </ul>
                         </div>
+
                         <div class="mid">
                             <button onclick="dropfunction()" class="drop"><b>Mid-Game</b></button>
                             <ul id="dropped" class="drop-content">
@@ -117,6 +124,7 @@
                                 <li><span>Void Worm</span></li>
                             </ul>
                         </div>
+
                         <div class="late">
                             <button onclick="dropfunction()" class="drop"><b>End-Game</b></button>
                             <ul id="dropped" class="drop-content">
@@ -140,6 +148,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="mechanics">
                     <h3>What to put?</h3>
                     <ul>
@@ -156,7 +165,7 @@
 
         <!--Bottom-->
         <div class="edit">
-            <div class="others">
+            <section class="others">
                 <h3>Other Modpacks</h3>
                 <div class="pack">
                     <a>
@@ -175,14 +184,14 @@
                         <img src="/Images/Logo/Beyond_Nightfall_logo_crop.png">
                     </a>
                 </div>
-            </div>
-            <div class="more">
-                <h3>Want to contribute in this wiki?</h3>
+            </section>
+
+            <section class="more">
+                <b>Want to contribute in this wiki?</b>
                 <p>You can currently add info freely with no restrictions for now. </p><br>
                 <p class="join">Support the packs creator: <a href="https://ko-fi.com/blueversal" target="_blank"><img src="https://drive.google.com/thumbnail?id=1WaU22e-BXhwRxwx2Zm4LsShYnPFtIPig&sz=4000"></a></p>
                 <p class="join">Also join our Discord: <a href="https://discord.gg/VqrxmqZP" target="_blank"><img src="/Images/Logo/discord.png"></a></p>
-            </div>
-        </div>
+            </section>
         </div>
 
         <script src="/beyond-depth/script.js"></script>
