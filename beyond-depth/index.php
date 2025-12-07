@@ -39,8 +39,8 @@
             </section>
 
             <div class="categories">
-                <div class="items">
-                    <h3>Items</h3>
+                <section class="items">
+                    <p class="sector-title"><b>Items</b></p>
                     <ul>
                         <li><span>Weapons</span></li>
                         <li><span>Tools</span></li>
@@ -54,10 +54,10 @@
                         <li><span>Blocks</span></li>
                         <li><span>Crafting Stations</span></li>
                     </ul>
-                </div>
+                </section>
 
-                <div class="dimensions">
-                    <h3>Dimensions</h3>
+                <section class="dimensions">
+                    <p class="sector-title"><b>Dimensions</b></p>
                     <ul>
                         <li><span>Undergarden</span></li>
                         <li><span>Nether</span></li>
@@ -65,10 +65,11 @@
                         <li><span>Otherside</span></li>
                         <li><span>Voidscape</span></li>
                     </ul>
-                </div>
+                </section>
 
-                <div class="bosses">
-                    <h3>Bosses</h3>
+                <section class="bosses">
+                    <p class="sector-title"><b>Bosses</b></p>
+                    <!-- Mini -->
                     <div class="mini">
                         <button onclick="dropfunction()" class="drop"><b>Mini-Bosses</b></button>
                         <ul id="dropped" class="drop-content">
@@ -88,6 +89,7 @@
                     </div>
 
                     <div class="tier">
+                        <!-- Early Game -->
                         <div class="early">
                             <button onclick="dropfunction()" class="drop"><b>Early-Game</b></button>
                             <ul id="dropped" class="drop-content">
@@ -99,6 +101,7 @@
                             </ul>
                         </div>
 
+                        <!-- Mid Game -->
                         <div class="mid">
                             <button onclick="dropfunction()" class="drop"><b>Mid-Game</b></button>
                             <ul id="dropped" class="drop-content">
@@ -125,6 +128,7 @@
                             </ul>
                         </div>
 
+                        <!-- Late Game -->
                         <div class="late">
                             <button onclick="dropfunction()" class="drop"><b>End-Game</b></button>
                             <ul id="dropped" class="drop-content">
@@ -147,10 +151,10 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <div class="mechanics">
-                    <h3>Tips and Tricks</h3>
+                <div class="tips">
+                    <p class="sector-title"><b>Tips</b></p>
                     <ul>
                         <li><span>???</span></li>
                         <li><span>???</span></li>
@@ -166,7 +170,7 @@
         <!--Bottom-->
         <div class="edit">
             <section class="others">
-                <h3>Other Modpacks</h3>
+                <p class="sector-title"><b>Other Modpacks</b></p>
                 <div class="pack">
                     <a>
                         <img src="/Images/Logo/Beyond_Ascension_logo_crop.png">
@@ -188,7 +192,7 @@
 
             <section class="more">
                 <b>Want to contribute in this wiki?</b>
-                <p>You can currently add info freely with no restrictions for now. </p><br>
+                <p>You can currently add info freely with no restrictions for now. </p>
                 <p class="join">Support the packs creator: <a href="https://ko-fi.com/blueversal" target="_blank"><img src="https://drive.google.com/thumbnail?id=1WaU22e-BXhwRxwx2Zm4LsShYnPFtIPig&sz=4000"></a></p>
                 <p class="join">Also join our Discord: <a href="https://discord.gg/VqrxmqZP" target="_blank"><img src="/Images/Logo/discord.png"></a></p>
             </section>
