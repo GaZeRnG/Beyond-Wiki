@@ -224,6 +224,7 @@
     margin: calc(var(--spacing) * 0);
     background-color: var(--color-zinc-700);
     font-family: var(--font-sans);
+    font-size: 15px;
     color: var(--color-white);
   }
   .hub-page {
@@ -510,6 +511,7 @@
     border-radius: 5px;
     background-color: rgba(160,160,160,0.5);
     padding: 5px 0 5px 15px;
+    font-size: 18px;
   }
   .bd-page .main .categories {
     box-sizing: border-box;
@@ -521,16 +523,130 @@
     box-sizing: border-box;
     border-radius: 10px;
     background-color: rgba(117,117,117,0.5);
-    padding: 10px 0 0 15px;
   }
   .bd-page .main :is(.items, .dimensions, .bosses, .tips) .sector-title {
-    margin-bottom: -15px;
-    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgba(160,160,160,0.5);
+    padding-left: calc(var(--spacing) * 2.5);
+    font-size: 18px;
+  }
+  .bd-page .main :is(.items, .dimensions, .bosses, .tips) ul {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0 20px;
+    padding: 0 10px 10px 10px;
+  }
+  .bd-page .main .bosses ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .bd-page .main .dimensions ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .bd-page :is(.mini, .early, .mid, .late) .drop {
+    margin: 3px 0 5px 10px;
+    width: calc(100% - 20px);
+    cursor: pointer;
     border-radius: 5px;
     background-color: rgba(160,160,160,0.5);
+    padding: 5px;
+    text-align: center;
+    color: var(--color-white);
+    &:hover {
+      @media (hover: hover) {
+        background-color: rgba(160,160,160,0.8);
+      }
+    }
   }
-  .bd-page .join {
+  .bd-page .mini {
+    margin-top: 5px;
+  }
+  .bd-page .late {
+    margin-bottom: 5px;
+  }
+  .bd-page .drop-content {
+    display: none !important;
+  }
+  .bd-page .active {
+    display: grid !important;
+  }
+  .bd-page .drop-content li {
+    padding: 3px 0;
+  }
+  .bd-page .content li {
+    margin-bottom: 5px;
+  }
+  .bd-page .content li span {
+    cursor: pointer;
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-line: underline;
+      }
+    }
+  }
+  .bd-page .extra {
+    margin-inline: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    max-width: 95%;
+    border-radius: 10px;
+    background-color: rgba(117,117,117,0.5);
+    padding: 15px;
+    --tw-shadow: 0 0 20px var(--tw-shadow-color, rgb(163,163,163));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .bd-page .extra .sector-title {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: rgba(160,160,160,0.5);
+    padding: 5px 0 5px 15px;
+    font-size: 18px;
+  }
+  .bd-page .extra .others .pack {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .bd-page .extra .others .pack a {
+    display: flex;
+    flex: 1 1 18%;
+    justify-content: center;
+  }
+  .bd-page .extra .others .pack img {
+    margin-bottom: calc(var(--spacing) * 5);
+    height: calc(var(--spacing) * 20);
+    width: auto;
+    transition-property: 0.8s;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    &:hover {
+      @media (hover: hover) {
+        scale: 1.1;
+      }
+    }
+  }
+  .bd-page .extra .more {
+    text-align: center;
+  }
+  .bd-page .extra .more .join {
+    display: flex;
+    justify-content: center;
     gap: calc(var(--spacing) * 0);
+  }
+  .bd-page .extra .more .join img {
+    height: calc(var(--spacing) * 5);
+    width: auto;
+    padding-left: calc(var(--spacing) * 2.5);
+    transition-property: 1s;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    &:hover {
+      @media (hover: hover) {
+        scale: 1.2;
+      }
+    }
   }
 }
 @property --tw-font-weight {

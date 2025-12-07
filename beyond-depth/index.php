@@ -156,21 +156,16 @@
                 <div class="tips">
                     <p class="sector-title"><b>Tips</b></p>
                     <ul>
-                        <li><span>???</span></li>
-                        <li><span>???</span></li>
-                        <li><span>???</span></li>
-                        <li><span>???</span></li>
-                        <li><span>???</span></li>
-                        <li><span>???</span></li>
+                        <li><span>Tip 1</span></li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <!--Bottom-->
-        <div class="edit">
+        <div class="extra">
             <section class="others">
-                <p class="sector-title"><b>Other Modpacks</b></p>
+                <p class="sector-title"><b>Other Modpacks</b></p><br>
                 <div class="pack">
                     <a>
                         <img src="/Images/Logo/Beyond_Ascension_logo_crop.png">
