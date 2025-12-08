@@ -15,7 +15,7 @@
     .hub-page {
         @apply bg-repeat bg-blend-multiply bg-[url('/Images/background.png')] bg-size-[50px] select-none;
     }
-    .bd-page {
+    .bd-page, .add-tip-page, .view-tip-page {
         @apply bg-fixed bg-[url('/Images/Beyond_Depth_Background.png')] bg-cover;
     }
 }
@@ -133,6 +133,17 @@
         @apply bg-[rgba(160,160,160,0.5)] w-full p-[5px_0_5px_15px] rounded-[5px] text-[18px];
     }
 
+    /* Serverpack CSS */
+    .bd-page .main .serverpack {
+        @apply text-center mb-5;
+    }
+    .bd-page .main .serverpack .sector-title {
+        @apply bg-[rgba(160,160,160,0.5)] w-[30%] mx-auto rounded-[5px] text-[18px];
+    }
+    .bd-page .main .serverpack a {
+        @apply underline cursor-pointer hover:text-[rgb(200,200,200)];
+    }
+
     /* Categories CSS*/
     .bd-page .main .categories {
         @apply grid grid-cols-2 gap-2.5 box-border;
@@ -151,6 +162,14 @@
     }
     .bd-page .main .dimensions ul {
         @apply grid-cols-3;
+    }
+    .bd-page .main :is(.items, .dimensions, .bosses, .tips) a {
+        @apply hover:underline cursor-pointer;
+    }
+
+    /* Tips CSS */
+    .bd-page .main .tips .add-tip button {
+        @apply float-right mr-2.5 cursor-pointer hover:underline;
     }
 
     /* Dropdown CSS (For Bosses) */
@@ -203,5 +222,64 @@
     }
     .bd-page .extra .more .join img {
         @apply w-auto h-5 pl-2.5 transition-[1s] hover:scale-[1.2];
+    }
+}
+
+/* Add Tip Page */
+@layer components {
+    .add-tip-page .title {
+        @apply bg-[rgba(160,160,160,0.5)] w-[95%] mx-auto rounded-[10px] text-center text-[40px];
+    }
+    .add-tip-page form {
+        @apply bg-[rgba(117,117,117,0.5)] shadow-[0_0_20px_rgb(163,163,163)] rounded-[10px] mx-auto mt-[30px] mb-[30px] p-[15px] max-w-[95%] box-border text-white;
+    }
+    .add-tip-page form .input-value {
+        @apply flex flex-col justify-center mb-5;
+    }
+    .add-tip-page form .input-title {
+        @apply flex justify-center text-[20px] font-bold mb-0;
+    }
+    .add-tip-page form :is(input[type="text"], textarea) {
+        @apply bg-[rgba(120,120,120,0.5)] mx-auto border border-gray-300 p-2.5 rounded-md;
+    }
+    .add-tip-page form .author-input {
+        @apply w-[30%] text-center;
+    }
+    .add-tip-page form .title-input {
+        @apply w-[50%] text-center;
+    }
+    .add-tip-page form .content-input {
+        @apply w-[80%];
+    }
+    .add-tip-page form .submit-button {
+        @apply flex flex-col items-center;
+    }
+    .add-tip-page form .submit {
+        @apply bg-[rgb(30,30,30)] font-bold py-2.5 px-5 mb-2.5 rounded-[10px] cursor-pointer hover:bg-[rgb(60,60,60)];
+    }
+    .add-tip-page form .back {
+        @apply text-white no-underline hover:underline;
+    }
+}
+
+/* View Tip Page */
+@layer components {
+    .view-tip-page .tip-details {
+        @apply bg-[rgba(160,160,160,0.5)] w-[95%] mx-auto mb-2.5 pb-2.5 rounded-[10px] text-center;
+    }
+    .view-tip-page .tip-details .tip-number {
+        @apply bg-[rgba(160,160,160,0.5)] text-[18px] font-bold mt-2.5 rounded-t-[10px];
+    }
+    .view-tip-page .tip-details .tip-title {
+        @apply bg-[rgba(160,160,160,0.5)] mx-auto w-[50%] mt-5 mb-2.5 text-[18px] rounded-[5px];
+    }
+    .view-tip-page .tip-details .tip-content {
+        @apply w-[90%] mx-auto;
+    }
+    .view-tip-page .back {
+        @apply text-white no-underline hover:underline flex justify-center mb-2.5;
+    }
+    .view-tip-page .add {
+        @apply text-white no-underline hover:underline flex justify-center;
     }
 }

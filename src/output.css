@@ -8,6 +8,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-600: oklch(57.7% 0.245 27.325);
+    --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-zinc-700: oklch(37% 0.013 285.805);
     --color-neutral-600: oklch(43.9% 0 0);
     --color-neutral-700: oklch(37.1% 0 0);
@@ -204,6 +205,9 @@
   .block {
     display: block;
   }
+  .table {
+    display: table;
+  }
   .h-20 {
     height: calc(var(--spacing) * 20);
   }
@@ -235,7 +239,7 @@
     -webkit-user-select: none;
     user-select: none;
   }
-  .bd-page {
+  .bd-page, .add-tip-page, .view-tip-page {
     background-image: url('/Images/Beyond_Depth_Background.png');
     background-size: cover;
     background-attachment: fixed;
@@ -513,6 +517,26 @@
     padding: 5px 0 5px 15px;
     font-size: 18px;
   }
+  .bd-page .main .serverpack {
+    margin-bottom: calc(var(--spacing) * 5);
+    text-align: center;
+  }
+  .bd-page .main .serverpack .sector-title {
+    margin-inline: auto;
+    width: 30%;
+    border-radius: 5px;
+    background-color: rgba(160,160,160,0.5);
+    font-size: 18px;
+  }
+  .bd-page .main .serverpack a {
+    cursor: pointer;
+    text-decoration-line: underline;
+    &:hover {
+      @media (hover: hover) {
+        color: rgb(200,200,200);
+      }
+    }
+  }
   .bd-page .main .categories {
     box-sizing: border-box;
     display: grid;
@@ -542,6 +566,24 @@
   }
   .bd-page .main .dimensions ul {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .bd-page .main :is(.items, .dimensions, .bosses, .tips) a {
+    cursor: pointer;
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-line: underline;
+      }
+    }
+  }
+  .bd-page .main .tips .add-tip button {
+    float: right;
+    margin-right: calc(var(--spacing) * 2.5);
+    cursor: pointer;
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-line: underline;
+      }
+    }
   }
   .bd-page :is(.mini, .early, .mid, .late) .drop {
     margin: 3px 0 5px 10px;
@@ -649,6 +691,148 @@
     }
   }
 }
+@layer components {
+  .add-tip-page .title {
+    margin-inline: auto;
+    width: 95%;
+    border-radius: 10px;
+    background-color: rgba(160,160,160,0.5);
+    text-align: center;
+    font-size: 40px;
+  }
+  .add-tip-page form {
+    margin-inline: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    max-width: 95%;
+    border-radius: 10px;
+    background-color: rgba(117,117,117,0.5);
+    padding: 15px;
+    color: var(--color-white);
+    --tw-shadow: 0 0 20px var(--tw-shadow-color, rgb(163,163,163));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .add-tip-page form .input-value {
+    margin-bottom: calc(var(--spacing) * 5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .add-tip-page form .input-title {
+    margin-bottom: calc(var(--spacing) * 0);
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .add-tip-page form :is(input[type="text"], textarea) {
+    margin-inline: auto;
+    border-radius: var(--radius-md);
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    border-color: var(--color-gray-300);
+    background-color: rgba(120,120,120,0.5);
+    padding: calc(var(--spacing) * 2.5);
+  }
+  .add-tip-page form .author-input {
+    width: 30%;
+    text-align: center;
+  }
+  .add-tip-page form .title-input {
+    width: 50%;
+    text-align: center;
+  }
+  .add-tip-page form .content-input {
+    width: 80%;
+  }
+  .add-tip-page form .submit-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .add-tip-page form .submit {
+    margin-bottom: calc(var(--spacing) * 2.5);
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: rgb(30,30,30);
+    padding-inline: calc(var(--spacing) * 5);
+    padding-block: calc(var(--spacing) * 2.5);
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+    &:hover {
+      @media (hover: hover) {
+        background-color: rgb(60,60,60);
+      }
+    }
+  }
+  .add-tip-page form .back {
+    color: var(--color-white);
+    text-decoration-line: none;
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-line: underline;
+      }
+    }
+  }
+}
+@layer components {
+  .view-tip-page .tip-details {
+    margin-inline: auto;
+    margin-bottom: calc(var(--spacing) * 2.5);
+    width: 95%;
+    border-radius: 10px;
+    background-color: rgba(160,160,160,0.5);
+    padding-bottom: calc(var(--spacing) * 2.5);
+    text-align: center;
+  }
+  .view-tip-page .tip-details .tip-number {
+    margin-top: calc(var(--spacing) * 2.5);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgba(160,160,160,0.5);
+    font-size: 18px;
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .view-tip-page .tip-details .tip-title {
+    margin-inline: auto;
+    margin-top: calc(var(--spacing) * 5);
+    margin-bottom: calc(var(--spacing) * 2.5);
+    width: 50%;
+    border-radius: 5px;
+    background-color: rgba(160,160,160,0.5);
+    font-size: 18px;
+  }
+  .view-tip-page .tip-details .tip-content {
+    margin-inline: auto;
+    width: 90%;
+  }
+  .view-tip-page .back {
+    margin-bottom: calc(var(--spacing) * 2.5);
+    display: flex;
+    justify-content: center;
+    color: var(--color-white);
+    text-decoration-line: none;
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-line: underline;
+      }
+    }
+  }
+  .view-tip-page .add {
+    display: flex;
+    justify-content: center;
+    color: var(--color-white);
+    text-decoration-line: none;
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-line: underline;
+      }
+    }
+  }
+}
 @property --tw-font-weight {
   syntax: "*";
   inherits: false;
@@ -737,6 +921,11 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -759,6 +948,7 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-border-style: solid;
     }
   }
 }

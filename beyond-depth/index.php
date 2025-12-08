@@ -3,6 +3,9 @@
 
     // For navbar wiki logo
     $page = 'bd';
+
+    // For tips listing
+    $tipslist = $conn->query("SELECT tip_id, tip_title, tip_content, author, created_at FROM tips ORDER BY created_at DESC");
 ?>
 
 <html>
@@ -24,6 +27,8 @@
         <!-- Warning -->
         <section class="warning">
             <h2>This wiki is currently under development and will have LIMITED, INACCURATE or NO INFO at all.</h2>
+            <p>Any categories in here that have (*), will be redirected to their official and/or fandom wiki</p>
+            <p>Serverpack and Tips are working</p>
         </section>
 
         <!-- Logo -->
@@ -36,6 +41,12 @@
             <section class="what">
                 <p class="sector-title"><b>What is Beyond Depth?</b></p>
                 Beyond Depth is an adventure and exploration modpack fully optimized with 400+ mods designed for players seeking new challenges. It features unique progression, expanded biomes, tougher bosses, and new mechanics, focusing on survival and discovery. Without relying too much on quests. With unique structures, enhanced combat, pet systems, and Building contraptions, the pack caters to various playstyles.
+            </section>
+
+            <section class="serverpack">
+                <p class="sector-title"><b>Serverpack</b></p>
+                <a href="https://buzzheavier.com/bmekdr16vdwe" target="_blank">Download - Thanks Nothingversal</a>
+                <p>Use Adoptium Java 21 for optimal performance and use the following java arguments: -XX:+UseZGC -XX:+ZGenerational</p>
             </section>
 
             <div class="categories">
@@ -59,11 +70,11 @@
                 <section class="dimensions">
                     <p class="sector-title"><b>Dimensions</b></p>
                     <ul>
-                        <li><span>Undergarden</span></li>
+                        <li><span><a href="https://the-undergarden-mod.fandom.com/wiki/The_Undergarden_Mod_Wiki" target="_blank">Undergarden*</a></span></li>
                         <li><span>Nether</span></li>
                         <li><span>End</span></li>
-                        <li><span>Otherside</span></li>
-                        <li><span>Voidscape</span></li>
+                        <li><span><a href="https://github.com/KyaniteMods/DeeperAndDarker/wiki" target="_blank">Otherside*</a></a></span></li>
+                        <li><span><a href="https://voidscape.tamaized.com/index.php/Main_Page" target="_blank">Voidscape*</a></span></li>
                     </ul>
                 </section>
 
@@ -154,10 +165,24 @@
                 </section>
 
                 <div class="tips">
-                    <p class="sector-title"><b>Tips</b></p>
-                    <ul>
-                        <li><span>Tip 1</span></li>
-                    </ul>
+                    <p class="sector-title"><b>Tips</b>
+                        <a href="/beyond-depth/tips/add-tip" rel="noopener noreferer" class="add-tip">
+                            <button id="open-add-tip"><b>Add Tip</b></button>
+                        </a>
+                    </p>
+                    <?php if ($tipslist && $tipslist->num_rows > 0): ?>
+                        <ul>
+                            <?php while ($tip = $tipslist->fetch_assoc()): ?>
+                                <li>
+                                    <a href="/beyond-depth/tips/view-tip?id=<?= htmlspecialchars($tip['tip_id']) ?>">
+                                        Tip #<?= htmlspecialchars($tip['tip_id']) ?> - <?= htmlspecialchars($tip['tip_title']) ?>
+                                    </a>
+                                </li>
+                            <?php endwhile; ?>
+                        </ul>
+                    <?php else: ?>
+                        <ul>No tips available.</ul>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -187,7 +212,7 @@
 
             <section class="more">
                 <b>Want to contribute in this wiki?</b>
-                <p>You can currently add info freely with no restrictions for now. </p>
+                <p>You cant currently add info for now. But you can leave tips. </p>
                 <p class="join">Support the packs creator: <a href="https://ko-fi.com/blueversal" target="_blank"><img src="https://drive.google.com/thumbnail?id=1WaU22e-BXhwRxwx2Zm4LsShYnPFtIPig&sz=4000"></a></p>
                 <p class="join">Also join our Discord: <a href="https://discord.gg/VqrxmqZP" target="_blank"><img src="/Images/Logo/discord.png"></a></p>
             </section>
