@@ -1,6 +1,8 @@
 <?php 
     session_start();
 
+    $page = 'add-tip';
+
     require_once $_SERVER["DOCUMENT_ROOT"] ."/features/db.php";
 
     $errors = [];

@@ -213,7 +213,7 @@
             <section class="more">
                 <b>Want to contribute in this wiki?</b>
                 <p>You cant currently add info for now. But you can leave tips. </p>
-                <p class="join">Support the packs creator: <a href="https://ko-fi.com/blueversal" target="_blank"><img src="https://drive.google.com/thumbnail?id=1WaU22e-BXhwRxwx2Zm4LsShYnPFtIPig&sz=4000"></a></p>
+                <p class="join">Support the packs creator: <a href="https://ko-fi.com/blueversal" target="_blank"><img src="/Images/Logo/kofi.png"></a></p>
                 <p class="join">Also join our Discord: <a href="https://discord.gg/VqrxmqZP" target="_blank"><img src="/Images/Logo/discord.png"></a></p>
             </section>
         </div>

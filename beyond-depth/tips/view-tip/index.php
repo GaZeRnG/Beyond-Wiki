@@ -1,6 +1,8 @@
 <?php 
     require_once $_SERVER["DOCUMENT_ROOT"] ."/features/db.php";
 
+    $page = 'view-tip';
+
     $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
     $stmt = $conn->prepare('SELECT tip_id, tip_title, tip_content, author, created_at FROM tips WHERE tip_id = ?');
     $stmt->bind_param('i', $id);
