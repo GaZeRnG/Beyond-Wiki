@@ -231,7 +231,7 @@
     font-size: 15px;
     color: var(--color-white);
   }
-  .hub-page {
+  .hub-page, .login-page, .register-page {
     background-image: url('/Images/background.png');
     background-size: 50px;
     background-repeat: repeat;
@@ -473,6 +473,7 @@
     }
   }
 }
+@layer components;
 @layer components {
   .bd-page .warning {
     margin-bottom: calc(var(--spacing) * 5);
