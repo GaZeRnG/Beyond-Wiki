@@ -62,7 +62,7 @@
         <!-- Navbar -->
         <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/features/navbar.php'; ?>
 
-        <div class="h-10"></div>
+        <div class="h-20"></div>
 
         <div class="register-container">
             <section class="register-title">REGISTER</section>

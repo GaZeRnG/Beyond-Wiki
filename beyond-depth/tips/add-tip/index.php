@@ -23,7 +23,7 @@
             if ($stmt->execute()) {
                 $id = $stmt->insert_id;
                 $stmt->close();
-                header("Location: view-tip?id=" . $id);
+                header("Location: /beyond-depth/tips/view-tip?id=" . $id);
                 exit();
             } else {
                 $errors[] = 'Database error: ' . $conn->error;

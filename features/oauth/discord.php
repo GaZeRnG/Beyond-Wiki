@@ -25,40 +25,58 @@
 
     // Step 2: Handle the OAuth 2.0 server response
     $code = $_GET["code"];
-    $token_url = "https://discord.com/api/oauth2/token";
 
-    $data = [
-        'client_id' => $client_id,
-        'client_secret' => $client_secret,
-        'grant_type' => 'authorization_code',
-        'code' => $code,
-        'redirect_uri' => $redirect_uri,
-        'scope' => 'identify email'
-    ];
+    $ch = curl_init("https://discord.com/api/oauth2/token");
 
-    $options = [
-        'http' => [
-            'header' => "Content-Type: application/x-www-form-urlencoded\r\n",
-            'method' => 'POST',
-            'content' => http_build_query($data)
-        ]
-    ];
+    curl_setopt_array($ch, [
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => http_build_query([
+            'client_id' => $client_id,
+            'client_secret' => $client_secret,
+            'grant_type' => 'authorization_code',
+            'code' => $code,
+            'redirect_uri' => $redirect_uri
+        ]),
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HTTPHEADER => [
+            "Content-Type: application/x-www-form-urlencoded"
+        ],
+    ]);
 
-    $context = stream_context_create($options);
-    $response = file_get_contents($token_url, false, $context);
-    if (!$response) {
-        die("Error retrieving access token.");
+    $response = curl_exec($ch);
+
+    if ($response === false) {
+        die("cURL token error: " . curl_error($ch));
     }
+
+    curl_close($ch);
+
     $token = json_decode($response, true);
 
+    if (!isset($token['access_token'])) {
+        die("Token error: " . print_r($token, true));
+    }
+
     // Step 3: Retrieve user information
-    $opts = [
-        'http' => [
-            'header' => "Authorization: Bearer {$token['access_token']}\r\n"
-        ]
-    ];
-    $context = stream_context_create($opts);
-    $user_info = json_decode(file_get_contents("https://discord.com/api/users/@me", false, $context), true);
+    $ch = curl_init("https://discord.com/api/users/@me");
+
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HTTPHEADER => [
+            "Authorization: Bearer " . $token['access_token']
+        ],
+    ]);
+
+    $user_response = curl_exec($ch);
+
+    if ($user_response === false) {
+        die("cURL user error: " . curl_error($ch));
+    }
+
+    curl_close($ch);
+
+    $user_info = json_decode($user_response, true);
+
 
     // Check if user exists
     $stmt = $conn->prepare("SELECT * FROM users WHERE oauth_provider = 'discord' AND oauth_id = ? LIMIT 1");

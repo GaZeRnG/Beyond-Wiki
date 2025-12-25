@@ -45,13 +45,13 @@
                 <div class="link2">
                     <p class="official">Official Links:
                         <div class="cflink">
-                            <a href="https://www.curseforge.com/minecraft/modpacks/beyond-depth" target="_blank"><img src="/Images/Logo/beyond_depth_logo.png"></a>
-                            <a href="https://www.curseforge.com/minecraft/modpacks/beyond-depth-insanity" target="_blank"><img src="/Images/Logo/beyond_depth_insanity_logo.png"></a>
-                            <a href="https://www.curseforge.com/minecraft/modpacks/beyond-ascension" target="_blank"><img src="/Images/Logo/beyond_ascension_logo.png"></a>
-                            <a href="https://www.curseforge.com/minecraft/modpacks/beyond-cosmo" target="_blank"><img src="/Images/Logo/beyond_cosmo_logo.png"></a>
-                            <a href="https://www.curseforge.com/minecraft/modpacks/beyond-ocean" target="_blank"><img src="/Images/Logo/beyond_ocean_logo.png"></a>
-                            <a href="https://www.curseforge.com/minecraft/modpacks/beyond-zombie" target="_blank"><img src="/Images/Logo/beyond_zombie_logo.png"></a>
-                            <a href="https://www.curseforge.com/minecraft/modpacks/beyond-nightfall" target="_blank"><img src="/Images/Logo/beyond_nightfall_logo.png"></a>
+                            <a href="https://www.curseforge.com/minecraft/modpacks/beyond-depth" target="_blank"><img src="/Images/Logo/Beyond_Depth_logo.png"></a>
+                            <a href="https://www.curseforge.com/minecraft/modpacks/beyond-depth-insanity" target="_blank"><img src="/Images/Logo/Beyond_Depth_Insanity_logo.png"></a>
+                            <a href="https://www.curseforge.com/minecraft/modpacks/beyond-ascension" target="_blank"><img src="/Images/Logo/Beyond_Ascension_logo.png"></a>
+                            <a href="https://www.curseforge.com/minecraft/modpacks/beyond-cosmo" target="_blank"><img src="/Images/Logo/Beyond_Cosmo_logo.png"></a>
+                            <a href="https://www.curseforge.com/minecraft/modpacks/beyond-ocean" target="_blank"><img src="/Images/Logo/Beyond_Ocean_logo.png"></a>
+                            <a href="https://www.curseforge.com/minecraft/modpacks/beyond-zombie" target="_blank"><img src="/Images/Logo/Beyond_Zombie_logo.png"></a>
+                            <a href="https://www.curseforge.com/minecraft/modpacks/beyond-nightfall" target="_blank"><img src="/Images/Logo/Beyond_NightFall_logo.png"></a>
                         </div>
                     </p>
                 </div>
