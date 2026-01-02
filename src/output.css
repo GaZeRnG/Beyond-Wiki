@@ -238,9 +238,6 @@
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
-  .h-10 {
-    height: calc(var(--spacing) * 10);
-  }
   .h-20 {
     height: calc(var(--spacing) * 20);
   }
@@ -739,7 +736,6 @@
     }
   }
 }
-@layer components;
 @layer components {
   .bd-page .warning {
     margin-bottom: calc(var(--spacing) * 5);
@@ -785,7 +781,7 @@
     font-size: 18px;
   }
   .bd-page .main .serverpack {
-    margin-bottom: calc(var(--spacing) * 5);
+    margin-bottom: calc(var(--spacing) * 0);
     text-align: center;
   }
   .bd-page .main .serverpack .sector-title {
@@ -804,37 +800,56 @@
       }
     }
   }
-  .bd-page .main .categories {
+  .bd-page .categories {
+    margin-inline: auto;
+    margin-top: calc(var(--spacing) * 5);
     box-sizing: border-box;
     display: grid;
+    max-width: 95%;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: calc(var(--spacing) * 2.5);
   }
-  .bd-page .main :is(.items, .dimensions, .bosses, .tips) {
+  .bd-page .categories :is(.items, .bosses) {
+    margin-top: calc(var(--spacing) * 2.5);
+    margin-right: calc(var(--spacing) * 2.5);
+    margin-bottom: calc(var(--spacing) * 0);
     box-sizing: border-box;
     border-radius: 10px;
     background-color: rgba(117,117,117,0.5);
+    padding: 15px;
+    --tw-shadow: 0 0 10px var(--tw-shadow-color, rgb(163,163,163));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .bd-page .main :is(.items, .dimensions, .bosses, .tips) .sector-title {
+  .bd-page .categories :is(.dimensions, .tips) {
+    margin-top: calc(var(--spacing) * 2.5);
+    margin-bottom: calc(var(--spacing) * 0);
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: rgba(117,117,117,0.5);
+    padding: 15px;
+    --tw-shadow: 0 0 10px var(--tw-shadow-color, rgb(163,163,163));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .bd-page .categories :is(.items, .dimensions, .bosses, .tips) .sector-title {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     background-color: rgba(160,160,160,0.5);
     padding-left: calc(var(--spacing) * 2.5);
     font-size: 18px;
   }
-  .bd-page .main :is(.items, .dimensions, .bosses, .tips) ul {
+  .bd-page .categories :is(.items, .dimensions, .bosses, .tips) ul {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 0 20px;
     padding: 0 10px 10px 10px;
   }
-  .bd-page .main .bosses ul {
+  .bd-page .categories .bosses ul {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
-  .bd-page .main .dimensions ul {
+  .bd-page .categories .dimensions ul {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  .bd-page .main :is(.items, .dimensions, .bosses, .tips) a {
+  .bd-page .categories :is(.items, .dimensions, .bosses, .tips) a {
     cursor: pointer;
     &:hover {
       @media (hover: hover) {

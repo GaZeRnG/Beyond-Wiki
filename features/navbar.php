@@ -1,6 +1,5 @@
 <?php 
     include "db.php";
-    session_start();
 ?>
 
 <nav class="nav">

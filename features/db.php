@@ -1,7 +1,7 @@
 <?php 
     $servername = "localhost";
     $username = "wikiadmin";
-    $password = "b3y0ndM1kiS4fe!";
+    $password = "b3y0ndM1ki";
     $dbname = "beyond-wiki";
 
     $conn = mysqli_connect($servername, $username, $password, $dbname);

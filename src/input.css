@@ -173,11 +173,6 @@
     }
 }
 
-/* Login Page */
-@layer components {
-
-}
-
 /* BD Page */
 @layer components{
 
@@ -209,7 +204,7 @@
 
     /* Serverpack CSS */
     .bd-page .main .serverpack {
-        @apply text-center mb-5;
+        @apply text-center mb-0;
     }
     .bd-page .main .serverpack .sector-title {
         @apply bg-[rgba(160,160,160,0.5)] w-[30%] mx-auto rounded-[5px] text-[18px];
@@ -219,25 +214,28 @@
     }
 
     /* Categories CSS*/
-    .bd-page .main .categories {
-        @apply grid grid-cols-2 gap-2.5 box-border;
+    .bd-page .categories {
+        @apply grid grid-cols-2 gap-2.5 box-border max-w-[95%] mx-auto mt-5;
     }
-    .bd-page .main :is(.items, .dimensions, .bosses, .tips) {
-        @apply bg-[rgba(117,117,117,0.5)] rounded-[10px] box-border;
+    .bd-page .categories :is(.items, .bosses) {
+    @apply bg-[rgba(117,117,117,0.5)] shadow-[0_0_10px_rgb(163,163,163)] rounded-[10px] mt-2.5 mr-2.5 mb-0 p-[15px] box-border;
     }
-    .bd-page .main :is(.items, .dimensions, .bosses, .tips) .sector-title {
+    .bd-page .categories :is(.dimensions, .tips) {
+        @apply bg-[rgba(117,117,117,0.5)] shadow-[0_0_10px_rgb(163,163,163)] rounded-[10px] mt-2.5 mb-0 p-[15px] box-border;
+    }
+    .bd-page .categories :is(.items, .dimensions, .bosses, .tips) .sector-title {
         @apply bg-[rgba(160,160,160,0.5)] pl-2.5 rounded-t-[10px] text-[18px];
     }
-    .bd-page .main :is(.items, .dimensions, .bosses, .tips) ul {
+    .bd-page .categories :is(.items, .dimensions, .bosses, .tips) ul {
         @apply grid grid-cols-5 p-[0_10px_10px_10px] gap-[0_20px];
     }
-    .bd-page .main .bosses ul {
+    .bd-page .categories .bosses ul {
         @apply grid-cols-4;
     }
-    .bd-page .main .dimensions ul {
+    .bd-page .categories .dimensions ul {
         @apply grid-cols-3;
     }
-    .bd-page .main :is(.items, .dimensions, .bosses, .tips) a {
+    .bd-page .categories :is(.items, .dimensions, .bosses, .tips) a {
         @apply hover:underline cursor-pointer;
     }
 
