@@ -84,18 +84,18 @@
                 <div class="mini">
                     <button onclick="dropfunction()" class="drop"><b>Mini-Bosses</b></button>
                     <ul id="dropped" class="drop-content">
-                        <li><span>Forgotten Guardian</span></li>
-                        <li><span>Eel</span></li>
-                        <li><span>Mother of the Maze</span></li>
-                        <li><span>Warped Mosco</span></li>
-                        <li><span>Gum Worm</span></li>
-                        <li><span>Farseer</span></li>
-                        <li><span>Forsaken</span></li>
-                        <li><span>Magnetron</span></li>
-                        <li><span>Hullbreaker</span></li>
-                        <li><span>Warden</span></li>
-                        <li><span>Void's Wrath</span></li>
-                        <li><span>Corpse Warlock</span></li>
+                        <li><a href="https://the-undergarden-mod.fandom.com/wiki/Forgotten_Guardian" target="_blank">Forgotten Guardian*</a></li>
+                        <li><a href="https://github.com/ObscuriaLithium/Aquamirae/wiki/Creatures" target="_blank">Eel*</a></li>
+                        <li><a href="https://github.com/ObscuriaLithium/Aquamirae/wiki/Creatures" target="_blank">Mother of the Maze*</a></li>
+                        <li><a href="https://alexs-mobs-unofficial.fandom.com/wiki/Warped_Mosco" target="_blank">Warped Mosco*</a></li>
+                        <li><a href="https://alexscaves.wiki.gg/wiki/Gum_Worm">Gum Worm*</a></li>
+                        <li><a href="https://alexs-mobs-unofficial.fandom.com/wiki/Farseer" target="_blank">Farseer*</a></li>
+                        <li><a href="https://alexscaves.wiki.gg/wiki/Forsaken" target="_blank">Forsaken*</a></li>
+                        <li><a href="http://alexscaves.wiki.gg/wiki/Magnetron" target="_blank">Magnetron*</a></li>
+                        <li><a href="https://alexscaves.wiki.gg/wiki/Hullbreaker" target="_blank">Hullbreaker*</a></li>
+                        <li><a href="https://minecraft.wiki/w/Warden" target="_blank">Warden*</a></li>
+                        <li><a href="https://voidscape.tamaized.com/index.php/Void%27s_Wrath" target="_blank">Void's Wrath*</a></li>
+                        <li><a href="https://www.curseforge.com/minecraft/mc-mods/eeeabs-mobs" target="_blank">Corpse Warlock*</a></li>
                     </ul>
                 </div>
 
