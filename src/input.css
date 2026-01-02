@@ -88,7 +88,7 @@
 /* Login Page */
 @layer components {
     .login-page .login-container {
-        @apply max-w-[500px] mx-auto p-5 bg-[rgba(117,117,117,0.5)] shadow-[0_0_20px_rgb(163,163,163)] rounded-[10px];
+        @apply max-w-[500px] mx-auto p-5 bg-[rgba(117,117,117,0.5)] shadow-[0_0_20px_rgb(163,163,163)] rounded-[10px] select-none;
     }
     .login-page .login-title {
         @apply text-center text-[20px] font-bold mb-2.5;
@@ -104,6 +104,9 @@
     }
     .login-page .login-form .login-submit {
         @apply bg-neutral-800 border border-neutral-600 rounded-md w-[30%] p-2.5 mx-auto mt-2.5 cursor-pointer hover:bg-neutral-600;
+    }
+    .login-page .login-form .login-remember {
+        @apply items-center gap-2.5 mt-2.5 w-fit;
     }
     .login-page .login-form .login-others {
         @apply flex flex-row justify-center items-center gap-2.5 mt-2.5 mb-2.5;
@@ -191,7 +194,7 @@
 
     /* Main CSS */
     .bd-page .main {
-        @apply bg-[rgba(117,117,117,0.5)] shadow-[0_0_20px_rgb(163,163,163)] rounded-[10px] mx-auto mt-[30px] mb-0 p-[15px] max-w-[95%] box-border;
+        @apply bg-[rgba(117,117,117,0.5)] shadow-[0_0_10px_rgb(163,163,163)] rounded-[10px] mx-auto mt-[30px] mb-0 p-[15px] max-w-[95%] box-border;
     }
 
     /* What is Beyond Depth */
@@ -303,10 +306,10 @@
 /* Add Tip Page */
 @layer components {
     .add-tip-page .title {
-        @apply bg-[rgba(160,160,160,0.5)] w-[95%] mx-auto rounded-[10px] text-center text-[40px];
+        @apply bg-[rgba(160,160,160,0.5)] mx-auto w-fit mt-5 mb-2.5 px-5 text-[40px] font-bold rounded-[10px];
     }
     .add-tip-page form {
-        @apply bg-[rgba(117,117,117,0.5)] shadow-[0_0_20px_rgb(163,163,163)] rounded-[10px] mx-auto mt-[30px] mb-[30px] p-[15px] max-w-[95%] box-border text-white;
+        @apply bg-[rgba(117,117,117,0.5)] shadow-[0_0_10px_rgb(163,163,163)] rounded-[10px] mx-auto mb-[30px] p-2.5 max-w-[80%] box-border text-white;
     }
     .add-tip-page form .input-value {
         @apply flex flex-col justify-center mb-5;
@@ -318,13 +321,16 @@
         @apply bg-[rgba(120,120,120,0.5)] mx-auto border border-gray-300 p-2.5 rounded-md;
     }
     .add-tip-page form .author-input {
-        @apply w-[30%] text-center;
+        @apply inline-block text-center w-auto max-w-[50%];
     }
     .add-tip-page form .title-input {
-        @apply w-[50%] text-center;
+        @apply inline-block text-center w-auto max-w-[80%];
+    }
+    .add-tip-page form .shadow-span {
+        @apply invisible absolute whitespace-nowrap px-2.5; font-size: 1rem;
     }
     .add-tip-page form .content-input {
-        @apply w-[80%];
+        @apply w-[90%];
     }
     .add-tip-page form .submit-button {
         @apply flex flex-col items-center;
@@ -343,21 +349,23 @@
         @apply w-[75%] mx-auto mb-2.5 pb-2.5 text-center;
     }
     .view-tip-page .tip-details .tip-title {
-        @apply bg-[rgba(160,160,160,0.5)] shadow-[0_0_20px_rgb(163,163,163)] mx-auto w-fit mt-5 mb-2.5 px-5 text-[40px] rounded-[5px];
+        @apply bg-[rgba(160,160,160,0.5)] mx-auto w-fit mt-5 mb-2.5 px-5 text-[40px] rounded-[10px];
     }
     .view-tip-page .tip-details .tip-who {
         @apply mb-2.5;
     }
     .view-tip-page .tip-details .tip-content {
-        @apply w-[90%] mx-auto bg-[rgba(117,117,117,0.5)] p-2.5 rounded-[10px];
+        @apply w-[90%] mx-auto bg-[rgba(117,117,117,0.5)] shadow-[0_0_10px_rgb(163,163,163)] p-2.5 rounded-[10px];
     }
-    .view-tip-page .tip-more{
+    .view-tip-page .tip-details .tip-more{
         @apply flex-col justify-center mt-5;
     }
-    .view-tip-page .back {
-        @apply text-white no-underline hover:underline mb-2.5 flex w-fit;
+    .view-tip-page .tip-details .tip-more .back {
+        @apply text-white no-underline hover:underline mb-2.5 flex mx-auto w-fit;
     }
-    .view-tip-page .add {
-        @apply text-white no-underline hover:underline flex w-fit;
+    .view-tip-page .tip-details .tip-more .add {
+        @apply text-white no-underline hover:underline flex mx-auto w-fit;
     }
 }
+
+/* npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch */

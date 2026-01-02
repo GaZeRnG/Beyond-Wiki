@@ -6,7 +6,7 @@
 
     $errors = [];
 
-    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["username"]) && isset($_POST["password"])) {
         $login = trim($_POST["username"]);
         $password = $_POST["password"];
 
@@ -23,6 +23,20 @@
                 $_SESSION["user_id"] = $user["user_id"];
                 $_SESSION["user_name"] = $user["user_name"];
                 $_SESSION["user_pfp"] = $user["user_pfp"];
+
+                // Remember Me
+                if (!empty($_POST["remember"])) {
+                    $token = bin2hex(random_bytes(16));
+                    $hash = hash('sha256', $token);
+                    $exp = date('Y-m-d H:i:s', strtotime('+30 days'));
+
+                    $stmt2 = $conn->prepare("REPLACE INTO cookie_tokens (user_id, token_hash, expires_at) VALUES (?, ?, ?)");
+
+                    $stmt2->bind_param("iss", $user["user_id"], $hash, $exp);
+                    $stmt2->execute();
+
+                    setcookie("remember_me", $token, strtotime('+30days'), "/", "", true, true);
+                }
 
                 header("Location: /");
                 exit();
@@ -51,7 +65,7 @@
         <div class="h-20"></div>
 
         <div class="login-container">
-            <section class="login-title">Login</section>
+            <section class="login-title">LOGIN</section>
 
             <!-- For Errors -->
             <?php if (!empty($errors)): ?>
@@ -69,6 +83,11 @@
 
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
+
+                <label class="login-remember">
+                    <input type="checkbox" name="remember" class="login-remember-box" value="1">
+                    Remember Me
+                </label>
 
                 <button type="submit" class="login-submit">Login</button>
                 

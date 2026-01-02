@@ -40,6 +40,7 @@
         <meta name="viewport" content="width=device-width, initial-scale= 1.0">
         <title>BD - Add Tip</title>
     </head>
+
     <body class="add-tip-page">
 
         <!-- Navbar -->
@@ -48,7 +49,7 @@
         <div class="h-20"></div>
 
         <!-- Title -->
-        <section class="title"><b>Add Tip</b></section>
+        <section class="title">Add a Tip</section>
 
         <!-- Errors -->
         <?php if (!empty($errors)): ?>
@@ -63,25 +64,28 @@
 
         <!-- Form -->
         <form method="POST" action="">
-            <div class="input-value">
-                <label for="author" class="input-title">Your Name (Optional)</label>
-                <input id="author" name="author" class="author-input" type="text" maxlength="100" value="<?= isset($author) ? htmlspecialchars($author) : '' ?>">
-            </div>
-
-            <div class="input-value">
+            <section class="input-value">
                 <label for="title" class="input-title">Title of the Tip</label>
                 <input id="title" name="title" class="title-input" type="text" maxlength="300" required value="<?= isset($title) ? htmlspecialchars($title) : '' ?>">
-            </div>
+                <span id="title-shadow" class="shadow-span"></span>
+            </section>
 
-            <div class="input-value">
+            <section class="input-value">
+                <label for="author" class="input-title">Your Name (Optional)</label>
+                <input id="author" name="author" class="author-input" type="text" maxlength="100" value="<?= isset($author) ? htmlspecialchars($author) : '' ?>">
+                <span id="author-shadow" class="shadow-span"></span>
+            </section>
+
+            <section class="input-value">
                 <label for="content" class="input-title">Tip</label>
                 <textarea id="content" name="content" class="content-input" rows="3" cols="60" required><?= isset($content) ? htmlspecialchars($content) : '' ?></textarea>
-            </div>
+            </section>
 
-            <div class="submit-button">
+            <section class="submit-button">
                 <button type="submit" class="submit">Submit Tip</button>
                 <a href="/beyond-depth" class="back">Back to Beyond Depth</a>
-            </div>
+            </section>
         </form>
+        <script src="/beyond-depth/tips/add-tip/add-tip.js"></script>
     </body>
 </html>
