@@ -802,7 +802,7 @@
   }
   .bd-page .categories {
     margin-inline: auto;
-    margin-top: calc(var(--spacing) * 5);
+    margin-top: calc(var(--spacing) * 2.5);
     box-sizing: border-box;
     display: grid;
     max-width: 95%;
@@ -857,10 +857,15 @@
       }
     }
   }
-  .bd-page .main .tips .add-tip button {
-    float: right;
+  .bd-page .categories .tips .sector-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .bd-page .categories .tips .add-tip button {
     margin-right: calc(var(--spacing) * 2.5);
     cursor: pointer;
+    font-size: 15px;
     &:hover {
       @media (hover: hover) {
         text-decoration-line: underline;
@@ -910,7 +915,7 @@
   }
   .bd-page .extra {
     margin-inline: auto;
-    margin-top: 30px;
+    margin-top: calc(var(--spacing) * 5);
     margin-bottom: 30px;
     box-sizing: border-box;
     max-width: 95%;
@@ -1063,38 +1068,41 @@
   .view-tip-page .tip-details {
     margin-inline: auto;
     margin-bottom: calc(var(--spacing) * 2.5);
-    width: 95%;
-    border-radius: 10px;
-    background-color: rgba(160,160,160,0.5);
+    width: 75%;
     padding-bottom: calc(var(--spacing) * 2.5);
     text-align: center;
-  }
-  .view-tip-page .tip-details .tip-number {
-    margin-top: calc(var(--spacing) * 2.5);
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    background-color: rgba(160,160,160,0.5);
-    font-size: 18px;
-    --tw-font-weight: var(--font-weight-bold);
-    font-weight: var(--font-weight-bold);
   }
   .view-tip-page .tip-details .tip-title {
     margin-inline: auto;
     margin-top: calc(var(--spacing) * 5);
     margin-bottom: calc(var(--spacing) * 2.5);
-    width: 50%;
+    width: fit-content;
     border-radius: 5px;
     background-color: rgba(160,160,160,0.5);
-    font-size: 18px;
+    padding-inline: calc(var(--spacing) * 5);
+    font-size: 40px;
+    --tw-shadow: 0 0 20px var(--tw-shadow-color, rgb(163,163,163));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .view-tip-page .tip-details .tip-who {
+    margin-bottom: calc(var(--spacing) * 2.5);
   }
   .view-tip-page .tip-details .tip-content {
     margin-inline: auto;
     width: 90%;
+    border-radius: 10px;
+    background-color: rgba(117,117,117,0.5);
+    padding: calc(var(--spacing) * 2.5);
+  }
+  .view-tip-page .tip-more {
+    margin-top: calc(var(--spacing) * 5);
+    flex-direction: column;
+    justify-content: center;
   }
   .view-tip-page .back {
     margin-bottom: calc(var(--spacing) * 2.5);
     display: flex;
-    justify-content: center;
+    width: fit-content;
     color: var(--color-white);
     text-decoration-line: none;
     &:hover {
@@ -1105,7 +1113,7 @@
   }
   .view-tip-page .add {
     display: flex;
-    justify-content: center;
+    width: fit-content;
     color: var(--color-white);
     text-decoration-line: none;
     &:hover {

@@ -164,27 +164,26 @@
                 </div>
             </section>
 
-                <div class="tips">
-                    <p class="sector-title"><b>Tips</b>
-                        <a href="/beyond-depth/tips/add-tip" rel="noopener noreferer" class="add-tip">
-                            <button id="open-add-tip"><b>Add Tip</b></button>
-                        </a>
-                    </p>
-                    <?php if ($tipslist && $tipslist->num_rows > 0): ?>
-                        <ul>
-                            <?php while ($tip = $tipslist->fetch_assoc()): ?>
-                                <li>
-                                    <a href="/beyond-depth/tips/view-tip?id=<?= htmlspecialchars($tip['tip_id']) ?>">
-                                        Tip #<?= htmlspecialchars($tip['tip_id']) ?> - <?= htmlspecialchars($tip['tip_title']) ?>
-                                    </a>
-                                </li>
-                            <?php endwhile; ?>
-                        </ul>
-                    <?php else: ?>
-                        <ul>No tips available.</ul>
-                    <?php endif; ?>
-                </div>
-            </div>
+            <section class="tips">
+                <p class="sector-title"><b>Tips</b>
+                    <a href="/beyond-depth/tips/add-tip" rel="noopener noreferer" class="add-tip">
+                        <button id="open-add-tip">Add Tip</button>
+                    </a>
+                </p>
+                <?php if ($tipslist && $tipslist->num_rows > 0): ?>
+                    <ul> 
+                        <?php while ($tip = $tipslist->fetch_assoc()): ?>
+                            <li>
+                                <a href="/beyond-depth/tips/view-tip?id=<?= htmlspecialchars($tip['tip_id']) ?>">
+                                    Tip #<?= htmlspecialchars($tip['tip_id']) ?> - <?= htmlspecialchars($tip['tip_title']) ?>
+                                </a>
+                            </li>
+                        <?php endwhile; ?>
+                    </ul>
+                <?php else: ?>
+                    <ul>No tips available.</ul>
+                <?php endif; ?>
+            </section>
         </div>
 
         <!--Bottom-->

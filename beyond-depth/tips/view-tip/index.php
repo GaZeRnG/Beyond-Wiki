@@ -1,5 +1,6 @@
 <?php 
     require_once $_SERVER["DOCUMENT_ROOT"] ."/features/db.php";
+    session_start();
 
     $page = 'view-tip';
 
@@ -36,26 +37,25 @@
 
         <!-- Tip Details -->
         <div class="tip-details">
-            <section class="tip-number">
-                <b>Tip #<?= htmlspecialchars($tip['tip_id']) ?></b>
+            <section class="tip-title">
+                <p><b><?= htmlspecialchars($tip['tip_title']) ?></b></p>
             </section>
-
+            
             <section class="tip-who">
                 <p><b>Author: </b><?= htmlspecialchars($tip['author'] ?: 'Anonymous') ?></p>
                 <p><b>Posted: </b><?= htmlspecialchars($tip['created_at']) ?></p>
-            </section>
-            
-            <section class="tip-title">
-                <p><b><?= htmlspecialchars($tip['tip_title']) ?></b></p>
             </section>
 
             <section class="tip-content">
                 <p><?= htmlspecialchars($tip['tip_content']) ?></p>
             </section>
         </div>
-
-        <a href="/beyond-depth" class="back"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left-icon lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
-        Back to Beyond Depth</a>
-        <a href="add-tip" class="add">Add a Tip<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus-icon lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg></a>
+        
+            <section class="tip-more">
+                <a href="/beyond-depth" class="back"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left-icon lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+                Back to Beyond Depth</a>
+                <a href="add-tip" class="add">Add a Tip<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus-icon lucide-circle-plus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg></a>
+            </section>
+        
     </body>
 </html>
