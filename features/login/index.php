@@ -92,8 +92,11 @@
                 <button type="submit" class="login-submit">Login</button>
                 
                 <div class="login-others">
+                    <!-- Google -->
                     <a href="/features/oauth/google.php" class="login-google">Google</a>
-                    <a href="/features/oauth/discord.php" class="login-discord">Discord</a>
+
+                    <!-- Discord -->
+                    <a href="/features/oauth/discord.php" id="discord-link" class="login-discord">Discord</a>
                 </div>
 
                 <a href="/features/register" class="login-register">Don't have an account? Register here.</a>

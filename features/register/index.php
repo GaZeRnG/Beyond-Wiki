@@ -39,9 +39,11 @@
         if (empty($errors)) {
             $hash = password_hash($password, PASSWORD_DEFAULT);
 
-            $stmt = $conn->prepare("INSERT INTO users (user_name, user_email, user_password, user_pfp) VALUES (?, ?, ?, ?)");
-            $stmt->execute([$username, $email, $hash, $pfp_name]);
-
+            $webpath = "/Images/pfp/" . $pfp_name;
+            $stmt = $conn->prepare("INSERT INTO users (user_name, user_email, user_password, user_pfp, oauth_provider, oauth_id) VALUES (?, ?, ?, ?, 'manual', NULL)");
+            $stmt->bind_param("ssss", $username, $email, $hash, $webpath);
+            $stmt->execute();
+            
             header(header: "Location: /features/login");
             exit();
         }

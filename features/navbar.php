@@ -17,7 +17,7 @@
             <?php if (isset($_SESSION["user_name"])): ?>
                 <p><?= htmlspecialchars($_SESSION["user_name"]) ?></p>
                 <div class="user-icon" id="user-icon">
-                    <img src="/Images/pfp/<?= htmlspecialchars($_SESSION["user_pfp"]) ?>" alt="User Profile Picture" class="rounded-full w-6 h-6 object-cover">
+                    <img src="<?= htmlspecialchars($_SESSION["user_pfp"]) ?>" alt="User Profile Picture" class="rounded-full w-6 h-6 object-cover">
                 </div>
             
             <!-- If not logged in -->
