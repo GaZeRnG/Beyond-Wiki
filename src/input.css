@@ -13,21 +13,21 @@
         @apply font-sans text-white text-[15px] m-0 bg-zinc-700 ;
     }
     .hub-page {
-        @apply bg-repeat bg-blend-multiply bg-[url('/Images/background.png')] bg-size-[50px] select-none;
+        @apply bg-repeat bg-blend-multiply bg-[url('/Images/background.webp')] bg-size-[50px] select-none;
     }
     .bd-page, .add-tip-page, .view-tip-page {
-        @apply bg-fixed bg-[url('/Images/Beyond_Depth_Background.png')] bg-cover;
+        @apply bg-fixed bg-[url('/Images/Beyond_Depth_Background.webp')] bg-cover;
     }
 }
 
 /* Login and Register Background */
 @layer utilities {
-    .bg-1 {background-image: url('/Images/Beyond_Depth_Background.png');}
-    .bg-2 {background-image: url('/Images/Beyond_Ascension_Background.png');}
-    .bg-3 {background-image: url('/Images/Beyond_Cosmo_Background.png');}
-    .bg-4 {background-image: url('/Images/Beyond_Ocean_Background.png');}
-    .bg-5 {background-image: url('/Images/Beyond_NightFall_Background.png');}
-    .bg-6 {background-image: url('/Images/Beyond_Zombie_Background.png');}
+    .bg-1 {background-image: url('/Images/Beyond_Depth_Background.webp');}
+    .bg-2 {background-image: url('/Images/Beyond_Ascension_Background.webp');}
+    .bg-3 {background-image: url('/Images/Beyond_Cosmo_Background.webp');}
+    .bg-4 {background-image: url('/Images/Beyond_Ocean_Background.webp');}
+    .bg-5 {background-image: url('/Images/Beyond_NightFall_Background.webp');}
+    .bg-6 {background-image: url('/Images/Beyond_Zombie_Background.webp');}
 }
 
 /* Navbar */

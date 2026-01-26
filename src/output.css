@@ -311,7 +311,7 @@
     color: var(--color-white);
   }
   .hub-page {
-    background-image: url('/Images/background.png');
+    background-image: url('/Images/background.webp');
     background-size: 50px;
     background-repeat: repeat;
     background-blend-mode: multiply;
@@ -319,29 +319,29 @@
     user-select: none;
   }
   .bd-page, .add-tip-page, .view-tip-page {
-    background-image: url('/Images/Beyond_Depth_Background.png');
+    background-image: url('/Images/Beyond_Depth_Background.webp');
     background-size: cover;
     background-attachment: fixed;
   }
 }
 @layer utilities {
   .bg-1 {
-    background-image: url('/Images/Beyond_Depth_Background.png');
+    background-image: url('/Images/Beyond_Depth_Background.webp');
   }
   .bg-2 {
-    background-image: url('/Images/Beyond_Ascension_Background.png');
+    background-image: url('/Images/Beyond_Ascension_Background.webp');
   }
   .bg-3 {
-    background-image: url('/Images/Beyond_Cosmo_Background.png');
+    background-image: url('/Images/Beyond_Cosmo_Background.webp');
   }
   .bg-4 {
-    background-image: url('/Images/Beyond_Ocean_Background.png');
+    background-image: url('/Images/Beyond_Ocean_Background.webp');
   }
   .bg-5 {
-    background-image: url('/Images/Beyond_NightFall_Background.png');
+    background-image: url('/Images/Beyond_NightFall_Background.webp');
   }
   .bg-6 {
-    background-image: url('/Images/Beyond_Zombie_Background.png');
+    background-image: url('/Images/Beyond_Zombie_Background.webp');
   }
 }
 @layer components {

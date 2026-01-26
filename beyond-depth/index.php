@@ -13,7 +13,7 @@
     <head>
         <link rel="stylesheet" href="/src/output.css">
         <link rel="stylesheet" href="/beyond-depth/style.css">
-        <link rel="icon" type="image" href="/Images/Logo/Beyond_Wiki_logo.png">
+        <link rel="icon" type="image" href="/Images/Logo/Beyond_Wiki_logo.webp">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale= 1.0">
         <title>Beyond Wiki - Depth</title>
@@ -33,7 +33,7 @@
 
         <!-- Logo -->
         <section class="logo">
-            <img src="/../Images/Logo/Beyond_Depth_logo_crop.png">
+            <img src="/../Images/Logo/Beyond_Depth_logo_crop.webp">
         </section>
 
         <!--Content-->
@@ -192,19 +192,19 @@
                 <p class="sector-title"><b>Other Modpacks</b></p><br>
                 <div class="pack">
                     <a>
-                        <img src="/Images/Logo/Beyond_Ascension_logo_crop.png">
+                        <img src="/Images/Logo/Beyond_Ascension_logo_crop.webp">
                     </a>
                     <a>
-                        <img src="/Images/Logo/Beyond_Cosmo_logo_crop.png">
+                        <img src="/Images/Logo/Beyond_Cosmo_logo_crop.webp">
                     </a>
                     <a>
-                        <img src="/Images/Logo/Beyond_Ocean_logo_crop.png">
+                        <img src="/Images/Logo/Beyond_Ocean_logo_crop.webp">
                     </a>
                     <a>
-                        <img src="/Images/Logo/Beyond_Zombie_logo_crop.png">
+                        <img src="/Images/Logo/Beyond_Zombie_logo_crop.webp">
                     </a>
                     <a>
-                        <img src="/Images/Logo/Beyond_Nightfall_logo_crop.png">
+                        <img src="/Images/Logo/Beyond_Nightfall_logo_crop.webp">
                     </a>
                 </div>
             </section>
@@ -212,8 +212,8 @@
             <section class="more">
                 <b>Want to contribute in this wiki?</b>
                 <p>Make sure to login so you can add infos</p>
-                <p class="join">Support the packs creator: <a href="https://ko-fi.com/blueversal" target="_blank"><img src="/Images/Logo/kofi.png"></a></p>
-                <p class="join">Also join our Discord: <a href="https://discord.gg/VqrxmqZP" target="_blank"><img src="/Images/Logo/discord.png"></a></p>
+                <p class="join">Support the packs creator: <a href="https://ko-fi.com/blueversal" target="_blank"><img src="/Images/Logo/kofi.webp"></a></p>
+                <p class="join">Also join our Discord: <a href="https://discord.gg/VqrxmqZP" target="_blank"><img src="/Images/Logo/discord.webp"></a></p>
             </section>
         </div>
 

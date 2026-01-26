@@ -12,18 +12,53 @@
         $password = $_POST["password"];
         $password_confirmation = trim($_POST["confirm-password"]);
 
+        // Handle profile picture upload
         if (!empty($_FILES["pfp"]["name"])) {
-            $ext = pathinfo($_FILES["pfp"]["name"], PATHINFO_EXTENSION);
-            $pfp_name = uniqid() . "." . $ext;
-            $pfp_path = $_SERVER['DOCUMENT_ROOT'] . "/Images/pfp/" . $pfp_name;
+            if ($_FILES["pfp"]["error"] !== UPLOAD_ERR_OK) {
+                $errors[] = "Upload error code " . $_FILES["pfp"]["error"];
+                goto skip_pfp;
+            }
 
-            if (!move_uploaded_file($_FILES["pfp"]["tmp_name"], $pfp_path)) {
-                $errors[] = "Failed to upload profile picture";
+            $tmp = $_FILES["pfp"]["tmp_name"];
+            $info = getimagesize($tmp);
+            if (!$info) {
+                $errors[] = "Uploaded file is not a valid image.";
+                goto skip_pfp;
+            }
+
+            switch ($info[2]) {
+                case IMAGETYPE_JPEG:
+                    $img = imagecreatefromjpeg($tmp);
+                    break;
+                case IMAGETYPE_PNG:
+                    $img = imagecreatefrompng($tmp);
+                    break;
+                case IMAGETYPE_GIF:
+                    $img = imagecreatefromgif($tmp);
+                    break;
+                default:
+                    $errors[] = "Unsupported image type. Please upload a JPG, PNG, or GIF.";
+                    goto skip_pfp;
+            }
+
+            // Convert to webp
+            $pfp_name = uniqid() . ".webp";
+            $pfp_path = $_SERVER["DOCUMENT_ROOT"] . "/Images/pfp/" . $pfp_name;
+
+            imagewebp($img, $pfp_path, 95);
+            imagedestroy($img);
+
+            $webpath = "/Images/pfp/" . $pfp_name;
+
+            skip_pfp:
+            if (isset($errors[count($errors) - 1]) && strpos($errors[count($errors) - 1], 'pfp') !== false) {
+                // If there was an upload error, do nothing
             }
         } else {
-            $errors [] = "Profile picture required";
+            $errors[] = "Profile picture is required.";
         }
 
+        // Validate inputs
         if ($password !== $password_confirmation) {
             $errors[] = "Passwords do not match.";
         }
