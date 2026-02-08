@@ -59,7 +59,6 @@
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_TIMEOUT        => 15,
         CURLOPT_SSL_VERIFYPEER => true,
-        // CURLOPT_RESOLVE        => ["oauth2.googleapis.com:443:142.250.185.77"]
     ]);
 
     $raw = curl_exec($ch);
