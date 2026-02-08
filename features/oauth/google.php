@@ -58,7 +58,8 @@
         ],
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_TIMEOUT        => 15,
-        CURLOPT_RESOLVE        => ["oauth2.googleapis.com:443:142.250.185.77"]
+        CURLOPT_SSL_VERIFYPEER => true,
+        // CURLOPT_RESOLVE        => ["oauth2.googleapis.com:443:142.250.185.77"]
     ]);
 
     $raw = curl_exec($ch);
@@ -88,11 +89,6 @@
         die('Invalid user info from Google');
     }
 
-    // $googleId = $userInfo['id'];
-    // $email    = $userInfo['email'];
-    // $name     = $userInfo['name'] ?? $email;
-    // $picture  = $userInfo['picture'] ?? '';
-
     // Check if user exists
     $stmt = $conn->prepare('SELECT * FROM users WHERE oauth_provider = "google" AND oauth_id = ? LIMIT 1');
     $stmt->bind_param('s', $userInfo['id']);
@@ -119,12 +115,17 @@
     $_SESSION['user_name'] = $userInfo['name'];
     $_SESSION['user_pfp']  = $picture;
 
+    // Remember Me
+    $token = bin2hex(random_bytes(16));
+    $hash = hash("sha256", $token);
+    $exp = date("Y-m-d H:i:s", strtotime('+30 days'));
+
+    $stmt2 = $conn->prepare("REPLACE INTO cookie_tokens (user_id, token_hash, expires_at) VALUES (?, ?, ?)");
+    $stmt2->bind_param("iss", $user_id, $hash, $exp);
+    $stmt2->execute();
+
+    setcookie("remember_me", $token, strtotime('+30days'), "/", "", true, true);
+
     header('Location: /');
     exit;
-
-// } catch (Throwable $e) {
-//     log_msg('Google 500: ' . $e->getMessage() . PHP_EOL . $e->getTraceAsString());
-//     header('HTTP/1.1 500 Internal Server Error');
-//     die('Internal error – check debug.log');
-// }
 ?>

@@ -1,6 +1,5 @@
 <?php 
-    include __DIR__ ."/../features/db.php";
-    session_start();
+    require_once $_SERVER["DOCUMENT_ROOT"] . "/features/bootstrap.php";
 
     // For navbar wiki logo
     $page = 'bd';

@@ -1,5 +1,5 @@
 <?php 
-    include "db.php";
+    require_once $_SERVER["DOCUMENT_ROOT"] . "/features/bootstrap.php";
 ?>
 
 <nav class="nav">

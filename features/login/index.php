@@ -1,6 +1,5 @@
 <?php 
-    require_once $_SERVER["DOCUMENT_ROOT"] ."/features/db.php";
-    session_start();
+    require_once $_SERVER["DOCUMENT_ROOT"] . "/features/bootstrap.php";
 
     $page = 'login';
 
@@ -27,26 +26,24 @@
                 // Remember Me
                 if (!empty($_POST["remember"])) {
                     $token = bin2hex(random_bytes(16));
-                    $hash = hash('sha256', $token);
-                    $exp = date('Y-m-d H:i:s', strtotime('+30 days'));
+                    $hash = hash("sha256", $token);
+                    $exp = date("Y-m-d H:i:s", strtotime('+30 days'));
 
                     $stmt2 = $conn->prepare("REPLACE INTO cookie_tokens (user_id, token_hash, expires_at) VALUES (?, ?, ?)");
-
                     $stmt2->bind_param("iss", $user["user_id"], $hash, $exp);
                     $stmt2->execute();
 
                     setcookie("remember_me", $token, strtotime('+30days'), "/", "", true, true);
-                }
+                };
 
-                header("Location: /");
+                header(header: "Location: /");
                 exit();
+
             } else {
                 $errors[] = "Invalid username/email or password.";
             }
         }
     }
-
-    // OAuth Callback
 ?>
 
 <html>
@@ -85,7 +82,7 @@
                 <input type="password" id="password" name="password" required>
 
                 <label class="login-remember">
-                    <input type="checkbox" name="remember" class="login-remember-box" value="1">
+                    <input type="checkbox" id="remember-link" name="remember" class="login-remember-box" value="1">
                     Remember Me
                 </label>
 
@@ -93,10 +90,10 @@
                 
                 <div class="login-others">
                     <!-- Google -->
-                    <a href="/features/oauth/google.php" class="login-google">Google</a>
+                    <a href="/features/oauth/google.php" id="google-link" name="google" class="login-google">Google</a>
 
                     <!-- Discord -->
-                    <a href="/features/oauth/discord.php" id="discord-link" class="login-discord">Discord</a>
+                    <a href="/features/oauth/discord.php" id="discord-link" name="discord" class="login-discord">Discord</a>
                 </div>
 
                 <a href="/features/register" class="login-register">Don't have an account? Register here.</a>

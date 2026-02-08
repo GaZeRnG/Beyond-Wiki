@@ -11,7 +11,6 @@
         );
     }
 
-    // log_msg('discord.php  remember=' . ($_GET['remember'] ?? 'null'));
 
     $dotnev = Dotenv\Dotenv::createImmutable(__DIR__ . "/../../");
     $dotnev->load();
@@ -22,7 +21,6 @@
 
     // Step 1: Redirect to Discord's OAuth 2.0 server
     if (!isset($_GET["code"])) {
-        // $remember = $_GET['state'] ?? '0';
         $params = [
             'client_id' => $client_id,
             'redirect_uri' => $redirect_uri,
@@ -33,9 +31,6 @@
         header("Location: $auth_url");
         exit();
     }
-    
-    // $rememberFlag = $_GET['state'] ?? '0';
-    // log_msg('discord.php  state=' . $rememberFlag);
 
     // Step 2: Handle the OAuth 2.0 server response
     var_dump(curl_version()['version'], defined('CURLOPT_DNS_SERVERS'));
@@ -113,25 +108,15 @@
     $_SESSION["user_pfp"] = $avatar_url;
 
     // Remember Me
-    // if ($rememberFlag === '1') {
-    //     log_msg('remember block entered for user ' . $user_id);
-    //     $token = bin2hex(random_bytes(16));
-    //     $hash  = hash('sha256', $token);
-    //     $exp   = date('Y-m-d H:i:s', strtotime('+30 days'));
+    $token = bin2hex(random_bytes(16));
+    $hash = hash("sha256", $token);
+    $exp = date("Y-m-d H:i:s", strtotime('+30 days'));
 
-    //     $stmt = $conn->prepare("REPLACE INTO cookie_tokens (user_id, token_hash, expires_at) VALUES (?, ?, ?)");
-    //     $stmt->bind_param("iss", $user_id, $hash, $exp);
-    //     $stmt->execute();
+    $stmt2 = $conn->prepare("REPLACE INTO cookie_tokens (user_id, token_hash, expires_at) VALUES (?, ?, ?)");
+    $stmt2->bind_param("iss", $user_id, $hash, $exp);
+    $stmt2->execute();
 
-    //     setcookie('remember_me', $token, strtotime('+30 days'), '/', '', true, true);
-
-    //     if ($stmt->error) {
-    //         log_msg('remember DB error: ' . $stmt->error);
-    //     } else {
-    //         log_msg('remember row inserted, affected=' . $stmt->affected_rows);
-    //     }
-
-    // }
+    setcookie("remember_me", $token, strtotime('+30days'), "/", "", true, true);
 
     header("Location: /");
     exit();

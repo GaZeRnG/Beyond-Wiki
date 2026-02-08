@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: sql202.yzz.me
--- Generation Time: Jan 03, 2026 at 07:36 AM
+-- Generation Time: Feb 08, 2026 at 11:01 AM
 -- Server version: 11.4.9-MariaDB
 -- PHP Version: 7.2.22
 
@@ -74,16 +74,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `user_password`, `user_pfp`, `oauth_provider`, `oauth_id`, `created_at`, `updated_at`) VALUES
-(1, 'gazer2006', 'christianpatrickpanti@gmail.com', NULL, '7ee308a713b0938a8f9ad32f4d63004b', 'discord', '678492415392350209', '2026-01-03 08:31:40', '2026-01-03 08:31:40'),
-(2, 'test', 'gazeringg@gmail.com', '$2y$10$llXZ4ui2TlBPIY1m4LBKxOZFji7bP2uBNhVOK.kvMj5v6.wgHXAaG', '/Images/pfp/6958d41541946.JPG', '', NULL, '2026-01-03 08:32:21', '2026-01-03 08:32:21'),
-(3, 'Dump Lng', 'dumpacclngtouy@gmail.com', NULL, NULL, 'google', '107149618915310914826', '2026-01-03 12:31:16', '2026-01-03 12:35:23'),
-(4, 'Gazer rng', 'gazeringg@gmail.com', NULL, NULL, 'google', '103917951335292033430', '2026-01-03 12:34:12', '2026-01-03 12:35:29');
-
---
 -- Indexes for dumped tables
 --
 
@@ -120,7 +110,7 @@ ALTER TABLE `tips`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
