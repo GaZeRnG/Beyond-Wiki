@@ -11,52 +11,6 @@
         $password = $_POST["password"];
         $password_confirmation = trim($_POST["confirm-password"]);
 
-        // Handle profile picture upload
-        if (!empty($_FILES["pfp"]["name"])) {
-            if ($_FILES["pfp"]["error"] !== UPLOAD_ERR_OK) {
-                $errors[] = "Upload error code " . $_FILES["pfp"]["error"];
-                goto skip_pfp;
-            }
-
-            $tmp = $_FILES["pfp"]["tmp_name"];
-            $info = getimagesize($tmp);
-            if (!$info) {
-                $errors[] = "Uploaded file is not a valid image.";
-                goto skip_pfp;
-            }
-
-            switch ($info[2]) {
-                case IMAGETYPE_JPEG:
-                    $img = imagecreatefromjpeg($tmp);
-                    break;
-                case IMAGETYPE_PNG:
-                    $img = imagecreatefrompng($tmp);
-                    break;
-                case IMAGETYPE_GIF:
-                    $img = imagecreatefromgif($tmp);
-                    break;
-                default:
-                    $errors[] = "Unsupported image type. Please upload a JPG, PNG, or GIF.";
-                    goto skip_pfp;
-            }
-
-            // Convert to webp
-            $pfp_name = uniqid() . ".webp";
-            $pfp_path = $_SERVER["DOCUMENT_ROOT"] . "/Images/pfp/" . $pfp_name;
-
-            imagewebp($img, $pfp_path, 95);
-            imagedestroy($img);
-
-            $webpath = "/Images/pfp/" . $pfp_name;
-
-            skip_pfp:
-            if (isset($errors[count($errors) - 1]) && strpos($errors[count($errors) - 1], 'pfp') !== false) {
-                // If there was an upload error, do nothing
-            }
-        } else {
-            $errors[] = "Profile picture is required.";
-        }
-
         // Validate inputs
         if ($password !== $password_confirmation) {
             $errors[] = "Passwords do not match.";
@@ -73,9 +27,9 @@
         if (empty($errors)) {
             $hash = password_hash($password, PASSWORD_DEFAULT);
 
-            $webpath = "/Images/pfp/" . $pfp_name;
-            $stmt = $conn->prepare("INSERT INTO users (user_name, user_email, user_password, user_pfp, oauth_provider, oauth_id) VALUES (?, ?, ?, ?, 'manual', NULL)");
-            $stmt->bind_param("ssss", $username, $email, $hash, $webpath);
+            // $defaultimg = '/Images/pfp/default.jpg';
+            $stmt = $conn->prepare("INSERT INTO users (user_name, user_email, user_password, oauth_provider, oauth_id) VALUES (?, ?, ?, 'manual', NULL)");
+            $stmt->bind_param("sss", $username, $email, $hash);
             $stmt->execute();
             
             header(header: "Location: /features/login");
@@ -127,9 +81,6 @@
 
                 <label for="confirm-password">Confirm Password:</label>
                 <input type="password" id="confirm-password" name="confirm-password" required>
-
-                <label for="pfp">Profile Picture:</label>
-                <input type="file" id="pfp" name="pfp" accept="image/*" required>
 
                 <button type="submit" class="register-submit">Register</button>
                 <a href="/features/login" class="register-back">Back to Login</a>
