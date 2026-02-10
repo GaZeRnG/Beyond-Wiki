@@ -27,7 +27,6 @@
         if (empty($errors)) {
             $hash = password_hash($password, PASSWORD_DEFAULT);
 
-            // $defaultimg = '/Images/pfp/default.jpg';
             $stmt = $conn->prepare("INSERT INTO users (user_name, user_email, user_password, oauth_provider, oauth_id) VALUES (?, ?, ?, 'manual', NULL)");
             $stmt->bind_param("sss", $username, $email, $hash);
             $stmt->execute();

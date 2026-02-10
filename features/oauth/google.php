@@ -4,14 +4,6 @@
     require_once __DIR__ . '/../../vendor/autoload.php';
     session_start();
 
-    function log_msg(string $msg): void {
-        file_put_contents(
-            $_SERVER['DOCUMENT_ROOT'] . '/debug.log',
-            date('Y-m-d H:i:s') . '  ' . $msg . PHP_EOL,
-            FILE_APPEND | LOCK_EX
-        );
-    }
-
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
     $dotenv->load();
 
@@ -61,32 +53,8 @@
         CURLOPT_SSL_VERIFYPEER => true,
     ]);
 
-    $raw = curl_exec($ch);
-    if ($raw === false) {
-        log_msg('CURL error: ' . curl_error($ch) . '  errno: ' . curl_errno($ch));
-    }
-    curl_close($ch);
-
-    $tokenData = json_decode($raw, true);
-    $accessToken = $tokenData['access_token'] ?? null;
-    if (!$accessToken) {
-        log_msg('Google token missing: ' . $raw);
-        die('No access token from Google');
-    }
-
     // Step 3: fetch user info
     $json = file_get_contents("https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=$accessToken");
-    if ($json === false) {
-        log_msg('user-info fetch failed');
-        die('Failed to fetch user info from Google');
-    }
-
-    log_msg('Google user-info raw: ' . $json);
-    $userInfo = json_decode($json, true);
-    if (!$userInfo || !isset($userInfo['id'])) {
-        log_msg('user-info decode error: ' . print_r($userInfo, true));
-        die('Invalid user info from Google');
-    }
 
     // Check if user exists
     $stmt = $conn->prepare('SELECT * FROM users WHERE oauth_provider = "google" AND oauth_id = ? LIMIT 1');

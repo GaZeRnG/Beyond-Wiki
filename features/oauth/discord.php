@@ -3,15 +3,6 @@
     require_once __DIR__ . "/../../vendor/autoload.php";
     session_start();
 
-    function log_msg($msg) {
-        file_put_contents(
-            $_SERVER['DOCUMENT_ROOT'] . '/debug.log',
-            date('Y-m-d H:i:s') . '  ' . $msg . PHP_EOL,
-            FILE_APPEND | LOCK_EX
-        );
-    }
-
-
     $dotnev = Dotenv\Dotenv::createImmutable(__DIR__ . "/../../");
     $dotnev->load();
 
