@@ -38,11 +38,10 @@
         <div class="tip-details">
             <section class="tip-title">
                 <p><b><?= htmlspecialchars($tip['tip_title']) ?></b></p>
-            </section>
-            
-            <section class="tip-who">
-                <p><b>Author: </b><?= htmlspecialchars($tip['author'] ?: 'Anonymous') ?></p>
-                <p><b>Posted: </b><?= htmlspecialchars($tip['created_at']) ?></p>
+                <section class="tip-who">
+                    <p><b>Author: </b><?= htmlspecialchars($tip['author'] ?: 'Anonymous') ?></p>
+                    <p><b>Posted in: </b><?= htmlspecialchars($tip['created_at']) ?></p>
+                </section>
             </section>
 
             <section class="tip-content">

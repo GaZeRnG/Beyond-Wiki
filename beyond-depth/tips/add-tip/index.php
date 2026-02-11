@@ -48,9 +48,6 @@
 
         <div class="h-20"></div>
 
-        <!-- Title -->
-        <section class="title">Add a Tip</section>
-
         <!-- Errors -->
         <?php if (!empty($errors)): ?>
             <div>
@@ -64,21 +61,23 @@
 
         <!-- Form -->
         <form method="POST" action="">
-            <section class="input-value">
-                <label for="title" class="input-title">Title of the Tip</label>
-                <input id="title" name="title" class="title-input" type="text" maxlength="300" required value="<?= isset($title) ? htmlspecialchars($title) : '' ?>">
-                <span id="title-shadow" class="shadow-span"></span>
+            <section class="top-bar">
+                <section class="input-value">
+                    <!-- <label for="title" class="input-title"></label> -->
+                    <input id="title" name="title" class="title-input" type="text" placeholder="Enter your Title" maxlength="300" required value="<?= isset($title) ? htmlspecialchars($title) : '' ?>">
+                    <span id="title-shadow" class="shadow-span"></span>
+                </section>
+
+                <section class="input-value">
+                    <!-- <label for="author" class="input-title">Your Name (Optional)</label> -->
+                    <input id="author" name="author" class="author-input" type="text" placeholder="Enter your Username(Optional)" maxlength="30" value="<?= isset($author) ? htmlspecialchars($author) : '' ?>">
+                    <span id="author-shadow" class="shadow-span"></span>
+                </section>
             </section>
 
             <section class="input-value">
-                <label for="author" class="input-title">Your Name (Optional)</label>
-                <input id="author" name="author" class="author-input" type="text" maxlength="100" value="<?= isset($author) ? htmlspecialchars($author) : '' ?>">
-                <span id="author-shadow" class="shadow-span"></span>
-            </section>
-
-            <section class="input-value">
-                <label for="content" class="input-title">Tip</label>
-                <textarea id="content" name="content" class="content-input" rows="3" cols="60" required><?= isset($content) ? htmlspecialchars($content) : '' ?></textarea>
+                <!-- <label for="content" class="input-title">Tip</label> -->
+                <textarea id="content" name="content" class="content-input" placeholder="Enter your Tip" rows="5" cols="60" required><?= isset($content) ? htmlspecialchars($content) : '' ?></textarea>
             </section>
 
             <section class="submit-button">

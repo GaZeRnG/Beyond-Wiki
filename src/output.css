@@ -979,29 +979,17 @@
   }
 }
 @layer components {
-  .add-tip-page .title {
-    margin-inline: auto;
-    margin-top: calc(var(--spacing) * 5);
-    margin-bottom: calc(var(--spacing) * 2.5);
-    width: fit-content;
-    border-radius: 10px;
-    background-color: rgba(160,160,160,0.5);
-    padding-inline: calc(var(--spacing) * 5);
-    font-size: 40px;
-    --tw-font-weight: var(--font-weight-bold);
-    font-weight: var(--font-weight-bold);
-  }
   .add-tip-page form {
     margin-inline: auto;
     margin-bottom: 30px;
     box-sizing: border-box;
-    max-width: 80%;
-    border-radius: 10px;
-    background-color: rgba(117,117,117,0.5);
+    max-width: 75%;
     padding: calc(var(--spacing) * 2.5);
     color: var(--color-white);
-    --tw-shadow: 0 0 10px var(--tw-shadow-color, rgb(163,163,163));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .add-tip-page form .top-bar {
+    display: flex;
+    justify-content: space-between;
   }
   .add-tip-page form .input-value {
     margin-bottom: calc(var(--spacing) * 5);
@@ -1029,13 +1017,13 @@
   .add-tip-page form .author-input {
     display: inline-block;
     width: auto;
-    max-width: 50%;
+    max-width: 100%;
     text-align: center;
   }
   .add-tip-page form .title-input {
     display: inline-block;
     width: auto;
-    max-width: 80%;
+    max-width: 100%;
     text-align: center;
   }
   .add-tip-page form .shadow-span {
@@ -1046,7 +1034,7 @@
     font-size: 1rem;
   }
   .add-tip-page form .content-input {
-    width: 90%;
+    width: 100%;
   }
   .add-tip-page form .submit-button {
     display: flex;
@@ -1087,21 +1075,20 @@
     text-align: center;
   }
   .view-tip-page .tip-details .tip-title {
-    margin-inline: auto;
     margin-top: calc(var(--spacing) * 5);
     margin-bottom: calc(var(--spacing) * 2.5);
-    width: fit-content;
-    border-radius: 10px;
-    background-color: rgba(160,160,160,0.5);
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
     padding-inline: calc(var(--spacing) * 5);
     font-size: 40px;
   }
-  .view-tip-page .tip-details .tip-who {
+  .view-tip-page .tip-details .tip-title .tip-who {
     margin-bottom: calc(var(--spacing) * 2.5);
+    font-size: 18px;
   }
   .view-tip-page .tip-details .tip-content {
     margin-inline: auto;
-    width: 90%;
     border-radius: 10px;
     background-color: rgba(117,117,117,0.5);
     padding: calc(var(--spacing) * 2.5);

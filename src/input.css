@@ -298,11 +298,11 @@
 
 /* Add Tip Page */
 @layer components {
-    .add-tip-page .title {
-        @apply bg-[rgba(160,160,160,0.5)] mx-auto w-fit mt-5 mb-2.5 px-5 text-[40px] font-bold rounded-[10px];
-    }
     .add-tip-page form {
-        @apply bg-[rgba(117,117,117,0.5)] shadow-[0_0_10px_rgb(163,163,163)] rounded-[10px] mx-auto mb-[30px] p-2.5 max-w-[80%] box-border text-white;
+        @apply mx-auto mb-[30px] p-2.5 max-w-[75%] box-border text-white;
+    }
+    .add-tip-page form .top-bar {
+        @apply flex justify-between;
     }
     .add-tip-page form .input-value {
         @apply flex flex-col justify-center mb-5;
@@ -314,16 +314,16 @@
         @apply bg-[rgba(120,120,120,0.5)] mx-auto border border-gray-300 p-2.5 rounded-md;
     }
     .add-tip-page form .author-input {
-        @apply inline-block text-center w-auto max-w-[50%];
+        @apply inline-block text-center w-auto max-w-full;
     }
     .add-tip-page form .title-input {
-        @apply inline-block text-center w-auto max-w-[80%];
+        @apply inline-block text-center w-auto max-w-full;
     }
     .add-tip-page form .shadow-span {
         @apply invisible absolute whitespace-nowrap px-2.5; font-size: 1rem;
     }
     .add-tip-page form .content-input {
-        @apply w-[90%];
+        @apply w-full;
     }
     .add-tip-page form .submit-button {
         @apply flex flex-col items-center;
@@ -342,13 +342,13 @@
         @apply w-[75%] mx-auto mb-2.5 pb-2.5 text-center;
     }
     .view-tip-page .tip-details .tip-title {
-        @apply bg-[rgba(160,160,160,0.5)] mx-auto w-fit mt-5 mb-2.5 px-5 text-[40px] rounded-[10px];
+        @apply w-full mt-5 mb-2.5 px-5 flex justify-between text-[40px];
     }
-    .view-tip-page .tip-details .tip-who {
-        @apply mb-2.5;
+    .view-tip-page .tip-details .tip-title .tip-who {
+        @apply mb-2.5 text-[18px];
     }
     .view-tip-page .tip-details .tip-content {
-        @apply w-[90%] mx-auto bg-[rgba(117,117,117,0.5)] shadow-[0_0_10px_rgb(163,163,163)] p-2.5 rounded-[10px];
+        @apply mx-auto bg-[rgba(117,117,117,0.5)] shadow-[0_0_10px_rgb(163,163,163)] p-2.5 rounded-[10px];
     }
     .view-tip-page .tip-details .tip-more{
         @apply flex-col justify-center mt-5;
