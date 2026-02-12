@@ -329,7 +329,7 @@
         @apply flex flex-col items-center;
     }
     .add-tip-page form .submit {
-        @apply bg-[rgb(30,30,30)] font-bold py-2.5 px-5 mb-2.5 rounded-[10px] cursor-pointer hover:bg-[rgb(60,60,60)];
+        @apply bg-[rgb(54,53,53)] font-bold py-2.5 px-5 mb-2.5 rounded-[10px] cursor-pointer hover:bg-[rgb(67,67,67)];
     }
     .add-tip-page form .back {
         @apply text-white no-underline hover:underline;
@@ -339,7 +339,7 @@
 /* View Tip Page */
 @layer components {
     .view-tip-page .tip-details {
-        @apply w-[75%] mx-auto mb-2.5 pb-2.5 text-center;
+        @apply w-[75%] mx-auto mb-2.5 pb-2.5 text-center align-middle;
     }
     .view-tip-page .tip-details .tip-title {
         @apply w-full mt-5 mb-2.5 px-5 flex justify-between text-[40px];
@@ -351,7 +351,7 @@
         @apply mx-auto bg-[rgba(117,117,117,0.5)] shadow-[0_0_10px_rgb(163,163,163)] p-2.5 rounded-[10px];
     }
     .view-tip-page .tip-details .tip-more{
-        @apply flex-col justify-center mt-5;
+        @apply flex justify-between mt-5 w-full;
     }
     .view-tip-page .tip-details .tip-more .back {
         @apply text-white no-underline hover:underline mb-2.5 flex mx-auto w-fit;
@@ -360,5 +360,7 @@
         @apply text-white no-underline hover:underline flex mx-auto w-fit;
     }
 }
+
+
 
 /* npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch */
