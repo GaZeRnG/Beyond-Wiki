@@ -1,5 +1,5 @@
 <?php 
-    $servername = "localhost"; //Windows: localhost, Linux:192.168.1.4
+    $servername = "127.0.0.1"; //Windows: localhost, Linux: 127.0.0.1
     $username = "wikiadmin";
     $password = "b3y0ndM1ki";
     $dbname = "beyond-wiki";
