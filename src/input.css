@@ -232,7 +232,7 @@
         @apply grid-cols-3;
     }
     .bd-page .categories :is(.items, .dimensions, .bosses, .tips) a:hover {
-        @apply shadow-[0_3px_0_0_rgb(163,163,163)] rounded-[5px] p-[3px] transition-ease  cursor-pointer;
+        @apply shadow-[0_3px_0_0_rgb(163,163,163)] rounded-[5px] p-[3px]  cursor-pointer;
     }
 
     /* Tips CSS */

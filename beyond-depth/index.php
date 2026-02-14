@@ -19,6 +19,10 @@
     </head>
 
     <body class="bd-page">
+        <!-- Background -->
+        <div class="bd-bg">
+        </div>
+
         <!-- Navbar -->
         <?php include_once __DIR__ . '/../features/navbar.php'; ?>
 

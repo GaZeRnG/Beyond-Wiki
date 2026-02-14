@@ -181,6 +181,9 @@
   .fixed {
     position: fixed;
   }
+  .static {
+    position: static;
+  }
   .inset-0 {
     inset: calc(var(--spacing) * 0);
   }
@@ -832,12 +835,8 @@
     cursor: pointer;
     border-radius: 5px;
     padding: 3px;
-    font-size: 18px;
     --tw-shadow: 0 3px 0 0 var(--tw-shadow-color, rgb(163,163,163));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   .bd-page .categories .tips .sector-title {
     display: flex;
