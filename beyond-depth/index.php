@@ -26,7 +26,7 @@
         
         <!-- Warning -->
         <section class="warning">
-            <h2>This wiki is currently under development and will have LIMITED, INACCURATE or NO INFO at all.</h2>
+            <h2>⚠️ This wiki is currently under development and will have LIMITED, INACCURATE or NO INFO at all.</h2>
             <p>Any categories in here that have (*), will be redirected to their official and/or fandom wiki</p>
         </section>
 

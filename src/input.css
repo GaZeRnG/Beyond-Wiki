@@ -223,7 +223,7 @@
         @apply bg-[rgba(160,160,160,0.5)] pl-2.5 rounded-t-[10px] text-[18px];
     }
     .bd-page .categories :is(.items, .dimensions, .bosses, .tips) ul {
-        @apply grid grid-cols-5 p-[0_10px_10px_10px] gap-[0_20px];
+        @apply grid grid-cols-5 p-[0_10px_10px_10px] gap-[5px_20px];
     }
     .bd-page .categories .bosses ul {
         @apply grid-cols-4;
@@ -231,8 +231,8 @@
     .bd-page .categories .dimensions ul {
         @apply grid-cols-3;
     }
-    .bd-page .categories :is(.items, .dimensions, .bosses, .tips) a {
-        @apply hover:underline cursor-pointer;
+    .bd-page .categories :is(.items, .dimensions, .bosses, .tips) a:hover {
+        @apply shadow-[0_3px_0_0_rgb(163,163,163)] rounded-[5px] p-[3px] transition-ease  cursor-pointer;
     }
 
     /* Tips CSS */
