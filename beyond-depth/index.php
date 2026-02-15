@@ -21,6 +21,8 @@
     <body class="bd-page">
         <!-- Background -->
         <div class="bd-bg">
+            <div class="bd-blob-3"></div>
+            <div class="bd-blob-4"></div>
         </div>
 
         <!-- Navbar -->

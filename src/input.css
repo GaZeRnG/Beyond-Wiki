@@ -19,7 +19,7 @@
         @apply bg-repeat bg-blend-multiply bg-[url('/Images/background.webp')] bg-size-[50px] select-none;
     }
     .bd-page, .add-tip-page, .view-tip-page {
-        @apply bg-fixed bg-[url('/Images/Beyond_Depth_Background.webp')] bg-cover;
+        @apply bg-linear-to-br from-[rgb(32,32,32)] to-[rgb(60,60,60)];
     }
 }
 
@@ -171,23 +171,78 @@
 
 /* BD Page */
 @layer components{
+    /* Background */
+    .bd-page .bd-bg {
+        @apply fixed inset-0 -z-10 overflow-hidden;
+        filter: blur(80px);
+    }
+
+    .bd-page .bd-bg::before {
+        content: "";
+        @apply absolute -top-1/4 -left-1/4 w-[60vw] h-[60vw] rounded-full;
+        background: #404040;
+        animation: blobFloat1 20s ease-in-out infinite;
+    }
+
+    .bd-page .bd-bg::after {
+        content: "";
+        @apply absolute -bottom-1/4 -right-1/4 w-[50vw] h-[50vw] rounded-full;
+        background: #404040;
+        animation: blobFloat2 25s ease-in-out infinite;
+    }
+
+    .bd-page .bd-blob-3 {
+        @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40vw] h-[40vw] rounded-full;
+        background: #333333;
+        filter: blur(60px);
+        animation: blobFloat3 18s ease-in-out infinite;
+    }
+
+    .bd-page .bd-blob-4 {
+        @apply absolute top-1/4 right-1/4 w-[30vw] h-[30vw] rounded-full;
+        background: #2a2a2a;
+        filter: blur(70px);
+        animation: blobFloat4 22s ease-in-out infinite;
+    }
+
+    @keyframes blobFloat1 {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        33% { transform: translate(50px, 30px) scale(1.1); }
+        66% { transform: translate(-30px, 50px) scale(0.9); }
+    }
+
+    @keyframes blobFloat2 {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        50% { transform: translate(-40px, -40px) scale(1.15); }
+    }
+
+    @keyframes blobFloat3 {
+        0%, 100% { transform: translate(-50%, -50%) scale(1); }
+        50% { transform: translate(-50%, -50%) scale(1.2); }
+    }
+
+    @keyframes blobFloat4 {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        25% { transform: translate(-30px, 40px) scale(0.95); }
+        75% { transform: translate(20px, -30px) scale(1.05); }
+    }
 
     /* Warning CSS*/
     .bd-page .warning {
-        @apply text-[20px] font-bold bg-red-600 text-center mb-5;
+        @apply text-[20px] text-[#ffcc23] font-bold bg-[#f59f0b83] border border-[#ffa200] shadow-[0_5px_10px_0_rgb(255,162,0)] w-[90%] mx-auto align-middle rounded-[10px] text-center mb-10 select-none;
     }
 
     /* Logo CSS */
     .bd-page .logo {
-        @apply flex justify-center items-center w-full mt-5;
+        @apply flex justify-center py-5;
     }
     .bd-page .logo img {
-        @apply block mx-auto h-[150px];
+        @apply w-auto h-37.5 drop-shadow-[0_0_30px_rgba(143,143,143,0.5)];
     }
 
     /* Main CSS */
     .bd-page .main {
-        @apply bg-[rgba(117,117,117,0.5)] shadow-[0_0_10px_rgb(163,163,163)] rounded-[10px] mx-auto mt-[30px] mb-0 p-[15px] max-w-[95%] box-border;
+        @apply max-w-[95%] mx-auto px-4 grid md:grid-cols-2 gap-6 mb-8;
     }
 
     /* What is Beyond Depth */
