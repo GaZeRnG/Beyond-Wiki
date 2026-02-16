@@ -174,7 +174,7 @@
     /* Background */
     .bd-page .bd-bg {
         @apply fixed inset-0 -z-10 overflow-hidden;
-        filter: blur(80px);
+        filter: blur(20px);
     }
 
     .bd-page .bd-bg::before {
@@ -194,14 +194,14 @@
     .bd-page .bd-blob-3 {
         @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40vw] h-[40vw] rounded-full;
         background: #333333;
-        filter: blur(60px);
+        filter: blur(20px);
         animation: blobFloat3 18s ease-in-out infinite;
     }
 
     .bd-page .bd-blob-4 {
-        @apply absolute top-1/4 right-1/4 w-[30vw] h-[30vw] rounded-full;
-        background: #2a2a2a;
-        filter: blur(70px);
+        @apply absolute top-1/4 right-1/8 w-[30vw] h-[30vw] rounded-full;
+        background: #272727;
+        filter: blur(20px);
         animation: blobFloat4 22s ease-in-out infinite;
     }
 
@@ -229,7 +229,7 @@
 
     /* Warning CSS*/
     .bd-page .warning {
-        @apply text-[20px] text-[#ffcc23] font-bold bg-[#f59f0b83] border border-[#ffa200] shadow-[0_5px_10px_0_rgb(255,162,0)] w-[90%] mx-auto align-middle rounded-[10px] text-center mb-10 select-none;
+        @apply text-[20px] text-[#ffcc23e5] font-bold bg-[#f59f0b34] border border-[#ffa200] shadow-[0_5px_10px_0_rgb(255,162,0)] w-[90%] mx-auto align-middle rounded-[10px] text-center mb-10 select-none;
     }
 
     /* Logo CSS */
@@ -237,25 +237,25 @@
         @apply flex justify-center py-5;
     }
     .bd-page .logo img {
-        @apply w-auto h-37.5 drop-shadow-[0_0_30px_rgba(143,143,143,0.5)];
+        @apply w-auto h-37.5 drop-shadow-[0_0_10px_rgba(143,143,143,0.5)];
     }
 
     /* Main CSS */
     .bd-page .main {
-        @apply max-w-[95%] mx-auto px-4 grid md:grid-cols-2 gap-6 mb-8;
+        @apply max-w-[90%] mx-auto flex gap-6 mb-8;
     }
 
     /* What is Beyond Depth */
     .bd-page .main .what {
-        @apply text-center mb-5;
+        @apply text-center mb-5 flex-2;
     }
     .bd-page .main .what .sector-title {
-        @apply bg-[rgba(160,160,160,0.5)] w-full p-[5px_0_5px_15px] rounded-[5px] text-[18px];
+        @apply w-full text-[#afafaf] p-[5px_0_5px_15px] text-[18px];
     }
 
     /* Serverpack CSS */
     .bd-page .main .serverpack {
-        @apply text-center mb-0;
+        @apply text-center mb-0 flex-[0.5];
     }
     .bd-page .main .serverpack .sector-title {
         @apply bg-[rgba(160,160,160,0.5)] w-[30%] mx-auto rounded-[5px] text-[18px];
@@ -416,6 +416,145 @@
     }
 }
 
+@layer components {
+    .test-page {
+    @apply min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-gray-100;
+    }
 
+    /* Warning Banner */
+    .test-page .warning {
+    @apply bg-amber-500/20 border border-amber-500/50 rounded-lg p-4 mx-4 mt-4 text-center;
+    }
+    .test-page .warning h2 {
+    @apply text-amber-400 font-bold text-lg mb-2;
+    }
+    .test-page .warning p {
+    @apply text-amber-300/80 text-sm;
+    }
+
+    /* Logo Section */
+    .test-page .logo {
+    @apply flex justify-center py-8;
+    }
+    .test-page .logo img {
+    @apply w-64 h-auto drop-shadow-[0_0_30px_rgba(59,130,246,0.5)] hover:scale-105 transition-transform duration-300;
+    }
+
+    /* Main Content Grid */
+    .test-page .main {
+    @apply max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-6 mb-8;
+    }
+
+    /* Content Cards */
+    .test-page .what,
+    .test-page .serverpack {
+    @apply bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 shadow-lg;
+    }
+    .test-page .sector-title {
+    @apply text-2xl font-bold text-blue-400 mb-4 pb-2 border-b-2 border-blue-500/30 inline-block;
+    }
+    .test-page .what p:not(.sector-title) {
+    @apply text-gray-300 leading-relaxed;
+    }
+    .test-page .serverpack a {
+    @apply text-blue-400 hover:text-blue-300 transition-colors cursor-pointer;
+    }
+
+    /* Categories Grid */
+    .test-page .categories {
+    @apply max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6 mb-8;
+    }
+
+    /* Category Cards */
+    .test-page .items,
+    .test-page .dimensions,
+    .test-page .bosses,
+    .test-page .tips {
+    @apply bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 shadow-lg;
+    }
+
+    /* Lists */
+    .test-page ul {
+    @apply space-y-2;
+    }
+    .test-page li {
+    @apply text-gray-300 hover:text-blue-400 transition-colors;
+    }
+    .test-page li span,
+    .test-page li a {
+    @apply cursor-pointer;
+    }
+    .test-page li a {
+    @apply text-blue-400 hover:text-blue-300 hover:underline;
+    }
+
+    /* Dropdown Buttons */
+    .test-page .drop {
+    @apply w-full text-left bg-slate-700/50 hover:bg-slate-700 text-blue-400 font-bold py-3 px-4 rounded-lg transition-all duration-200 flex items-center justify-between;
+    }
+    .test-page .drop::after {
+    @apply content-['▼'] text-sm transition-transform duration-200;
+    }
+    .test-page .drop.active::after {
+    @apply rotate-180;
+    }
+
+    /* Dropdown Content */
+    .test-page .drop-content {
+    @apply hidden mt-2 space-y-1 pl-4 border-l-2 border-slate-600;
+    }
+    .test-page .drop-content.active {
+    @apply block;
+    }
+
+    /* Tips Section */
+    .test-page .tips .sector-title {
+    @apply flex items-center justify-between w-full;
+    }
+    .test-page .add-tip button {
+    @apply bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold py-2 px-4 rounded-lg transition-colors shadow-lg shadow-blue-600/30;
+    }
+    .test-page .tips ul {
+    @apply mt-4 space-y-2;
+    }
+    .test-page .tips li a {
+    @apply block bg-slate-700/30 hover:bg-slate-700/50 rounded-lg p-3 transition-colors;
+    }
+
+    /* Bottom Section */
+    .test-page .extra {
+    @apply max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-6 pb-12;
+    }
+    .test-page .others,
+    .test-page .more {
+    @apply bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700/50 shadow-lg;
+    }
+
+        /* Modpack Grid */
+        .test-page .pack {
+        @apply grid grid-cols-3 sm:grid-cols-5 gap-4 mt-4;
+        }
+        .test-page .pack a {
+        @apply block hover:scale-110 transition-transform duration-300;
+        }
+        .test-page .pack img {
+        @apply w-full h-auto rounded-lg shadow-md;
+        }
+
+        /* Join Section */
+        .test-page .more p {
+        @apply text-gray-300 mb-2;
+        }
+        .test-page .join {
+        @apply flex items-center gap-2 mt-4;
+        }
+        .test-page .join img {
+        @apply w-8 h-8 hover:scale-110 transition-transform;
+        }
+    .test-page .join a {
+        @apply inline-block;
+        }
+
+}
 
 /* npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch */
