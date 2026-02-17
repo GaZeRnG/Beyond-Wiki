@@ -19,7 +19,7 @@
         @apply bg-repeat bg-blend-multiply bg-[url('/Images/background.webp')] bg-size-[50px] select-none;
     }
     .bd-page, .add-tip-page, .view-tip-page {
-        @apply bg-linear-to-br from-[rgb(32,32,32)] to-[rgb(60,60,60)];
+        @apply bg-linear-to-br from-[rgb(32,32,32)] to-[rgb(60,60,60)] relative min-h-screen;
     }
 }
 
@@ -173,10 +173,17 @@
 @layer components{
     /* Background */
     .bd-page .bd-bg {
-        @apply fixed inset-0 -z-10 overflow-hidden;
-        filter: blur(20px);
+        @apply fixed inset-0 -z-10 bg-[url('/Images/bd_background.webp')] bg-size-[4318px_100%] bg-repeat-x bg-position-[0%_0%];
+        filter: blur(3px);
+        animation: bgAnimation 100s linear infinite;
     }
 
+    @keyframes bgAnimation {
+        0% { background-position: 0 0; }
+        100% { background-position: -4318px 0; }
+    }
+
+/* 
     .bd-page .bd-bg::before {
         content: "";
         @apply absolute -top-1/4 -left-1/4 w-[60vw] h-[60vw] rounded-full;
@@ -225,7 +232,7 @@
         0%, 100% { transform: translate(0, 0) scale(1); }
         25% { transform: translate(-30px, 40px) scale(0.95); }
         75% { transform: translate(20px, -30px) scale(1.05); }
-    }
+    } */
 
     /* Warning CSS*/
     .bd-page .warning {
@@ -247,7 +254,7 @@
 
     /* What is Beyond Depth */
     .bd-page .main .what {
-        @apply flex-2 bg-[#a0a0a01f] border border-[#868686] shadow-lg rounded-[10px] p-5 backdrop-blur-[50px];
+        @apply flex-2 bg-[#a0a0a01f] border border-[#868686] shadow-lg rounded-[10px] p-5 backdrop-blur-[20px];
     }
     .bd-page .main .what .sector-title, .bd-page .main .serverpack .sector-title {
         @apply text-white text-[20px] font-bold border-b-2 border-[#a5a5a5] w-fit mb-3;
@@ -255,7 +262,7 @@
 
     /* Serverpack CSS */
     .bd-page .main .serverpack {
-        @apply flex-[0.5] bg-[#a0a0a01f] border border-[#868686] shadow-lg rounded-[10px] p-5 box-border backdrop-blur-[50px];
+        @apply flex-[0.5] bg-[#a0a0a01f] border border-[#868686] shadow-lg rounded-[10px] p-5 box-border backdrop-blur-[20px];
     }
 
     /* Categories CSS*/
@@ -263,7 +270,7 @@
         @apply max-w-[90%] mx-auto grid grid-cols-3 gap-5 mb-5;
     }
     .bd-page .categories .items, .bd-page .categories .dimensions, .bd-page .categories .bosses {
-        @apply bg-[#a0a0a01f] border border-[#868686] shadow-lg rounded-[10px] p-5 backdrop-blur-[50px];
+        @apply bg-[#a0a0a01f] border border-[#868686] shadow-lg rounded-[10px] p-5 backdrop-blur-[20px];
     }
     .bd-page .categories .items .sector-title, .bd-page .categories .dimensions .sector-title, .bd-page .categories .bosses .sector-title {
         @apply text-white text-[18px] font-bold border-b-2 border-[#a5a5a5] w-fit mb-3;
