@@ -44,7 +44,7 @@
         <!--Content-->
         <div class="main">
             <section class="what">
-                <p class="sector-title"><b>What is Beyond Depth?</b></p>
+                <p class="sector-title">What is Beyond Depth?</p>
                 Beyond Depth is an adventure and exploration modpack fully optimized with 400+ mods designed for players seeking new challenges. It features unique progression, expanded biomes, tougher bosses, and new mechanics, focusing on survival and discovery. Without relying too much on quests. With unique structures, enhanced combat, pet systems, and Building contraptions, the pack caters to various playstyles.
             </section>
 
@@ -168,28 +168,29 @@
                     </div>
                 </div>
             </section>
-
-            <section class="tips">
-                <p class="sector-title"><b>Tips</b>
-                    <a href="/beyond-depth/tips/add-tip" rel="noopener noreferer" class="add-tip">
-                        <button id="open-add-tip">Add Tip</button>
-                    </a>
-                </p>
-                <?php if ($tipslist && $tipslist->num_rows > 0): ?>
-                    <ul> 
-                        <?php while ($tip = $tipslist->fetch_assoc()): ?>
-                            <li>
-                                <a href="/beyond-depth/tips/view-tip?id=<?= htmlspecialchars($tip['tip_id']) ?>">
-                                    Tip #<?= htmlspecialchars($tip['tip_id']) ?> - <?= htmlspecialchars($tip['tip_title']) ?>
-                                </a>
-                            </li>
-                        <?php endwhile; ?>
-                    </ul>
-                <?php else: ?>
-                    <ul>No tips available.</ul>
-                <?php endif; ?>
-            </section>
         </div>
+
+        <!-- Tips -->
+        <section class="tips">
+            <p class="sector-title"><b>Tips</b>
+                <a href="/beyond-depth/tips/add-tip" rel="noopener noreferer" class="add-tip">
+                    <button id="open-add-tip">Add Tip</button>
+                </a>
+            </p>
+            <?php if ($tipslist && $tipslist->num_rows > 0): ?>
+                <ul> 
+                    <?php while ($tip = $tipslist->fetch_assoc()): ?>
+                        <li>
+                            <a href="/beyond-depth/tips/view-tip?id=<?= htmlspecialchars($tip['tip_id']) ?>">
+                                Tip #<?= htmlspecialchars($tip['tip_id']) ?> - <?= htmlspecialchars($tip['tip_title']) ?>
+                            </a>
+                        </li>
+                    <?php endwhile; ?>
+                </ul>
+            <?php else: ?>
+                <ul>No tips available.</ul>
+            <?php endif; ?>
+        </section>
 
         <!--Bottom-->
         <div class="extra">
