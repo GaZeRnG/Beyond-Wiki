@@ -183,57 +183,6 @@
         100% { background-position: -4318px 0; }
     }
 
-/* 
-    .bd-page .bd-bg::before {
-        content: "";
-        @apply absolute -top-1/4 -left-1/4 w-[60vw] h-[60vw] rounded-full;
-        background: #404040;
-        animation: blobFloat1 20s ease-in-out infinite;
-    }
-
-    .bd-page .bd-bg::after {
-        content: "";
-        @apply absolute -bottom-1/4 -right-1/4 w-[50vw] h-[50vw] rounded-full;
-        background: #404040;
-        animation: blobFloat2 25s ease-in-out infinite;
-    }
-
-    .bd-page .bd-blob-3 {
-        @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40vw] h-[40vw] rounded-full;
-        background: #333333;
-        filter: blur(20px);
-        animation: blobFloat3 18s ease-in-out infinite;
-    }
-
-    .bd-page .bd-blob-4 {
-        @apply absolute top-1/4 right-1/8 w-[30vw] h-[30vw] rounded-full;
-        background: #272727;
-        filter: blur(20px);
-        animation: blobFloat4 22s ease-in-out infinite;
-    }
-
-    @keyframes blobFloat1 {
-        0%, 100% { transform: translate(0, 0) scale(1); }
-        33% { transform: translate(50px, 30px) scale(1.1); }
-        66% { transform: translate(-30px, 50px) scale(0.9); }
-    }
-
-    @keyframes blobFloat2 {
-        0%, 100% { transform: translate(0, 0) scale(1); }
-        50% { transform: translate(-40px, -40px) scale(1.15); }
-    }
-
-    @keyframes blobFloat3 {
-        0%, 100% { transform: translate(-50%, -50%) scale(1); }
-        50% { transform: translate(-50%, -50%) scale(1.2); }
-    }
-
-    @keyframes blobFloat4 {
-        0%, 100% { transform: translate(0, 0) scale(1); }
-        25% { transform: translate(-30px, 40px) scale(0.95); }
-        75% { transform: translate(20px, -30px) scale(1.05); }
-    } */
-
     /* Warning CSS*/
     .bd-page .warning {
         @apply text-[20px] text-[#fdc717e5] font-bold bg-[#f59f0b1f] border border-[#ffa200] w-[90%] mx-auto align-middle rounded-[10px] text-center select-none;
@@ -269,22 +218,35 @@
     .bd-page .categories {
         @apply max-w-[90%] mx-auto grid grid-cols-3 gap-5 mb-5;
     }
-    .bd-page .categories .items, .bd-page .categories .dimensions, .bd-page .categories .bosses {
+    .bd-page .categories .items,.bd-page .categories .dimensions, .bd-page .categories .bosses, .bd-page .tips {
         @apply bg-[#a0a0a01f] border border-[#868686] shadow-lg rounded-[10px] p-5 backdrop-blur-[20px];
     }
     .bd-page .categories .items .sector-title, .bd-page .categories .dimensions .sector-title, .bd-page .categories .bosses .sector-title {
         @apply text-white text-[18px] font-bold border-b-2 border-[#a5a5a5] w-fit mb-3;
     }
     .bd-page .categories .items ul, .bd-page .categories .dimensions ul, .bd-page .categories .bosses ul {
-        @apply space-y-2;
+        @apply space-y-2 border-l border-[#a5a5a5] pl-4;
     }
     .bd-page .categories .items li, .bd-page .categories .dimensions li, .bd-page .categories .bosses li {
         @apply text-white w-fit hover:text-[#a5a5a5] transition-colors cursor-pointer;
     }
+    /* Drop */
+    .bd-page .categories .drop {
+        @apply bg-[#a0a0a01f] border border-[#868686] shadow-lg rounded-[5px] p-2.5 text-center cursor-pointer hover:bg-[#a0a0a03f];
+    }
+    .bd-page .categories .drop::after {
+        @apply content-['▼'] text-sm transition-transform duration-200;
+    }
+    .bd-page .categories .drop.active::after {
+        @apply rotate-180;
+    }
 
     /* Tips CSS */
+    .bd-page .tips {
+        @apply bg-[#a0a0a01f] border border-[#868686] shadow-lg rounded-[10px] p-5 backdrop-blur-[20px] w-[90%] flex justify-between items-center;
+    }
     .bd-page .categories .tips .sector-title {
-        @apply flex justify-between items-center;
+        @apply text-white text-[18px] font-bold border-b-2 border-[#a5a5a5] w-fit mb-3 flex items-center justify-between w-full;
     }
     .bd-page .categories .tips .add-tip button {
         @apply mr-2.5 cursor-pointer hover:underline text-[15px];
