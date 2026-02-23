@@ -18,8 +18,15 @@
     .login-page, .register-page {
         @apply bg-repeat bg-blend-multiply bg-[url('/Images/background.webp')] bg-size-[50px] select-none;
     }
-    .bd-page, .add-tip-page, .view-tip-page {
-        @apply bg-linear-to-br from-[rgb(32,32,32)] to-[rgb(60,60,60)] relative min-h-screen;
+    .bd-page .bd-bg {
+        @apply fixed inset-0 -z-10 bg-[url('/Images/bd_background.webp')] bg-size-[4318px_100%] bg-repeat-x bg-position-[0%_0%];
+        filter: blur(3px);
+        animation: bgAnimation 100s linear infinite;
+    }
+
+    @keyframes bgAnimation {
+        0% { background-position: 0 0; }
+        100% { background-position: -4318px 0; }
     }
 }
 
@@ -171,18 +178,6 @@
 
 /* BD Page */
 @layer components{
-    /* Background */
-    .bd-page .bd-bg {
-        @apply fixed inset-0 -z-10 bg-[url('/Images/bd_background.webp')] bg-size-[4318px_100%] bg-repeat-x bg-position-[0%_0%];
-        filter: blur(3px);
-        animation: bgAnimation 100s linear infinite;
-    }
-
-    @keyframes bgAnimation {
-        0% { background-position: 0 0; }
-        100% { background-position: -4318px 0; }
-    }
-
     /* Warning CSS*/
     .bd-page .warning {
         @apply text-[20px] text-[#fdc717e5] font-bold bg-[#f59f0b1f] border border-[#ffa200] w-[90%] mx-auto align-middle rounded-[10px] text-center select-none;
@@ -233,12 +228,6 @@
     /* Drop */
     .bd-page .categories .drop {
         @apply bg-[#a0a0a01f] border border-[#868686] shadow-lg rounded-[5px] p-2.5 text-center cursor-pointer hover:bg-[#a0a0a03f];
-    }
-    .bd-page .categories .drop::after {
-        @apply content-['▼'] text-sm transition-transform duration-200;
-    }
-    .bd-page .categories .drop.active::after {
-        @apply rotate-180;
     }
 
     /* Tips CSS */
