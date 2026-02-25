@@ -346,7 +346,7 @@
     -webkit-user-select: none;
     user-select: none;
   }
-  .bd-page .bd-bg {
+  .bd-page .bd-bg, .view-tip-page .view-tip-bg, .add-tip-page .add-tip-bg {
     position: fixed;
     inset: calc(var(--spacing) * 0);
     z-index: calc(10 * -1);

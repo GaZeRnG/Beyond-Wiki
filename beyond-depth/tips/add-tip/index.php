@@ -42,6 +42,8 @@
     </head>
 
     <body class="add-tip-page">
+        <!-- Background -->
+        <div class="add-tip-bg"></div>
 
         <!-- Navbar -->
         <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/features/navbar.php'; ?>

@@ -20,10 +20,7 @@
 
     <body class="bd-page">
         <!-- Background -->
-        <div class="bd-bg">
-            <div class="bd-blob-3"></div>
-            <div class="bd-blob-4"></div>
-        </div>
+        <div class="bd-bg"></div>
 
         <!-- Navbar -->
         <?php include_once __DIR__ . '/../features/navbar.php'; ?>

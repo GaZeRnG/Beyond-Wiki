@@ -18,7 +18,7 @@
     .login-page, .register-page {
         @apply bg-repeat bg-blend-multiply bg-[url('/Images/background.webp')] bg-size-[50px] select-none;
     }
-    .bd-page .bd-bg {
+    .bd-page .bd-bg, .view-tip-page .view-tip-bg, .add-tip-page .add-tip-bg {
         @apply fixed inset-0 -z-10 bg-[url('/Images/bd_background.webp')] bg-size-[4318px_100%] bg-repeat-x bg-position-[0%_0%];
         filter: blur(3px);
         animation: bgAnimation 100s linear infinite;
@@ -359,6 +359,7 @@
     }
 }
 
+/* Test Page */
 @layer components {
     .test-page {
     @apply min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-gray-100;

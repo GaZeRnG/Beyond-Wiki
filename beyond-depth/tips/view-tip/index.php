@@ -28,6 +28,8 @@
     </head>
 
     <body class="view-tip-page">
+        <!-- Background -->
+        <div class="view-tip-bg"></div>
 
         <!-- Navbar -->
         <?php require_once $_SERVER["DOCUMENT_ROOT"] . '/features/navbar.php'; ?>
