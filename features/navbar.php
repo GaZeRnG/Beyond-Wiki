@@ -2,7 +2,8 @@
     require_once $_SERVER["DOCUMENT_ROOT"] . "/features/bootstrap.php";
 ?>
 
-<nav class="nav">
+<section class="nav">
+    <!-- Logo -->
     <?php if (isset($page) && $page !== 'hub'): ?>
         <a href="/" class="logo_click">
             <img src="/Images/Logo/Beyond_Wiki_logo_crop.webp" alt="Beyond Wiki Logo">
@@ -41,6 +42,6 @@
             <?php endif; ?>
         </div>
     </section>
-</nav>
+</section>
 
 <script src="/features/navbar.js"></script>
