@@ -5,7 +5,7 @@
     $page = 'hub';
 ?>
 
-<html style="overflow: hidden; height: 100dvh;">
+<html>
     <head>
         <title>Beyond Wiki</title>
         <link rel="stylesheet" href="/src/output.css">
@@ -15,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale= 1.0">
     </head>
 
-    <body class="hub-page" style="min-height: 100%;">
+    <body class="hub-page">
         <!-- Navbar -->
         <?php include_once __DIR__ . '/features/navbar.php'; ?>
 

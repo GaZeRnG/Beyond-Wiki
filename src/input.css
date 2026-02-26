@@ -1,14 +1,12 @@
 @import "tailwindcss";
-@plugin "daisyui" {
-    themes: light --default, dark --prefersdark;
-}
+@plugin "daisyui";
 
 @layer base {
     body {
-        @apply font-sans text-white text-[15px] m-0 bg-zinc-700;
+        @apply font-sans text-white text-[15px] m-0;
     }
     .hub-page, .login-page, .register-page {
-        @apply bg-repeat bg-blend-multiply bg-[url('/Images/background.webp')] bg-size-[50px] select-none;
+        @apply bg-repeat bg-blend-multiply bg-zinc-700 bg-[url('/Images/background.webp')] bg-size-[50px] select-none pb-[30px];
     }
     .bd-page .bd-bg, .view-tip-page .view-tip-bg, .add-tip-page .add-tip-bg {
         @apply fixed inset-0 -z-10 bg-[url('/Images/bd_background.webp')] bg-size-[4318px_100%] bg-repeat-x bg-position-[0%_0%];
@@ -124,7 +122,7 @@
         @apply block mx-auto h-[150px];
     }
     .hub-page .main {
-        @apply bg-[rgba(117,117,117,0.5)] shadow-[0_0_20px_rgb(163,163,163)] rounded-[10px] mx-auto mt-[30px] mb-[30px] max-w-[95%] pt-2.5 text-center;
+        @apply bg-[rgba(117,117,117,0.5)] shadow-[0_0_20px_rgb(163,163,163)] rounded-[10px] mx-auto mt-[30px] max-w-[95%] pt-2.5 text-center;
     }
     .hub-page .content_description {
         @apply text-[15px] w-[85%] mx-auto;
