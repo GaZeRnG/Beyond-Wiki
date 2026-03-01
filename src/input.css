@@ -47,7 +47,6 @@
 
 /* Register Page */
 @layer components {
-
     .register-page .register-container {
         @apply max-w-125 w-[85%] mx-auto my-auto mt-20 p-5 bg-[rgba(117,117,117,0.5)] shadow-[0_0_20px_rgb(163,163,163)] rounded-[10px];
     }
