@@ -3,10 +3,10 @@
 
 @layer base {
     body {
-        @apply font-sans text-white text-[15px] m-0;
+        @apply font-sans text-white text-[15px] m-0 pb-7.5;
     }
     .hub-page, .login-page, .register-page {
-        @apply bg-repeat bg-blend-multiply bg-zinc-700 bg-[url('/Images/background.webp')] bg-size-[50px] select-none pb-[30px];
+        @apply bg-repeat bg-blend-multiply bg-zinc-700 bg-[url('/Images/background.webp')] bg-size-[50px] select-none;
     }
     .bd-page .bd-bg, .view-tip-page .view-tip-bg, .add-tip-page .add-tip-bg {
         @apply fixed inset-0 -z-10 bg-[url('/Images/bd_background.webp')] bg-size-[4318px_100%] bg-repeat-x bg-position-[0%_0%];
@@ -23,35 +23,33 @@
 /* Navbar */
 @layer components {
     .nav {
-        @apply fixed top-0 left-0 w-full h-[50px] p-5 z-50 flex justify-start items-center bg-neutral-800 select-none;
+        @apply navbar fixed bg-neutral-800 px-5 z-10 select-none shadow-[0_0_10px_rgba(143,143,143,0.5)];
     }
     .nav img {
-        @apply h-[30px];
+        @apply h-7.5;
     }
-    .nav .logo_click {
-        @apply transition-transform duration-300 hover:scale-120 active:scale-120;
+    .nav .nav_logo {
+        @apply transition-transform duration-300 hover:scale-110 active:scale-110;
     }
-    .nav .icons {
-        @apply ml-auto flex gap-5 align-middle;
+    .nav .drop {
+        @apply dropdown dropdown-end ml-auto ;
     }
-    .nav .icons .user {
-        @apply flex items-center text-white text-[10px] cursor-pointer transition-transform duration-300 hover:scale-120 active:scale-120;
+    .nav .drop .user {
+        @apply flex items-center text-white text-[10px] cursor-pointer transition-transform duration-300 hover:scale-110 active:scale-110;
     }
-    .nav .icons .user p {
+    .nav .drop .user p {
         @apply mr-1;
     }
-    .nav .icons .dropdown {
-        @apply hidden absolute top-[50px] bg-neutral-700 shadow-[0_0_8px_rgba(163,163,163,0.5)] rounded-md p-1 w-[200px] end-5 whitespace-normal;
-    }
-    .nav .icons .dropdown a {
-        @apply m-0 text-white text-[15px] no-underline flex justify-center hover:bg-neutral-600 rounded-md;
+    .nav .drop .drop_menu {
+        @apply menu menu-sm bg-neutral-700 rounded-box z-1 mt-3 w-52 p-2;
     }
 }
 
 /* Register Page */
 @layer components {
+
     .register-page .register-container {
-        @apply max-w-[500px] mx-auto p-5 bg-[rgba(117,117,117,0.5)] shadow-[0_0_20px_rgb(163,163,163)] rounded-[10px];
+        @apply max-w-125 w-[85%] mx-auto my-auto mt-20 p-5 bg-[rgba(117,117,117,0.5)] shadow-[0_0_20px_rgb(163,163,163)] rounded-[10px];
     }
     .register-page .register-title {
         @apply text-center text-[20px] font-bold mb-5;
@@ -59,14 +57,8 @@
     .register-page .register-form {
         @apply flex flex-col gap-2.5;
     }
-    .register-page .register-form label {
-        @apply text-[15px];
-    }
-    .register-page .register-form input {
-        @apply bg-neutral-800 border border-neutral-600 rounded-md p-2.5;
-    }
     .register-page .register-form .register-submit {
-        @apply bg-neutral-800 border border-neutral-600 rounded-md w-[30%] p-2.5 mx-auto mt-2.5 cursor-pointer hover:bg-neutral-600;
+        @apply btn bg-neutral-800 border border-neutral-600 rounded-md w-[30%] p-2.5 mx-auto mt-2.5 cursor-pointer hover:bg-neutral-600;
     }
     .register-page .register-form .register-back {
         @apply text-white no-underline hover:underline flex justify-center;
