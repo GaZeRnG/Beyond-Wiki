@@ -1,51 +1,68 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const slides = [...document.querySelectorAll(".carousel-content .mod")];
+    const slides = [...document.querySelectorAll(".wiki-links-images .mod")];
     const prevBtn = document.getElementById("prev");
     const nextBtn = document.getElementById("next");
-    const container = document.querySelector(".carousel-content");
-    if (!container || slides.length === 0 || !prevBtn || !nextBtn) {
-        console.warn("Carousel: missing elements", { container: !!container, slides: slides.length, prev: !!prevBtn, next: !!nextBtn });
+
+    if (!slides.length || !prevBtn || !nextBtn) {
+        console.warn("Carousel: missing elements");
         return;
     }
 
-    const order = ["bo","ba","bd","bc","bz","bn"];
-    let offset = 0;
-    const apply = () => slides.forEach((s,i) => s.className = "mod " + order[(i + offset) % slides.length]);
+    const positions = ["far-left", "left", "center", "right", "far-right", "hidden"];
+    let currentIndex = 2;
 
-    const rotate = (dir) => { offset = (offset + dir + slides.length) % slides.length; apply(); };
+    const updatePositions = () => {
+        slides.forEach((slide, i) => {
+            let posIndex = (i - currentIndex + 2 + slides.length) % slides.length;
 
-    nextBtn.onclick = () => rotate(-1);
-    prevBtn.onclick = () => rotate(1);
+            if (posIndex >= positions.length) posIndex = positions.length - 1;
 
-    //swipe
-    let startX = 0, lastX = 0, isMoving = false;
-    const threshold = 40;
-    const maxTime = 800;
-    let tStart = 0;
+            slide.setAttribute("data-pos", positions[posIndex]);
+
+            slide.onclick = positions[posIndex] === "center" ? null : (e) => {
+                e.preventDefault();
+                const direction = posIndex < 2 ? -1 : 1;
+                rotate(direction);
+            };
+        });
+    };
+
+    const rotate = (direction) => {
+        currentIndex = (currentIndex + direction + slides.length) % slides.length;
+        updatePositions();
+    };
+
+    prevBtn.onclick = () => rotate(-1);
+    nextBtn.onclick = () => rotate(1);
+    
+    // Keyboard
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") rotate(-1);
+        if (e.key === "ArrowRight") rotate(1);
+    });
+
+    // Touch
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const container = document.querySelector(".wiki-links");
 
     container.addEventListener("touchstart", (e) => {
-        if (!e.touches || !e.touches[0]) return;
-        startX = e.touches[0].clientX;
-        lastX = startX;
-        isMoving = true;
-        tStart = Date.now();
-    }, {passive: true});
-
-    container.addEventListener("touchmove", (e) => {
-        if (!isMoving || !e.touches || !e.touches[0]) return;
-        lastX = e.touches[0].clientX;
-    }, {passive: true});
+        touchStartX = e.changedTouches[0].screenX;
+    }, {passive: true}); 
 
     container.addEventListener("touchend", (e) => {
-        if (!isMoving) return;
-        isMoving = false;
-        const dist = lastX - startX;
-        const dt = Date.now() - tStart;
-
-        if (Math.abs(dist) > threshold && dt < 2000) {
-        if (dist < 0) rotate(-1);
-        else rotate(1);
-        }
-        startX = lastX = 0;
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
     }, {passive: true});
+
+    const handleSwipe = () => {
+        const swipeThreshold = 50;
+        const diff = touchEndX - touchStartX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+            rotate(diff > 0 ? -1 : 1);
+        }
+    };
+
+    updatePositions();
 });

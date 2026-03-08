@@ -73,14 +73,16 @@
 
                 <!-- Form -->
                 <form method="POST" class="login-form">
-                    <label for="username" class="input validator bg-neutral-800 rounded-md p-2.5 w-full">
+                    <label for="username" class="floating-label input validator bg-neutral-800 rounded-md p-2.5 w-full">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-icon lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span>Username or Email</span>
                         <input type="text" id="username" name="username" required placeholder="Username or Email" pattern="[A-Za-z][A-Za-z0-9\-]*" minlength="3" maxlength="30" title="Only letters, numbers or dash"/>
                     </label>
                     <p class="validator-hint hidden mt-0">Must be 3 to 30 characters<br>Containing only letters, numbers or dash</p>
 
-                    <label for="password" class="input validator bg-neutral-800 rounded-md p-2.5 w-full">
+                    <label for="password" class=" floating-label input validator bg-neutral-800 rounded-md p-2.5 w-full">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-key-round-icon lucide-key-round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg>
+                        <span>Password</span>
                         <input type="password" id="password" name="password" required placeholder="Password" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"/>
                     </label>
                     <p class="validator-hint hidden mt-0">Must be more than 8 characters, including number, lowercase letter, uppercase letter</p>
