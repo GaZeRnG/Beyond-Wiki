@@ -38,7 +38,7 @@
         </section>
 
         <!--Content-->
-        <div class="main">
+        <div class="full">
             <section class="what">
                 <p class="sector-title">What is Beyond Depth?</p>
                 Beyond Depth is an adventure and exploration modpack fully optimized with 400+ mods designed for players seeking new challenges. It features unique progression, expanded biomes, tougher bosses, and new mechanics, focusing on survival and discovery. Without relying too much on quests. With unique structures, enhanced combat, pet systems, and Building contraptions, the pack caters to various playstyles.
@@ -46,7 +46,7 @@
 
             <section class="serverpack">
                 <p class="sector-title"><b>Serverpack</b></p>
-                <a>Download - Upcoming feature</a>
+                <a>Upcoming feature</a>
             </section>
         </div>
     
@@ -78,29 +78,32 @@
                     <li><span><a href="https://voidscape.tamaized.com/index.php/Main_Page" target="_blank">Voidscape*</a></span></li>
                 </ul>
             </section>
+        </div>
         
+        <div class="full">
             <section class="bosses">
                 <p class="sector-title"><b>Bosses</b></p>
                 <!-- Mini -->
-                <div class="mini">
-                    <button onclick="dropfunction()" class="drop"><b>Mini-Bosses <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg></b></button>
-                    <ul id="dropped" class="drop-content">
-                        <li><a href="https://the-undergarden-mod.fandom.com/wiki/Forgotten_Guardian" target="_blank">Forgotten Guardian*</a></li>
-                        <li><a href="https://github.com/ObscuriaLithium/Aquamirae/wiki/Creatures" target="_blank">Eel*</a></li>
-                        <li><a href="https://github.com/ObscuriaLithium/Aquamirae/wiki/Creatures" target="_blank">Mother of the Maze*</a></li>
-                        <li><a href="https://alexs-mobs-unofficial.fandom.com/wiki/Warped_Mosco" target="_blank">Warped Mosco*</a></li>
-                        <li><a href="https://alexscaves.wiki.gg/wiki/Gum_Worm">Gum Worm*</a></li>
-                        <li><a href="https://alexs-mobs-unofficial.fandom.com/wiki/Farseer" target="_blank">Farseer*</a></li>
-                        <li><a href="https://alexscaves.wiki.gg/wiki/Forsaken" target="_blank">Forsaken*</a></li>
-                        <li><a href="http://alexscaves.wiki.gg/wiki/Magnetron" target="_blank">Magnetron*</a></li>
-                        <li><a href="https://alexscaves.wiki.gg/wiki/Hullbreaker" target="_blank">Hullbreaker*</a></li>
-                        <li><a href="https://minecraft.wiki/w/Warden" target="_blank">Warden*</a></li>
-                        <li><a href="https://voidscape.tamaized.com/index.php/Void%27s_Wrath" target="_blank">Void's Wrath*</a></li>
-                        <li><a href="https://www.curseforge.com/minecraft/mc-mods/eeeabs-mobs" target="_blank">Corpse Warlock*</a></li>
-                    </ul>
-                </div>
-
                 <div class="tier">
+                    <div class="mini">
+                        <button onclick="dropfunction()" class="drop"><b>Mini-Bosses</b></button>
+                        <ul id="dropped" class="drop-content">
+                            <li><a href="https://the-undergarden-mod.fandom.com/wiki/Forgotten_Guardian" target="_blank">Forgotten Guardian*</a></li>
+                            <li><a href="https://github.com/ObscuriaLithium/Aquamirae/wiki/Creatures" target="_blank">Eel*</a></li>
+                            <li><a href="https://github.com/ObscuriaLithium/Aquamirae/wiki/Creatures" target="_blank">Mother of the Maze*</a></li>
+                            <li><a href="https://alexs-mobs-unofficial.fandom.com/wiki/Warped_Mosco" target="_blank">Warped Mosco*</a></li>
+                            <li><a href="https://alexscaves.wiki.gg/wiki/Gum_Worm">Gum Worm*</a></li>
+                            <li><a href="https://alexs-mobs-unofficial.fandom.com/wiki/Farseer" target="_blank">Farseer*</a></li>
+                            <li><a href="https://alexscaves.wiki.gg/wiki/Forsaken" target="_blank">Forsaken*</a></li>
+                            <li><a href="http://alexscaves.wiki.gg/wiki/Magnetron" target="_blank">Magnetron*</a></li>
+                            <li><a href="https://alexscaves.wiki.gg/wiki/Hullbreaker" target="_blank">Hullbreaker*</a></li>
+                            <li><a href="https://minecraft.wiki/w/Warden" target="_blank">Warden*</a></li>
+                            <li><a href="https://voidscape.tamaized.com/index.php/Void%27s_Wrath" target="_blank">Void's Wrath*</a></li>
+                            <li><a href="https://www.curseforge.com/minecraft/mc-mods/eeeabs-mobs" target="_blank">Corpse Warlock*</a></li>
+                        </ul>
+                    </div>
+
+                
                     <!-- Early Game -->
                     <div class="early">
                         <button onclick="dropfunction()" class="drop"><b>Early-Game</b></button>
@@ -167,7 +170,7 @@
         </div>
 
         <!-- Tips -->
-        <section class="tips">
+        <!-- <section class="tips">
             <p class="sector-title"><b>Tips</b>
                 <a href="/beyond-depth/tips/add-tip" rel="noopener noreferer" class="add-tip">
                     <button id="open-add-tip">Add Tip</button>
@@ -186,7 +189,7 @@
             <?php else: ?>
                 <ul>No tips available.</ul>
             <?php endif; ?>
-        </section>
+        </section> -->
 
         <!--Footer-->
         <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/features/footer.php"; ?>
