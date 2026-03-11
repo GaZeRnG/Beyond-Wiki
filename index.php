@@ -16,6 +16,8 @@
     </head>
 
     <body class="hub-page">
+        <!-- Scrollbar -->
+
         <!-- Navbar -->
         <?php include_once __DIR__ . '/features/navbar.php'; ?>
 
@@ -36,7 +38,7 @@
         <section class="main">
             <p>Welcome to <b>Beyond Wiki</b></p>
             <p>A wiki for all of Beyond Packs.</p>
-            
+            <p>Select a pack</p>
 
             <hr class="mx-auto w-[90%] my-4">
 
@@ -58,31 +60,7 @@
         </section>
 
         <!-- Footer -->
-        <footer class="footer footer-center">
-            <div class="last">
-                <div class="join">
-                    <p>Discord: <a href="https://discord.gg/VqrxmqZP" target="_blank"><img src="/Images/Logo/discord.webp"></a></p>
-                </div>
-                
-                <div class="link2">
-                    <p class="official">Official Links:
-                        <div class="cflink">
-                            <a href="https://www.curseforge.com/minecraft/modpacks/beyond-depth" target="_blank"><img src="/Images/Logo/Beyond_Depth_logo.webp"></a>
-                            <a href="https://www.curseforge.com/minecraft/modpacks/beyond-depth-insanity" target="_blank"><img src="/Images/Logo/Beyond_Depth_Insanity_logo.webp"></a>
-                            <a href="https://www.curseforge.com/minecraft/modpacks/beyond-ascension" target="_blank"><img src="/Images/Logo/Beyond_Ascension_logo.webp"></a>
-                            <a href="https://www.curseforge.com/minecraft/modpacks/beyond-cosmo" target="_blank"><img src="/Images/Logo/Beyond_Cosmo_logo.webp"></a>
-                            <a href="https://www.curseforge.com/minecraft/modpacks/beyond-ocean" target="_blank"><img src="/Images/Logo/Beyond_Ocean_logo.webp"></a>
-                            <a href="https://www.curseforge.com/minecraft/modpacks/beyond-zombie" target="_blank"><img src="/Images/Logo/Beyond_Zombie_logo.webp"></a>
-                            <a href="https://www.curseforge.com/minecraft/modpacks/beyond-nightfall" target="_blank"><img src="/Images/Logo/Beyond_NightFall_logo.webp"></a>
-                        </div>
-                    </p>
-                </div>
-
-                <div class="join">
-                    <p>Support the Creator: <a href="https://ko-fi.com/blueversal" target="_blank"><img src="/Images/Logo/kofi.webp"></a></p>
-                </div>
-            </div>
-        </footer>
+        <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/features/footer.php"; ?>
 
         <script src="script.js"></script>
     </body>

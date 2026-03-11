@@ -189,36 +189,8 @@
             <?php endif; ?>
         </section>
 
-        <!--Bottom-->
-        <div class="extra">
-            <section class="others">
-                <p class="sector-title"><b>Other Modpacks</b></p><br>
-                <div class="pack">
-                    <a>
-                        <img src="/Images/Logo/Beyond_Ascension_logo_crop.webp">
-                    </a>
-                    <a>
-                        <img src="/Images/Logo/Beyond_Cosmo_logo_crop.webp">
-                    </a>
-                    <a>
-                        <img src="/Images/Logo/Beyond_Ocean_logo_crop.webp">
-                    </a>
-                    <a>
-                        <img src="/Images/Logo/Beyond_Zombie_logo_crop.webp">
-                    </a>
-                    <a>
-                        <img src="/Images/Logo/Beyond_Nightfall_logo_crop.webp">
-                    </a>
-                </div>
-            </section>
-
-            <section class="more">
-                <b>Want to contribute in this wiki?</b>
-                <p>Make sure to login so you can add infos</p>
-                <p class="join">Support the packs creator: <a href="https://ko-fi.com/blueversal" target="_blank"><img src="/Images/Logo/kofi.webp"></a></p>
-                <p class="join">Also join our Discord: <a href="https://discord.gg/VqrxmqZP" target="_blank"><img src="/Images/Logo/discord.webp"></a></p>
-            </section>
-        </div>
+        <!--Footer-->
+        <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/features/footer.php"; ?>
 
         <script src="/beyond-depth/script.js"></script>
     </body>

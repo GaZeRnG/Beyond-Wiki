@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
+@plugin "tailwind-scrollbar";
 
 @layer base {
     body {
@@ -45,6 +46,34 @@
     }
     .nav .drop .drop_menu {
         @apply menu menu-sm bg-neutral-700 rounded-box z-1 mt-3 w-52 p-2;
+    }
+}
+
+/* Footer */
+@layer components {
+    .footer {
+        @apply sm:footer-horizontal bg-neutral-800 shadow-[0_0_10px_rgba(143,143,143,0.5)] p-3;
+    }
+    .footer img {
+        @apply transition-transform duration-300 hover:scale-120 active:scale-120 h-6.25;
+    }
+    .footer .first {
+        @apply flex flex-col items-center gap-2.5;
+    }
+    .footer .last {
+        @apply grid grid-cols-3 w-full gap-2;
+    }
+    .footer .join a {
+        @apply flex place-content-center;
+    }
+    .footer .official {
+        @apply flex justify-center items-center gap-0.5;
+    }
+    .footer .cflink {
+        @apply flex flex-row items-center gap-2.5;
+    }
+    .footer .cflink img {
+        @apply h-7.5;
     }
 }
 
@@ -157,7 +186,7 @@
     }
     .hub-page .wiki-links-images .mod[data-pos="left"] {
         transform: translateX(-140px) translateZ(-150px) rotateY(15deg) scale(0.8);
-        opacity: 0.6;
+        opacity: 0.8;
         z-index: 2;
     }
     .hub-page .wiki-links-images .mod[data-pos="center"] {
@@ -170,7 +199,7 @@
     }
     .hub-page .wiki-links-images .mod[data-pos="right"] {
         transform: translateX(140px) translateZ(-150px) rotateY(-15deg) scale(0.8);
-        opacity: 0.6;
+        opacity: 0.8;
         z-index: 2;
     }
     .hub-page .wiki-links-images .mod[data-pos="far-right"] {
@@ -183,29 +212,6 @@
         opacity: 0;
         z-index: 0;
         pointer-events: none;
-    }
-
-    /* Footer */
-    .hub-page .footer {
-        @apply sm:footer-horizontal bg-neutral-800 shadow-[0_0_10px_rgba(143,143,143,0.5)] p-3;
-    }
-    .hub-page .footer img {
-        @apply transition-transform duration-300 hover:scale-120 active:scale-120 h-6.25;
-    }
-    .hub-page .last {
-        @apply grid grid-cols-3 w-full gap-2;
-    }
-    .hub-page .join a {
-        @apply flex place-content-center;
-    }
-    .hub-page .official {
-        @apply flex justify-center items-center gap-0.5;
-    }
-    .hub-page .cflink {
-        @apply flex flex-row items-center gap-2.5;
-    }
-    .hub-page .cflink img {
-        @apply h-7.5;
     }
 }
 
