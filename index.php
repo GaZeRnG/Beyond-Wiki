@@ -5,7 +5,7 @@
     $page = 'hub';
 ?>
 
-<html>
+<html class="scrollbar">
     <head>
         <title>Beyond Wiki</title>
         <link rel="stylesheet" href="/src/output.css">

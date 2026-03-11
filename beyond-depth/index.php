@@ -8,10 +8,9 @@
     $tipslist = $conn->query("SELECT tip_id, tip_title, tip_content, author, created_at FROM tips ORDER BY created_at DESC");
 ?>
 
-<html>
+<html class="scrollbar">
     <head>
         <link rel="stylesheet" href="/src/output.css">
-        <link rel="stylesheet" href="/beyond-depth/style.css">
         <link rel="icon" type="image" href="/Images/Logo/Beyond_Wiki_logo.webp">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale= 1.0">
