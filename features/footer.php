@@ -8,11 +8,7 @@
         <p>Make sure to login so you can add infos!</p>
     </div>
     <div class="last">
-        <div class="join">
-            <p>Discord: <a href="https://discord.gg/VqrxmqZP" target="_blank"><img src="/Images/Logo/discord.webp"></a></p>
-        </div>
-        
-        <div class="link2">
+        <section>
             <p class="official">Curseforge Links:
                 <div class="cflink">
                     <a href="https://www.curseforge.com/minecraft/modpacks/beyond-depth" target="_blank"><img src="/Images/Logo/Beyond_Depth_logo.webp"></a>
@@ -24,6 +20,10 @@
                     <a href="https://www.curseforge.com/minecraft/modpacks/beyond-nightfall" target="_blank"><img src="/Images/Logo/Beyond_NightFall_logo.webp"></a>
                 </div>
             </p>
+        </section>
+        
+        <div class="join">
+            <p>Discord: <a href="https://discord.gg/VqrxmqZP" target="_blank"><img src="/Images/Logo/discord.webp"></a></p>
         </div>
 
         <div class="join">

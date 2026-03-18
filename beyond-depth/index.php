@@ -44,9 +44,9 @@
                 Beyond Depth is an adventure and exploration modpack fully optimized with 400+ mods designed for players seeking new challenges. It features unique progression, expanded biomes, tougher bosses, and new mechanics, focusing on survival and discovery. Without relying too much on quests. With unique structures, enhanced combat, pet systems, and Building contraptions, the pack caters to various playstyles.
             </section>
 
-            <section class="serverpack">
-                <p class="sector-title"><b>Serverpack</b></p>
-                <a>Upcoming feature</a>
+            <section class="others">
+                <p class="sector-title"><b>Other Wiki:</b></p>
+                Upcoming feature
             </section>
         </div>
     
@@ -170,10 +170,13 @@
         </div>
 
         <!-- Tips -->
-        <!-- <section class="tips">
-            <p class="sector-title"><b>Tips</b>
+        <section class="tips">
+            <p class="sector-title"><b>General Tips</b>
                 <a href="/beyond-depth/tips/add-tip" rel="noopener noreferer" class="add-tip">
-                    <button id="open-add-tip">Add Tip</button>
+                    <button id="open-add-tip" class="open-add-tip">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                        Add Tip
+                    </button>
                 </a>
             </p>
             <?php if ($tipslist && $tipslist->num_rows > 0): ?>
@@ -189,7 +192,7 @@
             <?php else: ?>
                 <ul>No tips available.</ul>
             <?php endif; ?>
-        </section> -->
+        </section>
 
         <!--Footer-->
         <?php include_once $_SERVER["DOCUMENT_ROOT"] . "/features/footer.php"; ?>

@@ -261,9 +261,11 @@
     .bd-page .sector-title {
         @apply text-white text-[20px] font-bold border-b-2 border-[#a5a5a5] w-fit mb-3;
     }
-    .bd-page .serverpack {
+    .bd-page .others {
         @apply flex-[0.5] bg-[#a0a0a01f] border border-[#868686] shadow-lg rounded-[10px] p-5 box-border backdrop-blur-[20px];
     }
+
+    /* Categories */
     .bd-page .categories {
         @apply max-w-[90%] mx-auto grid grid-cols-2 gap-5 mb-5;
     }
@@ -273,7 +275,7 @@
     .bd-page li {
         @apply text-white w-fit hover:text-[#a5a5a5] transition-colors cursor-pointer;
     }
-    .bd-page .categories li {
+    .bd-page .categories li, .bd-page .bosses li {
         @apply border-l border-[#a5a5a5] pl-3 pb-1;
     }
     /* Items */
@@ -289,49 +291,37 @@
         @apply mx-auto;
     }
     .bd-page .tier {
-        @apply grid grid-cols-2;
+        @apply grid grid-cols-2 gap-2;
     }
-    .bd-page .bosses li {
+    .bd-page .bosses .drop {
+        @apply bg-[#a9a9a96f] border border-[#868686] shadow-lg rounded-[5px] p-2.5 w-full mb-2 text-center cursor-pointer hover:bg-[#a0a0a03f];
+    }
+    .bd-page .bosses .drop-content {
+        @apply hidden!;
+    }
+    .bd-page .bosses .active {
+        @apply grid!;
+    }
+    .bd-page .bosses :is(.mini, .early, .mid, .late) .drop-content {
+        @apply grid grid-cols-3;
+    }
+    .bd-page .bosses .early .drop-content {
+        @apply grid grid-cols-1;
+    }
+    /* Tips */
+    .bd-page .tips {
+        @apply max-w-[90%] mx-auto bg-[#a0a0a01f] border border-[#868686] shadow-lg rounded-[10px] p-5 mb-5 box-border backdrop-blur-[20px];
+    }
+    .bd-page .tips .sector-title {
+        @apply w-full flex justify-between;
+    }
+    .bd-page .tips .sector-title .open-add-tip {
+        @apply text-[15px] flex cursor-pointer hover:text-[#a5a5a5] transition-colors;
+    }
+    .bd-page .tips li {
         @apply border-l border-[#a5a5a5] pl-3 pb-1;
     }
 
-
-    .bd-page .categories .drop {
-        @apply bg-[#a0a0a01f] border border-[#868686] shadow-lg rounded-[5px] p-2.5 text-center cursor-pointer hover:bg-[#a0a0a03f];
-    }
-    .bd-page .tips {
-        @apply bg-[#a0a0a01f] border border-[#868686] shadow-lg rounded-[10px] p-5 backdrop-blur-[20px] w-[90%] flex justify-between items-center;
-    }
-    .bd-page .categories .tips .sector-title {
-        @apply text-white text-[18px] font-bold border-b-2 border-[#a5a5a5] w-fit mb-3 flex items-center justify-between w-full;
-    }
-    .bd-page .categories .tips .add-tip button {
-        @apply mr-2.5 cursor-pointer hover:underline text-[15px];
-    }
-    .bd-page :is(.mini, .early, .mid, .late) .drop {
-        @apply bg-[rgba(160,160,160,0.5)] text-white text-center w-[calc(100%-20px)] p-[5px] m-[3px_0_5px_10px] rounded-[5px] cursor-pointer hover:bg-[rgba(160,160,160,0.8)];
-    }
-    .bd-page .mini {
-        @apply mt-[5px];
-    }
-    .bd-page .late {
-        @apply mb-[5px];
-    }
-    .bd-page .drop-content {
-        @apply hidden!;
-    }
-    .bd-page .active {
-        @apply grid!;
-    }
-    .bd-page .drop-content li {
-        @apply p-[3px_0];
-    }
-    .bd-page .content li {
-        @apply mb-[5px];
-    }
-    .bd-page .content li span {
-        @apply hover:underline cursor-pointer;
-    }
     /* .bd-page .extra {
         @apply bg-[rgba(117,117,117,0.5)] shadow-[0_0_20px_rgb(163,163,163)] rounded-[10px] mx-auto mt-5 mb-[30px] p-[15px] max-w-[95%] box-border;
     }
