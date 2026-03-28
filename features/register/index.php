@@ -6,33 +6,56 @@
     $errors = [];
 
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        $username = trim($_POST["username"]);
-        $email = trim($_POST["email"]);
-        $password = $_POST["password"];
-        $password_confirmation = trim($_POST["confirm-password"]);
+        if (!validate_csrf_token($_POST["csrf-token"] ?? '')) {
+            $errors[] = "Invalid CSRF token.";
+        } else {
+            $username = trim($_POST["username"]);
+            $email = trim($_POST["email"]);
+            $password = $_POST["password"];
+            $password_confirmation = trim($_POST["confirm-password"]);
 
-        // Validate inputs
-        if ($password !== $password_confirmation) {
-            $errors[] = "Passwords do not match.";
-        }
+            // Check for duplicates
+            $check = $conn->prepare("SELECT user_name, user_email FROM users WHERE user_name = ? OR user_email = ? LIMIT 1");
+            $check->bind_param("ss", $username, $email);
+            $check->execute();
+            $res = $check->get_result();
 
-        if (strlen($password) < 8) {
-            $errors[] = "Password must be at least 8 characters long.";
-        }
+            if ($res->num_rows > 0) {
+                $existing = $res->fetch_assoc();
+                $errors[] = "Username or email already exists.";
+            }
 
-        if (empty($username) || empty($email) || empty($password) || empty($password_confirmation)) {
-            $errors[] = "All fields are required.";
-        }
+            // Validate inputs
+            if ($password !== $password_confirmation) {
+                $errors[] = "Passwords do not match.";
+            }
 
-        if (empty($errors)) {
-            $hash = password_hash($password, PASSWORD_DEFAULT);
+            if (strlen($password) < 8) {
+                $errors[] = "Password must be at least 8 characters long.";
+            }
 
-            $stmt = $conn->prepare("INSERT INTO users (user_name, user_email, user_password, oauth_provider, oauth_id) VALUES (?, ?, ?, 'manual', NULL)");
-            $stmt->bind_param("sss", $username, $email, $hash);
-            $stmt->execute();
-            
-            header(header: "Location: /features/login");
-            exit();
+            if (empty($username) || empty($email) || empty($password) || empty($password_confirmation)) {
+                $errors[] = "All fields are required.";
+            }
+
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $errors[] = "Invalid email format.";
+            }
+
+            if (!preg_match('/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/', $password)) {
+                $errors[] = "Password must contain at least one number, one lowercase and uppercase letter.";
+            }
+
+            if (empty($errors)) {
+                $hash = password_hash($password, PASSWORD_DEFAULT);
+
+                $stmt = $conn->prepare("INSERT INTO users (user_name, user_email, user_password, oauth_provider, oauth_id) VALUES (?, ?, ?, 'manual', NULL)");
+                $stmt->bind_param("sss", $username, $email, $hash);
+                $stmt->execute();
+                
+                header(header: "Location: /features/login");
+                exit();
+            }
         }
     }
 ?>
@@ -67,6 +90,8 @@
                 
                 <!-- Form -->
                 <form method="POST" class="register-form" enctype="multipart/form-data">
+                    <!-- CSRF -->
+                    <input type="hidden" name="csrf-token" value="<?= csrf_token() ?>">
                     <!-- Username -->
                     <label for="username" class="floating-label input validator bg-neutral-800 rounded-md p-2.5 w-full">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-icon lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>

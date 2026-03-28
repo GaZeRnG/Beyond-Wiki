@@ -272,7 +272,7 @@
     .bd-page .items, .bd-page .dimensions, .bd-page .bosses, .bd-page .tips {
         @apply bg-[#a0a0a01f] border border-[#868686] shadow-lg rounded-[10px] p-5 backdrop-blur-[20px];
     }
-    .bd-page li {
+    .bd-page .categories li {
         @apply text-white w-fit hover:text-[#a5a5a5] transition-colors cursor-pointer;
     }
     .bd-page .categories li, .bd-page .bosses li {

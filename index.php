@@ -46,7 +46,8 @@
             <div class="wiki-links">
                 <div class="wiki-links-images">
                     <a href="/" class="mod" data-index="0"><img src="/Images/Logo/Beyond_Ocean_logo_crop.webp"></a>
-                    <a href="/" class="mod active" data-index="1"><img src="/Images/Logo/Beyond_Ascension_logo_crop.webp"></a>
+                    <a href="/" class="mod" data-index="1"><img src="/Images/Logo/Beyond_Ascension_logo_crop.webp"></a>
+                    <a href="/beyond-depth/" class="mod active" data-index="2"><img src="/Images/Logo/Beyond_Depth_logo_crop.webp"></a>
                     <a href="/" class="mod" data-index="3"><img src="/Images/Logo/Beyond_Cosmo_logo_crop.webp"></a>
                     <a href="/" class="mod" data-index="4"><img src="/Images/Logo/Beyond_Zombie_logo_crop.webp"></a>
                     <a href="/" class="mod" data-index="5"><img src="/Images/Logo/Beyond_Nightfall_logo_crop.webp"></a>
