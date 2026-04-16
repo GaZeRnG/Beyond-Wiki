@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 02, 2026 at 05:36 PM
+-- Generation Time: Apr 16, 2026 at 06:07 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,117 +24,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cookie_tokens`
+-- Table structure for table `login_attempts`
 --
 
-CREATE TABLE `cookie_tokens` (
-  `user_id` int(11) NOT NULL,
-  `token_hash` varchar(64) NOT NULL,
-  `expires_at` datetime NOT NULL
+CREATE TABLE `login_attempts` (
+  `id` int(11) NOT NULL,
+  `ip` varchar(45) NOT NULL,
+  `success` tinyint(1) NOT NULL,
+  `attempted_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `cookie_tokens`
---
-
-INSERT INTO `cookie_tokens` (`user_id`, `token_hash`, `expires_at`) VALUES
-(1, 'e7d1084b20b46fed1ed0357c8a1b0e8e027cc255b917906bf16295dad0c25457', '2026-02-01 14:40:43');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tips`
---
-
-CREATE TABLE `tips` (
-  `tip_id` int(11) NOT NULL,
-  `tip_title` varchar(255) NOT NULL,
-  `tip_content` varchar(255) NOT NULL,
-  `author` varchar(50) DEFAULT NULL,
-  `created_at` date NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tips`
---
-
-INSERT INTO `tips` (`tip_id`, `tip_title`, `tip_content`, `author`, `created_at`) VALUES
-(1, 'test', 'test tip', '', '2026-01-02');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `user_id` int(11) NOT NULL,
-  `user_name` varchar(50) DEFAULT NULL,
-  `user_email` varchar(100) NOT NULL,
-  `user_password` varchar(255) DEFAULT NULL,
-  `user_pfp` varchar(255) DEFAULT NULL,
-  `oauth_provider` enum('google','discord') DEFAULT NULL,
-  `oauth_id` varchar(255) DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `user_password`, `user_pfp`, `oauth_provider`, `oauth_id`, `created_at`, `updated_at`) VALUES
-(1, 'test', 'gazeringg@gmail.com', '$2y$10$5sKFq4jaXZLSU7YdD4WHX./FQ7.1PWuWnWLyoVY/w.XbhAiQuCRCS', '694576e828205.jpg', NULL, NULL, '2025-12-19 16:01:44', '2025-12-19 16:01:44');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `cookie_tokens`
+-- Indexes for table `login_attempts`
 --
-ALTER TABLE `cookie_tokens`
-  ADD PRIMARY KEY (`token_hash`),
-  ADD KEY `user id` (`user_id`);
-
---
--- Indexes for table `tips`
---
-ALTER TABLE `tips`
-  ADD PRIMARY KEY (`tip_id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`),
-  ADD UNIQUE KEY `user_email` (`user_email`);
+ALTER TABLE `login_attempts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `ip` (`ip`,`attempted_at`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `tips`
+-- AUTO_INCREMENT for table `login_attempts`
 --
-ALTER TABLE `tips`
-  MODIFY `tip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `cookie_tokens`
---
-ALTER TABLE `cookie_tokens`
-  ADD CONSTRAINT `user id` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `login_attempts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
