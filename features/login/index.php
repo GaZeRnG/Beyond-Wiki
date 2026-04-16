@@ -1,5 +1,5 @@
 <?php 
-    require_once $_SERVER["DOCUMENT_ROOT"] . "/features/bootstrap.php";
+    require_once $_SERVER["DOCUMENT_ROOT"] . "/features/boot.php";
 
     $page = 'login';
 
