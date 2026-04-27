@@ -6,7 +6,7 @@
     <!-- Logo -->
     <section>
         <?php if (isset($page) && $page !== 'hub'): ?>
-            <a href="/" class="nav_logo tooltip tooltip-right tooltip-neutral" data-tip="Go back to Hub">
+            <a href="/" class="nav_logo">
                 <img src="/Images/Logo/Beyond_Wiki_logo_crop.webp" alt="Beyond Wiki Logo">
             </a>
         <?php else: ?>
