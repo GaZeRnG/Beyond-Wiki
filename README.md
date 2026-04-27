@@ -2,4 +2,6 @@ This is the source code for the Beyond Wiki
 
 Completion: 30%
 
-Currently status: busy with life ~~adding daisyui to site, which needs to change the whole css of the wiki~~
+Currently status: updating ui to daisyui
+
+Next Plan: Change to laravel

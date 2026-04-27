@@ -53,7 +53,7 @@
 /* Navbar */
 @layer components {
     .nav {
-        @apply navbar fixed bg-neutral-800 px-5 z-10 select-none shadow-[0_0_10px_rgba(143,143,143,0.5)];
+        @apply navbar fixed justify-between bg-neutral-800 px-5 z-10 select-none shadow-[0_0_10px_rgba(143,143,143,0.5)];
     }
     .nav img {
         @apply h-7.5;
@@ -61,8 +61,11 @@
     .nav .nav_logo {
         @apply transition-transform duration-300 hover:scale-110 active:scale-110;
     }
+    .nav .search {
+        @apply input bg-neutral-800 text-white w-[30%];
+    }
     .nav .drop {
-        @apply dropdown dropdown-end ml-auto ;
+        @apply dropdown dropdown-end cursor-pointer;
     }
     .nav .user {
         @apply flex items-center text-white text-[10px] cursor-pointer transition-transform duration-300 hover:scale-110 active:scale-110;
@@ -71,7 +74,10 @@
         @apply mr-1;
     }
     .nav .drop_menu {
-        @apply menu menu-sm bg-neutral-700 rounded-box z-1 mt-3 w-52 p-2;
+        @apply menu menu-sm bg-neutral-700 rounded-box z-1 mt-3 w-52;
+    }
+    .nav .drop-menu li {
+        @apply align-middle;
     }
 }
 
