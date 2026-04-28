@@ -13,10 +13,12 @@
         <link rel="icon" type="image" href="/Images/Logo/Beyond_Wiki_logo.webp">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale= 1.0">
+        <!-- <script src="https://cdn.jsdelivr.net/npm/animejs@4.0.0/lib/anime.umd.min.js"></script> -->
     </head>
 
     <body class="hub-page">
-        <!-- Scrollbar -->
+        <!-- Loading -->
+        <?php include_once __DIR__ . '/features/loading/loading.php'; ?>
 
         <!-- Navbar -->
         <?php include_once __DIR__ . '/features/navbar.php'; ?>
@@ -36,9 +38,9 @@
 
         <!-- Main -->
         <section class="main">
-            <p>Welcome to <b>Beyond Wiki</b></p>
+            <p class="welcome">Welcome to <b>Beyond Wiki</b></p>
             <p>A wiki for all of Beyond Packs.</p>
-            <p>Select a pack</p>
+            <p>Select a pack below to get started.</p>
 
             <hr class="mx-auto w-[90%] my-4">
 
