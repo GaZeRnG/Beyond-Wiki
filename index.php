@@ -44,21 +44,33 @@
 
             <hr class="mx-auto w-[90%] my-4">
 
-            <h1 class="m-0 text-lg font-bold">Modpacks</h1>
-            <div class="wiki-links">
-                <div class="wiki-links-images">
-                    <a href="/" class="mod" data-index="0"><img src="/Images/Logo/Beyond_Ocean_logo_crop.webp"></a>
-                    <a href="/" class="mod" data-index="1"><img src="/Images/Logo/Beyond_Ascension_logo_crop.webp"></a>
-                    <a href="/beyond-depth/" class="mod active" data-index="2"><img src="/Images/Logo/Beyond_Depth_logo_crop.webp"></a>
-                    <a href="/" class="mod" data-index="3"><img src="/Images/Logo/Beyond_Cosmo_logo_crop.webp"></a>
-                    <a href="/" class="mod" data-index="4"><img src="/Images/Logo/Beyond_Zombie_logo_crop.webp"></a>
-                    <a href="/" class="mod" data-index="5"><img src="/Images/Logo/Beyond_Nightfall_logo_crop.webp"></a>
+            <section class="main-content">
+                <div class="main-content-1-3">
+                    aaaaaaaaa
                 </div>
-                <div class="wiki-links-buttons">
-                    <button id="prev"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-left-icon lucide-arrow-big-left"><path d="M13 9a1 1 0 0 1-1-1V5.061a1 1 0 0 0-1.811-.75l-6.835 6.836a1.207 1.207 0 0 0 0 1.707l6.835 6.835a1 1 0 0 0 1.811-.75V16a1 1 0 0 1 1-1h6a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1z"/></svg></button>
-                    <button id="next"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-right-icon lucide-arrow-big-right"><path d="M11 9a1 1 0 0 0 1-1V5.061a1 1 0 0 1 1.811-.75l6.836 6.836a1.207 1.207 0 0 1 0 1.707l-6.836 6.835a1 1 0 0 1-1.811-.75V16a1 1 0 0 0-1-1H5a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1z"/></svg></button>
+
+                <div class="main-content-2-3">
+                    <h1 class="m-0 text-lg font-bold">Modpacks</h1>
+                    <div class="wiki-links">
+                        <div class="wiki-links-images">
+                            <a href="/" class="mod" data-index="0"><img src="/Images/Logo/Beyond_Ocean_logo_crop.webp"></a>
+                            <a href="/" class="mod" data-index="1"><img src="/Images/Logo/Beyond_Ascension_logo_crop.webp"></a>
+                            <a href="/beyond-depth/" class="mod active" data-index="2"><img src="/Images/Logo/Beyond_Depth_logo_crop.webp"></a>
+                            <a href="/" class="mod" data-index="3"><img src="/Images/Logo/Beyond_Cosmo_logo_crop.webp"></a>
+                            <a href="/" class="mod" data-index="4"><img src="/Images/Logo/Beyond_Zombie_logo_crop.webp"></a>
+                            <a href="/" class="mod" data-index="5"><img src="/Images/Logo/Beyond_Nightfall_logo_crop.webp"></a>
+                        </div>
+                        <div class="wiki-links-buttons">
+                            <button id="prev"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-left-icon lucide-arrow-big-left"><path d="M13 9a1 1 0 0 1-1-1V5.061a1 1 0 0 0-1.811-.75l-6.835 6.836a1.207 1.207 0 0 0 0 1.707l6.835 6.835a1 1 0 0 0 1.811-.75V16a1 1 0 0 1 1-1h6a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1z"/></svg></button>
+                            <button id="next"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-right-icon lucide-arrow-big-right"><path d="M11 9a1 1 0 0 0 1-1V5.061a1 1 0 0 1 1.811-.75l6.836 6.836a1.207 1.207 0 0 1 0 1.707l-6.836 6.835a1 1 0 0 1-1.811-.75V16a1 1 0 0 0-1-1H5a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1z"/></svg></button>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+                <div class="main-content-3-3">
+                    aaaaaaa
+                </div>
+            </section>
         </section>
 
         <!-- Footer -->

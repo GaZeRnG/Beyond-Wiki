@@ -22,20 +22,19 @@ function waitLoadAssets() {
 
     loadingText.textContent = total > 0 ? 'Loading Resources' : 'Ready';
 
-    // let loaded = 0;
+    let loaded = 0;
     
-    // images.forEach(img => {
-    //     const done = () => {
-    //         loaded++;
-    //         if (loaded >= total) {
-    //             loadingText.textContent = 'Ready';
-    //             setTimeout(finishLoading, 400);
-    //         }
-    //     };
-    //     img.addEventListener('load', done, { once: true });
-    //     img.addEventListener('error', done, { once: true });
-    // });
-
+    images.forEach(img => {
+        const done = () => {
+            loaded++;
+            if (loaded >= total) {
+                loadingText.textContent = 'Ready';
+                setTimeout(finishLoading, 500);
+            }
+        };
+        img.addEventListener('load', done, { once: true });
+        img.addEventListener('error', done, { once: true });
+    });
 }
 
 function finishLoading() {
