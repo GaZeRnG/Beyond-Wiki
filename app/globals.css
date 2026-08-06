@@ -9,6 +9,7 @@
     .login-page, .register-page {
         @apply pb-0 m-0;
     }
+    /* Hub Background */
     .hub-page, .login-page, .register-page {
         @apply bg-repeat bg-blend-multiply bg-zinc-700 bg-[url('/background/background.png')] bg-size-[50px] min-h-screen select-none;
     }
